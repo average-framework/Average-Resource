@@ -1,0 +1,985 @@
+[{
+    "Hash": "a_c_horse_americanpaint_greyovero",
+    "Category": "americanpaint",
+    "Variation": 1,
+    "Dress": "greyovero",
+    "Cost": 60.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanpaint_overo",
+    "Category": "americanpaint",
+    "Variation": 4,
+    "Dress": "overo",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanpaint_splashedwhite",
+    "Category": "americanpaint",
+    "Variation": 1,
+    "Dress": "splashedwhite",
+    "Cost": 55.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanpaint_tobiano",
+    "Category": "americanpaint",
+    "Variation": 3,
+    "Dress": "tobiano",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanstandardbred_black",
+    "Category": "americanstandardbred",
+    "Variation": 1,
+    "Dress": "black",
+    "Cost": 70.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanstandardbred_buckskin",
+    "Category": "americanstandardbred",
+    "Variation": 2,
+    "Dress": "buckskin",
+    "Cost": 70.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanstandardbred_lightbuckskin",
+    "Category": "americanstandardbred",
+    "Variation": 5,
+    "Dress": "lightbuckskin",
+    "Cost": 75.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanstandardbred_palominodapple",
+    "Category": "americanstandardbred",
+    "Variation": 2,
+    "Dress": "palominodapple",
+    "Cost": 75.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_americanstandardbred_silvertailbuckskin",
+    "Category": "americanstandardbred",
+    "Variation": 1,
+    "Dress": "silvertailbuckskin",
+    "Cost": 75.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_andalusian_darkbay",
+    "Category": "andalusian",
+    "Variation": 1,
+    "Dress": "darkbay",
+    "Cost": 80.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_andalusian_perlino",
+    "Category": "andalusian",
+    "Variation": 1,
+    "Dress": "perlino",
+    "Cost": 110.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_andalusian_rosegray",
+    "Category": "andalusian",
+    "Variation": 3,
+    "Dress": "rosegray",
+    "Cost": 110.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_appaloosa_blacksnowflake",
+    "Category": "appaloosa",
+    "Variation": 2,
+    "Dress": "blacksnowflake",
+    "Cost": 70.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_appaloosa_blanket",
+    "Category": "appaloosa",
+    "Variation": 1,
+    "Dress": "blanket",
+    "Cost": 55.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_appaloosa_brownleopard",
+    "Category": "appaloosa",
+    "Variation": 1,
+    "Dress": "brownleopard",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_appaloosa_fewspotted_pc",
+    "Category": "appaloosa",
+    "Variation": 2,
+    "Dress": "fewspotted",
+    "Cost": 65.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_appaloosa_leopard",
+    "Category": "appaloosa",
+    "Variation": 1,
+    "Dress": "leopard",
+    "Cost": 75.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_appaloosa_leopardblanket",
+    "Category": "appaloosa",
+    "Variation": 2,
+    "Dress": "leopardblanket",
+    "Cost": 55.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_black",
+    "Category": "arabian",
+    "Variation": 1,
+    "Dress": "black",
+    "Cost": 500.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_grey",
+    "Category": "arabian",
+    "Variation": 1,
+    "Dress": "grey",
+    "Cost": 480.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_redchestnut",
+    "Category": "arabian",
+    "Variation": 1,
+    "Dress": "redchestnut",
+    "Cost": 475.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_redchestnut_pc",
+    "Category": "arabian",
+    "Variation": 1,
+    "Dress": "redchestnut",
+    "Cost": 480.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_rosegreybay",
+    "Category": "arabian",
+    "Variation": 1,
+    "Dress": "rosegreybay",
+    "Cost": 550.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_warpedbrindle_pc",
+    "Category": "arabian",
+    "Variation": 1,
+    "Dress": "warpedbrindle",
+    "Cost": 530.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_arabian_white",
+    "Category": "arabian",
+    "Variation": 4,
+    "Dress": "white",
+    "Cost": 550.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_ardennes_bayroan",
+    "Category": "ardennes",
+    "Variation": 1,
+    "Dress": "bayroan",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_ardennes_irongreyroan",
+    "Category": "ardennes",
+    "Variation": 1,
+    "Dress": "irongreyroan",
+    "Cost": 260.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_ardennes_strawberryroan",
+    "Category": "ardennes",
+    "Variation": 1,
+    "Dress": "strawberryroan",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_belgian_blondchestnut",
+    "Category": "belgian",
+    "Variation": 1,
+    "Dress": "blondchestnut",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_belgian_mealychestnut",
+    "Category": "belgian",
+    "Variation": 1,
+    "Dress": "mealychestnut",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_breton_grullodun",
+    "Category": "breton",
+    "Variation": 1,
+    "Dress": "grullodun",
+    "Cost": 230.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_breton_mealydapplebay",
+    "Category": "breton",
+    "Variation": 1,
+    "Dress": "mealydapplebay",
+    "Cost": 260.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_breton_redroan",
+    "Category": "breton",
+    "Variation": 1,
+    "Dress": "redroan",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_breton_sealbrown",
+    "Category": "breton",
+    "Variation": 1,
+    "Dress": "sealbrown",
+    "Cost": 270.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_breton_sorrel",
+    "Category": "breton",
+    "Variation": 1,
+    "Dress": "sorrel",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_breton_steelgrey",
+    "Category": "breton",
+    "Variation": 1,
+    "Dress": "steelgrey",
+    "Cost": 270.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_buell_warvets",
+    "Category": "buell",
+    "Variation": 4,
+    "Dress": "warvets",
+    "Cost": 300.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_criollo_baybrindle",
+    "Category": "criollo",
+    "Variation": 1,
+    "Dress": "baybrindle",
+    "Cost": 150.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_criollo_bayframeovero",
+    "Category": "criollo",
+    "Variation": 1,
+    "Dress": "bayframeovero",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_criollo_blueroanovero",
+    "Category": "criollo",
+    "Variation": 1,
+    "Dress": "blueroanovero",
+    "Cost": 120.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_criollo_dun",
+    "Category": "criollo",
+    "Variation": 1,
+    "Dress": "dun",
+    "Cost": 120.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_criollo_marblesabino",
+    "Category": "criollo",
+    "Variation": 1,
+    "Dress": "marblesabino",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_criollo_sorrelovero",
+    "Category": "criollo",
+    "Variation": 1,
+    "Dress": "sorrelovero",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_dutchwarmblood_chocolateroan",
+    "Category": "dutchwarmblood",
+    "Variation": 1,
+    "Dress": "chocolateroan",
+    "Cost": 300.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_dutchwarmblood_sealbrown",
+    "Category": "dutchwarmblood",
+    "Variation": 1,
+    "Dress": "sealbrown",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_dutchwarmblood_sootybuckskin",
+    "Category": "dutchwarmblood",
+    "Variation": 1,
+    "Dress": "sootybuckskin",
+    "Cost": 290.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_hungarianhalfbred_darkdapplegrey",
+    "Category": "hungarianhalfbred",
+    "Variation": 1,
+    "Dress": "darkdapplegrey",
+    "Cost": 260.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_hungarianhalfbred_flaxenchestnut",
+    "Category": "hungarianhalfbred",
+    "Variation": 1,
+    "Dress": "flaxenchestnut",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_hungarianhalfbred_liverchestnut",
+    "Category": "hungarianhalfbred",
+    "Variation": 1,
+    "Dress": "liverchestnut",
+    "Cost": 300.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_hungarianhalfbred_piebaldtobiano",
+    "Category": "hungarianhalfbred",
+    "Variation": 2,
+    "Dress": "piebaldtobiano",
+    "Cost": 230.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_kentuckysaddle_black",
+    "Category": "kentuckysaddle",
+    "Variation": 1,
+    "Dress": "black",
+    "Cost": 55.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_kentuckysaddle_buttermilkbuckskin_pc",
+    "Category": "kentuckysaddle",
+    "Variation": 1,
+    "Dress": "buttermilkbuckskin",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_kentuckysaddle_chestnutpinto",
+    "Category": "kentuckysaddle",
+    "Variation": 1,
+    "Dress": "chestnutpinto",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_kentuckysaddle_grey",
+    "Category": "kentuckysaddle",
+    "Variation": 1,
+    "Dress": "grey",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_kentuckysaddle_silverbay",
+    "Category": "kentuckysaddle",
+    "Variation": 1,
+    "Dress": "silverbay",
+    "Cost": 50.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_kladruber_black",
+    "Category": "kladruber",
+    "Variation": 1,
+    "Dress": "black",
+    "Cost": 160.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_kladruber_cremello",
+    "Category": "kladruber",
+    "Variation": 1,
+    "Dress": "cremello",
+    "Cost": 180.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_kladruber_dapplerosegrey",
+    "Category": "kladruber",
+    "Variation": 1,
+    "Dress": "dapplerosegrey",
+    "Cost": 220.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_kladruber_grey",
+    "Category": "kladruber",
+    "Variation": 1,
+    "Dress": "grey",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_kladruber_silver",
+    "Category": "kladruber",
+    "Variation": 1,
+    "Dress": "silver",
+    "Cost": 220.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_kladruber_white",
+    "Category": "kladruber",
+    "Variation": 1,
+    "Dress": "white",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_amberchampagne",
+    "Category": "missourifoxtrotter",
+    "Variation": 1,
+    "Dress": "amberchampagne",
+    "Cost": 170.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_sablechampagne",
+    "Category": "missourifoxtrotter",
+    "Variation": 2,
+    "Dress": "sablechampagne",
+    "Cost": 170.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_silverdapplepinto",
+    "Category": "missourifoxtrotter",
+    "Variation": 1,
+    "Dress": "silverdapplepinto",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_morgan_bay",
+    "Category": "morgan",
+    "Variation": 1,
+    "Dress": "bay",
+    "Cost": 7.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_morgan_bayroan",
+    "Category": "morgan",
+    "Variation": 1,
+    "Dress": "bayroan",
+    "Cost": 7.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_morgan_flaxenchestnut",
+    "Category": "morgan",
+    "Variation": 1,
+    "Dress": "flaxenchestnut",
+    "Cost": 7.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_morgan_liverchestnut_pc",
+    "Category": "morgan",
+    "Variation": 1,
+    "Dress": "liverchestnut",
+    "Cost": 7.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_morgan_palomino",
+    "Category": "morgan",
+    "Variation": 1,
+    "Dress": "palomino",
+    "Cost": 7.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_murfreebrood_mange_01",
+    "Category": "murfreebrood",
+    "Variation": 2,
+    "Dress": "mange",
+    "Cost": 220.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_murfreebrood_mange_02",
+    "Category": "murfreebrood",
+    "Variation": 2,
+    "Dress": "mange",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_murfreebrood_mange_03",
+    "Category": "murfreebrood",
+    "Variation": 2,
+    "Dress": "mange",
+    "Cost": 220.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_goldendun",
+    "Category": "mustang",
+    "Variation": 2,
+    "Dress": "goldendun",
+    "Cost": 400.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_grullodun",
+    "Category": "mustang",
+    "Variation": 1,
+    "Dress": "grullodun",
+    "Cost": 300.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_tigerstripedbay",
+    "Category": "mustang",
+    "Variation": 1,
+    "Dress": "tigerstripedbay",
+    "Cost": 310.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_wildbay",
+    "Category": "mustang",
+    "Variation": 1,
+    "Dress": "wildbay",
+    "Cost": 300.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_nokota_blueroan",
+    "Category": "nokota",
+    "Variation": 2,
+    "Dress": "blueroan",
+    "Cost": 75.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_nokota_reversedappleroan",
+    "Category": "nokota",
+    "Variation": 1,
+    "Dress": "reversedappleroan",
+    "Cost": 120.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_nokota_whiteroan",
+    "Category": "nokota",
+    "Variation": 2,
+    "Dress": "whiteroan",
+    "Cost": 80.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_shire_darkbay",
+    "Category": "shire",
+    "Variation": 1,
+    "Dress": "darkbay",
+    "Cost": 210.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_shire_lightgrey",
+    "Category": "shire",
+    "Variation": 1,
+    "Dress": "lightgrey",
+    "Cost": 210.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_shire_ravenblack",
+    "Category": "shire",
+    "Variation": 1,
+    "Dress": "ravenblack",
+    "Cost": 210.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_suffolkpunch_redchestnut",
+    "Category": "suffolkpunch",
+    "Variation": 1,
+    "Dress": "redchestnut",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_suffolkpunch_sorrel",
+    "Category": "suffolkpunch",
+    "Variation": 1,
+    "Dress": "sorrel",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_blackrabicano",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "blackrabicano",
+    "Cost": 40.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_chestnut",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "chestnut",
+    "Cost": 40.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_dapplebay",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "dapplebay",
+    "Cost": 60.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_flaxenroan",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "flaxenroan",
+    "Cost": 45.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_goldpalomino_pc",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "goldpalomino",
+    "Cost": 40.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_mahoganybay",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "mahoganybay",
+    "Cost": 40.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_tennesseewalker_redroan",
+    "Category": "tennesseewalker",
+    "Variation": 1,
+    "Dress": "redroan",
+    "Cost": 40.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_thoroughbred_blackchestnut",
+    "Category": "thoroughbred",
+    "Variation": 1,
+    "Dress": "blackchestnut",
+    "Cost": 350.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_thoroughbred_bloodbay",
+    "Category": "thoroughbred",
+    "Variation": 1,
+    "Dress": "bloodbay",
+    "Cost": 320.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_thoroughbred_brindle",
+    "Category": "thoroughbred",
+    "Variation": 1,
+    "Dress": "brindle",
+    "Cost": 350.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_thoroughbred_dapplegrey",
+    "Category": "thoroughbred",
+    "Variation": 3,
+    "Dress": "dapplegrey",
+    "Cost": 320.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_thoroughbred_reversedappleblack",
+    "Category": "thoroughbred",
+    "Variation": 1,
+    "Dress": "reversedappleblack",
+    "Cost": 350.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_turkoman_darkbay",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "darkbay",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_turkoman_gold",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "gold",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_turkoman_silver",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "silver",
+    "Cost": 270.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_norfolkroadster_black",
+    "Category": "norfolkroadster",
+    "Variation": 1,
+    "Dress": "black",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_norfolkroadster_dappledbuckskin",
+    "Category": "norfolkroadster",
+    "Variation": 1,
+    "Dress": "dappledbuckskin",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_norfolkroadster_piebaldroan",
+    "Category": "norfolkroadster",
+    "Variation": 1,
+    "Dress": "piebaldroan",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_norfolkroadster_rosegrey",
+    "Category": "norfolkroadster",
+    "Variation": 1,
+    "Dress": "rosegrey",
+    "Cost": 250.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_norfolkroadster_speckledgrey",
+    "Category": "norfolkroadster",
+    "Variation": 1,
+    "Dress": "speckledgrey",
+    "Cost": 240.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_norfolkroadster_spottedtricolor",
+    "Category": "norfolkroadster",
+    "Variation": 1,
+    "Dress": "spottedtricolor",
+    "Cost": 260.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_gypsycob_palominoblagdon",
+    "Category": "gypsycob",
+    "Variation": 1,
+    "Dress": "palominoblagdon",
+    "Cost": 350.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_gypsycob_piebald",
+    "Category": "gypsycob",
+    "Variation": 1,
+    "Dress": "piebald",
+    "Cost": 320.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_gypsycob_skewbald",
+    "Category": "gypsycob",
+    "Variation": 1,
+    "Dress": "skewbald",
+    "Cost": 400.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_gypsycob_splashedbay",
+    "Category": "gypsycob",
+    "Variation": 1,
+    "Dress": "splashedbay",
+    "Cost": 400.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_gypsycob_splashedpiebald",
+    "Category": "gypsycob",
+    "Variation": 1,
+    "Dress": "splashedpiebald",
+    "Cost": 350.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_gypsycob_whiteblagdon",
+    "Category": "gypsycob",
+    "Variation": 1,
+    "Dress": "whiteblagdon",
+    "Cost": 400.0,
+    "IsBuyable": true,
+    "ChestWeight": 100.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_blacktovero",
+    "Category": "missourifoxtrotter",
+    "Variation": 1,
+    "Dress": "blacktovero",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_blueroan",
+    "Category": "missourifoxtrotter",
+    "Variation": 1,
+    "Dress": "blueroan",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_buckskinbrindle",
+    "Category": "missourifoxtrotter",
+    "Variation": 1,
+    "Dress": "buckskinbrindle",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_missourifoxtrotter_dapplegrey",
+    "Category": "missourifoxtrotter",
+    "Variation": 1,
+    "Dress": "dapplegrey",
+    "Cost": 200.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_blackovero",
+    "Category": "mustang",
+    "Variation": 2,
+    "Dress": "blackovero",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_buckskin",
+    "Category": "mustang",
+    "Variation": 2,
+    "Dress": "buckskin",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_chestnuttovero",
+    "Category": "mustang",
+    "Variation": 2,
+    "Dress": "chestnuttovero",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_mustang_reddunovero",
+    "Category": "mustang",
+    "Variation": 2,
+    "Dress": "reddunovero",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_turkoman_black",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "black",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 50.0
+}, {
+    "Hash": "a_c_horse_turkoman_chestnut",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "chestnut",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_turkoman_grey",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "grey",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}, {
+    "Hash": "a_c_horse_turkoman_perlino",
+    "Category": "turkoman",
+    "Variation": 1,
+    "Dress": "perlino",
+    "Cost": 280.0,
+    "IsBuyable": true,
+    "ChestWeight": 75.0
+}]

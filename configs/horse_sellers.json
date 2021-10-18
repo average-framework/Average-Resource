@@ -1,0 +1,133 @@
+[
+    {
+        "Name": "Valentine",
+        "IsManagedByPlayer": true,
+        "Interact": {
+            "Position": {
+                "X": -365.31,
+                "Y": 791.64,
+                "Z": 116.17
+            },
+            "Radius": 1.0
+        },
+        "BuyCamera": {
+            "Position": {
+                "X": -367.92,
+                "Y": 788.92,
+                "Z": 116.1
+            },
+            "LookAtOffset": {
+                "X": 1.5,
+                "Y": 0.0,
+                "Z": 1.0
+            },
+            "Fov": 50.0,
+            "SpawnPosition": {
+                "X": -371.21,
+                "Y": 787.12,
+                "Z": 115.16
+            },
+            "SpawnHeading": 253.19
+        },
+        "CustomizationCamera": {
+            "Position": {
+                "X": -369.4,
+                "Y": 789.2,
+                "Z": 117.15
+            },
+            "LookAtOffset": {
+                "X": 1.25,
+                "Y": 0.0,
+                "Z": 0.0
+            },
+            "Fov": 50.0,
+            "SpawnPosition": {
+                "X": -369.11,
+                "Y": 792.91,
+                "Z": 115.14
+            },
+            "SpawnHeading": 140.80
+        },
+        "Blip": {
+            "Position": {
+                "X": -369.6,
+                "Y": 786.86,
+                "Z": 116.16
+            },
+            "Sprite": 1938782895,
+            "Label": "Maréchal Ferrant",
+            "Scale": 1.0
+        },
+        "Npc": {
+            "Position": {
+                "X": -365.39,
+                "Y": 792.57,
+                "Z": 115.17
+            },
+            "Heading": 199.42,
+            "Model": "U_M_M_BWMSTABLEHAND_01",
+            "Variation": 0,
+            "Scenario": "WORLD_HUMAN_WAITING_IMPATIENT"
+        },
+        "Enterprise": {
+            "JobName": "horseseller_valentine",
+            "JobLabel": "Palefrenier",
+            "ChestId": "chest_enterprise_horseseller_valentine",
+            "Roles": [
+                {
+                    "Name": "vendor",
+                    "Label": "Vendeur",
+                    "Level": 0,
+                    "Permissions": [
+                        "can_manage_chest"
+                    ]
+                },
+                {
+                    "Name": "groom",
+                    "Label": "Palefrenier",
+                    "Level": 1,
+                    "Permissions": [
+                        "can_manage_lower_employees",
+                        "can_manage_lower_salaries",
+                        "can_manage_chest"
+                    ]
+                },
+                {
+                    "Name": "manager",
+                    "Label": "Gérant",
+                    "Level": 2,
+                    "Permissions": [
+                        "can_manage_lower_employees",
+                        "can_manage_lower_salaries",
+                        "can_manage_treasury",
+                        "can_manage_chest"
+                    ]
+                }
+            ],
+            "Interact": {
+                "Position": {
+                    "X": -364.08,
+                    "Y": 791.42,
+                    "Z": 116.18
+                },
+                "Radius": 1.0
+            }
+        },
+        "Prices": {
+            "17CEB41A": 5.0,
+            "05447332": 3.60,
+            "80451C25": 3.60,
+            "A63CAE10": 3.60,
+            "AA0217AB": 3.60,
+            "BAA7E618": 4.0,
+            "DA6DADCA": 3.60,
+            "EFB31921": 3.60,
+            "1530BE1C": 5.0,
+            "D3500E5D": 8.0,
+            "30DEFDDF": 0.0,
+            "94B2E3AF": 8.0,
+            "AC106B30": 5.0,
+            "FACFC3C0": 0.0
+        }
+    }
+]

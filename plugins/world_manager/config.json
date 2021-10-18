@@ -1,0 +1,9 @@
+{
+    // Seconds
+    "MinTransitionTime": 300,
+    "MaxTransitionTime": 600,
+    // Milliseconds
+    "MinTimeBetweenWeatherChanging": 1800000,
+    "MaxTimeBetweenWeatherChanging": 2400000,
+    "SaveInterval": 300000
+}

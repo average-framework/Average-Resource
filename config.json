@@ -1,0 +1,36 @@
+{
+    "Language": "fr",
+
+    "MongoDb": {
+        "Database": "average",
+        "Host": "localhost",
+        "Port": 27017,
+        "Username": "",
+        "Password": ""
+    },
+
+    "IsServerWhitelisted": true,
+
+    "WebHooks": {
+        "ConnectionActivity": "https://discord.com/api/webhooks/877253793446789230/173WnKHh4TSUt_xKmf94HonaqK0W-H93OPtjdCuuDhPA3Jav5uiY5voJBZGNY26ih6oT",
+        "PlayerActivity": "https://discord.com/api/webhooks/877253893724180530/azOltyTSnCdxJhTbVDxLCwq-VXEZS_D9qJzOFMYIGQ4NbAHBbUDQfOGpFaYfYC54FoVP",
+        "StaffActivity": "https://discord.com/api/webhooks/833404931960602645/6AvhkcHRrLihocEAJY1-6Mtfg_g4gA_PhvfjndaX7_fcLmiWxQRXXMGX57MLkhosUFms"
+    },
+
+    "Save": {
+        // Milliseconds
+        "SaveInterval": 300000,
+        "DeferredInterval": 250,
+        // Seconds
+        "CancelSaveTimeout": 10
+    },
+
+    "Streaming": {
+        "EnableDithering": true,
+        "DitheringDistance": 20.0,
+        "LodMaxDistance": 40.0,
+        // Milliseconds
+        "DitheringUpdateInterval": 100,
+        "RenderUpdateInterval": 1000
+    }
+}

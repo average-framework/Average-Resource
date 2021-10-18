@@ -1,0 +1,11 @@
+{
+    "Author": "bub.bl",
+    "Description": "An random description",
+    "Version": "1.0.0",
+    "ReleaseType": "debug",
+    "GithubUrl": "",
+    "Client": "World.Client.net.dll",
+    "Server": "World.Server.net.dll",
+    "UI": "",
+    "Dependencies": []
+}

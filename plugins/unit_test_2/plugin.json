@@ -1,0 +1,11 @@
+{
+    "Author": "bub.bl",
+    "Description": "An random description",
+    "Version": "0.0.1",
+    "ReleaseType": "debug",
+    "GithubUrl": "",
+    "Client": "UnitTest2.Client.net.dll",
+    "Server": "",
+    "UI": "",
+    "Dependencies": []
+}

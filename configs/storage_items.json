@@ -1,0 +1,260 @@
+[
+    // Consumable
+    { "Name": "consumable_carrot", "Text": "Carotte", "Img": "consumable_carrot.png", "Weight": 0.125, "Stackable": true },
+    { "Name": "consumable_apple", "Text": "Pomme", "Img": "consumable_apple.png", "Weight": 0.150, "Stackable": true },
+    { "Name": "consumable_pear", "Text": "Poire", "Img": "consumable_pear.png", "Weight": 0.120, "Stackable": true },
+    { "Name": "consumable_coffee", "Text": "Café", "Img": "consumable_coffee.png", "Weight": 0.250, "Stackable": true },
+    { "Name": "consumable_corn", "Text": "Maïs", "Img": "consumable_corn.png", "Weight": 0.160, "Stackable": true },
+    { "Name": "consumable_chocolatebar", "Text": "Bar de chocolat", "Img": "consumable_chocolate_bar.png", "Weight": 0.100, "Stackable": true },
+    { "Name": "consumable_cigar", "Text": "Cigare", "Img": "consumable_cigar.png", "Weight": 0.018, "Stackable": true },
+    { "Name": "consumable_beans", "Text": "Haricots", "Img": "consumable_baked_beans_can.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_bread", "Text": "Miche de pain", "Img": "consumable_bread_roll.png", "Weight": 0.200, "Stackable": true },
+    { "Name": "consumable_peach", "Text": "Pêche", "Img": "consumable_peach.png", "Weight": 0.090, "Stackable": true },
+    { "Name": "consumable_candy", "Text": "Candy", "Img": "consumable_candy_bag.png", "Weight": 0.500, "Stackable": true },
+    { "Name": "consumable_cocainegum", "Text": "Gum de cocaine", "Img": "consumable_cocaine_chewing_gum.png", "Weight": 0.05, "Stackable": true },
+    { "Name": "consumable_medicine", "Text": "Potion médicinal", "Img": "consumable_medicine.png", "Weight": 0.10, "Stackable": true },
+    { "Name": "consumable_tobaccogum", "Text": "Gum de tabac", "Img": "consumable_chewing_tobacco.png", "Weight": 0.05, "Stackable": true },
+    { "Name": "consumable_tonic", "Text": "Potion de réanimation", "Img": "consumable_tonic.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_whiskey", "Text": "Whisky", "Img": "consumable_whiskey.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_gin", "Text": "Gin", "Img": "consumable_gin.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_rum", "Text": "Rhum", "Img": "consumable_rum.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_sugarcube", "Text": "Sucre", "Img": "consumable_sugarcube.png", "Weight": 0.1, "Stackable": true },
+    { "Name": "consumable_beets", "Text": "Betterave", "Img": "consumable_beets.png", "Weight": 0.1, "Stackable": true },
+    { "Name": "consumable_pear_liquor", "Text": "Liqueur de poire", "Img": "consumable_tonic_potent_weight_gain.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_offal", "Text": "Alcool", "Img": "consumable_offal.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_moonshine", "Text": "Alcool contrebande", "Img": "consumable_moonshine.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_steak_cooked_meat", "Text": "Steak cuit", "Img": "provision_meat_mature_venison.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "consumable_mutton_cooked_meat", "Text": "Steak mouton cuit", "Img": "provision_meat_mature_venison.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "consumable_bottle_empty", "Text": "Bouteille vide", "Img": "generic_bottle_empty.png", "Weight": 0.1, "Stackable": true },
+    { "Name": "consumable_bottle", "Text": "Bouteille d'eau", "Img": "generic_bottle.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "consumable_bottle_1_3", "Text": "Bouteille d'eau", "Img": "generic_bottle-1-3.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "consumable_bottle_2_3", "Text": "Bouteille d'eau", "Img": "generic_bottle-2-3.png", "Weight": 0.6, "Stackable": true },
+    { "Name": "consumable_steak", "Text": "Steak cru", "Img": "provision_meat_mature_venison.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "consumable_thyme", "Text": "Thym", "Img": "consumable_herb_creeping_thyme.png", "Weight": 0.01, "Stackable": true },
+
+    // House
+    { "Name": "house_key", "Text": "Clé maison", "Img": "provision_jail_keys.png", "Weight": 0.0, "Stackable": false },
+
+    // HorseSeller
+    { "Name": "horse_deed", "Text": "Acte de propriété", "Img": "generic_official_doc.png", "Weight": 0.0, "Stackable": false },
+
+    // Other
+    { "Name": "provision_bandage", "Text": "Bandage", "Img": "clothing_generic_scarf.png", "Weight": 0.1, "Stackable": true },
+    { "Name": "key_smuggl", "Text": "Clé contrebande", "Img": "provision_jail_keys.png", "Weight": 0.05, "Stackable": false },
+    { "Name": "kit_camp_01", "Text": "Kit de camp", "Img": "upgrade_camp_tent.png", "Weight": 10.0, "Stackable": false },
+
+    // Plants
+    { "Name": "consumable_herb_golden_currant", "Text": "Groseille dorée", "Img": "consumable_herb_golden_currant.png", "Weight": 0.02, "Stackable": true },
+    
+    // Horse
+    { "Name": "consumable_haycube", "Text": "Foin", "Img": "consumable_haycube.png", "Weight": 2.0, "Stackable": true },
+
+    { "Name": "provision_feather", "Text": "Plûme", "Img": "provision_hawk_feather.png", "Weight": 0.01, "Stackable": true },
+    { "Name": "money", "Text": "Argent", "Img": "money_moneystack.png", "Weight": 0.0, "Stackable": true },
+    { "Name": "provision_genbox", "Text": "Approvisionnement Général Store", "Img": "provision_jewelry_gld_pearl_necklace.png", "Weight": 10.0, "Stackable": true },
+    { "Name": "provision_wood_trunk", "Text": "Tronc d'arbre", "Img": "provision_rf_wood_cobalt.png", "Weight": 3.0, "Stackable": true },
+    { "Name": "provision_wood_plank", "Text": "Planche", "Img": "collector_fossil_pet_wood_rainbow.png", "Weight": 1.0, "Stackable": true },
+    { "Name": "provision_coal", "Text": "Charbon", "Img": "provision_coal.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "outfit", "Text": "Tenue" , "Img": "clothing_generic_outfit.png", "Weight": 2.0, "Stackable": false },
+    { "Name": "provision_lockpick", "Text": "Lockpick", "Img": "consumable_lock_breaker.png", "Weight": 0.1, "Stackable": true },
+
+    // Mine Annesburg
+    { "Name": "provision_stone_block", "Text": "Bloc de pierre", "Img": "provision_gold_nugget.png", "Weight": 2.0, "Stackable": true },
+    { "Name": "provision_crushed_stone", "Text": "Pierre concassé", "Img": "provision_crushed_stone.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "provision_crushed_stone_clear", "Text": "Pierre concassé nettoyer", "Img": "provision_crushed_stone_clear.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "provision_stone", "Text": "Pierre", "Img": "provision_gold_nugget.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "provision_crushed_iron", "Text": "Minerais de fer", "Img": "provision_crushed_stone.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "provision_crushed_gold", "Text": "Minerais d'or", "Img": "provision_crushed_stone.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "provision_iron_ingot", "Text": "Lingot de fer", "Img": "provision_goldbar_small.png", "Weight": 3.0, "Stackable": true },
+    { "Name": "provision_gold_ingot", "Text": "Lingot d'or", "Img": "provision_goldbar_small.png", "Weight": 3.0, "Stackable": true },
+
+    // Objects
+    { "Name": "provision_flint", "Text": "Silex", "Img": "provision_disco_ammolite.png", "Weight": 0.05, "Stackable": true },
+    { "Name": "provision_tree_branch", "Text": "Branche d'arbre", "Img": "provision_elk_antlers.png", "Weight": 0.2, "Stackable": true },
+    { "Name": "provision_fiber", "Text": "Fibre", "Img": "consumable_herb_burdock_root.png", "Weight": 0.01, "Stackable": true },
+    { "Name": "provision_fabric", "Text": "Tissu", "Img": "clothing_generic_skirt.png", "Weight": 0.1, "Stackable": true },
+    { "Name": "provision_rope", "Text": "Corde", "Img": "weapon_lasso.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "provision_animal_fat", "Text": "Graisse animal", "Img": "generic_animal_fat.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "provision_stew_01", "Text": "Ragoût viande et carotte", "Img": "kit_shaving_kit.png", "Weight": 0.2, "Stackable": true },
+    { "Name": "provision_stew_02", "Text": "Ragoût viande et poire", "Img": "kit_shaving_kit.png", "Weight": 0.2, "Stackable": true },
+    { "Name": "provision_stew_03", "Text": "Ragoût viande et thym ", "Img": "kit_shaving_kit.png", "Weight": 0.2, "Stackable": true },
+
+    { "Name": "BOMB_DYNAMITE", "Text": "Bombe", "Img": "weapon_thrown_dynamite.png", "Weight": 5.0, "Stackable": true },
+    { "Name": "BOMB_DETONATOR", "Text": "Detonateur", "Img": "weapon_kit_camera.png", "Weight": 3.0, "Stackable": true },
+
+    // Melee
+    { "Name": "WEAPON_MELEE_TORCH", "Text": "Torche", "Img": "weapon_melee_torch.png", "Weight": 2.0, "Stackable": true },
+    { "Name": "WEAPON_MELEE_KNIFE", "Text": "Couteau", "Img": "weapon_melee_knife.png", "Weight": 0.6, "Stackable": false },
+    { "Name": "WEAPON_MELEE_KNIFE_JAWBONE", "Text": "Couteau", "Img": "weapon_melee_knife_jawbone.png", "Weight": 0.6, "Stackable": false },
+    // { "Name": "WEAPON_MELEE_KNIFE_MINER", "Text": "Couteau", "Img": "weapon_melee_knife.png", "Weight": 0.6, "Stackable": false },
+    // { "Name": "WEAPON_MELEE_KNIFE_VAMPIRE", "Text": "Couteau", "Img": "weapon_melee_knife.png", "Weight": 0.6, "Stackable": false },
+    // { "Name": "WEAPON_MELEE_KNIFE_BEAR", "Text": "Couteau", "Img": "weapon_melee_knife.png", "Weight": 0.6, "Stackable": false },
+    // { "Name": "WEAPON_MELEE_KNIFE_CIVIL_WAR", "Text": "Couteau", "Img": "weapon_melee_knife.png", "Weight": 0.6, "Stackable": false },
+    { "Name": "WEAPON_MELEE_MACHETE", "Text": "Machête", "Img": "weapon_melee_machete.png", "Weight": 1.0, "Stackable": false },
+    { "Name": "WEAPON_MELEE_MACHETE_HORROR", "Text": "Machête horreur", "Img": "weapon_melee_machete_horror.png", "Weight": 1.0, "Stackable": false },
+    { "Name": "WEAPON_MELEE_MACHETE_COLLECTOR", "Text": "Machête collector", "Img": "weapon_melee_machete_collector.png", "Weight": 1.2, "Stackable": false },
+    // { "Name": "WEAPON_MELEE_MACHETE_TRADER", "Text": "Machête du négociant", "Img": "weapon_melee_machete_trader.png", "Weight": 1.2, "Stackable": false },
+    { "Name": "WEAPON_MELEE_HATCHET", "Text": "Hachête", "Img": "weapon_melee_hatchet.png", "Weight": 0.8, "Stackable": false },
+    { "Name": "WEAPON_MELEE_HATCHET_HUNTER", "Text": "Hachête du chasseur", "Img": "weapon_melee_hatchet_hunter.png", "Weight": 0.8, "Stackable": false },
+    { "Name": "WEAPON_MELEE_HATCHET_DOUBLE_BIT", "Text": "Hachête à double tranchant", "Img": "weapon_melee_hatchet_double_bit.png", "Weight": 0.8, "Stackable": false },
+    { "Name": "WEAPON_MELEE_LANTERN", "Text": "Lanterne", "Img": "weapon_melee_davy_lantern.png", "Weight": 1.5, "Stackable": true },
+    { "Name": "WEAPON_MELEE_CLEAVER", "Text": "Cleaver", "Img": "weapon_melee_cleaver.png", "Weight": 0.7, "Stackable": false },
+    { "Name": "WEAPON_MELEE_BLADE", "Text": "???", "Img": "weapon_melee_blade.png", "Weight": 0.7, "Stackable": false },
+
+    // Thrown
+    { "Name": "WEAPON_THROWN_BOLAS", "Text": "Bolas", "Img": "weapon_thrown_bolas.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "WEAPON_THROWN_BOLAS_HAWKMOTH", "Text": "Bolas Hankmoth", "Img": "weapon_thrown_bolas_hawkmoth.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "WEAPON_THROWN_BOLAS_IRONSPIKED", "Text": "Bolas Pointe de fer", "Img": "weapon_thrown_bolas_ironspiked.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "WEAPON_THROWN_BOLAS_INTERTWINED", "Text": "Bolas Entrelacé", "Img": "weapon_thrown_bolas_intertwined.png", "Weight": 0.25, "Stackable": true },
+    { "Name": "WEAPON_THROWN_TOMAHAWK", "Text": "Tomahawk", "Img": "weapon_thrown_tomahawk.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "WEAPON_THROWN_TOMAHAWK_ANCIENT", "Text": "Tomahawk Ancien", "Img": "weapon_thrown_ancient_tomahawk.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "WEAPON_THROWN_DYNAMITE", "Text": "Dynamite", "Img": "weapon_thrown_dynamite.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "WEAPON_THROWN_MOLOTOV", "Text": "Molotov", "Img": "weapon_thrown_molotov.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "WEAPON_THROWN_THROWING_KNIVES", "Text": "Couteaux de lancé", "Img": "weapon_thrown_throwing_knives.png", "Weight": 0.3, "Stackable": true },
+    { "Name": "WEAPON_THROWN_POISONBOTTLE", "Text": "Bouteille de poison", "Img": "weapon_thrown_throwing_knives.png", "Weight": 0.3, "Stackable": true },
+
+    // Kit
+    { "Name": "WEAPON_KIT_BINOCULARS", "Text": "Jumelle", "Img": "weapon_kit_binoculars.png", "Weight": 1.0, "Stackable": false },
+    { "Name": "WEAPON_KIT_CAMERA", "Text": "Camera", "Img": "weapon_kit_camera.png", "Weight": 2.0, "Stackable": false },
+    { "Name": "WEAPON_KIT_DETECTOR", "Text": "Detecteur", "Img": "weapon_kit_detector.png", "Weight": 1.0, "Stackable": false },
+    { "Name": "WEAPON_KIT_CAMERA_ADVANCED", "Text": "Camera amélioré", "Img": "weapon_kit_camera_advanced.png", "Weight": 2.0, "Stackable": false },
+    { "Name": "WEAPON_KIT_BINOCULARS_ADVANCED", "Text": "Jumelle améliorer", "Img": "weapon_kit_binoculars_improved.png", "Weight": 1.0, "Stackable": false },
+    { "Name": "WEAPON_FISHINGROD", "Text": "Canne à pêche", "Img": "weapon_fishingrod.png", "Weight": 1.0, "Stackable": false },
+
+    // Weapons
+    { "Name": "WEAPON_MOONSHINEJUG_MP", "Text": "Moonshine", "Img": "weapon_moonshinejug_mp.png", "Weight": 0.0, "Stackable": false },
+    
+    { "Name": "WEAPON_LASSO", "Text": "Lasso", "Img": "weapon_lasso.png", "Weight": 0.50, "Stackable": false },
+    { "Name": "WEAPON_LASSO_REINFORCED", "Text": "Lasso renforcé", "Img": "weapon_lasso_reinforced.png", "Weight": 0.50, "Stackable": false },
+    
+    { "Name": "WEAPON_REVOLVER_CATTLEMAN", "Text": "Revolver Cattleman", "Img": "weapon_revolver_cattleman.png", "Weight": 1.1, "Stackable": false },
+    { "Name": "WEAPON_REVOLVER_CATTLEMAN_MEXICAN", "Text": "Revolver Cattleman", "Img": "weapon_revolver_cattleman.png", "Weight": 1.1, "Stackable": false },
+    { "Name": "WEAPON_REVOLVER_SCHOFIELD", "Text": "Revolver Schofield", "Img": "weapon_revolver_schofield.png", "Weight": 1.7, "Stackable": false },
+    { "Name": "WEAPON_REVOLVER_DOUBLEACTION", "Text": "Revolver Double Action", "Img": "weapon_revolver_doubleaction.png", "Weight": 1.3, "Stackable": false },
+    { "Name": "WEAPON_REVOLVER_NAVY", "Text": "Revolver Navy", "Img": "weapon_revolver_navy.png", "Weight": 1.2, "Stackable": false },
+    { "Name": "WEAPON_REVOLVER_NAVY_CROSSOVER", "Text": "Revolver Navy", "Img": "weapon_revolver_navy_crossover.png", "Weight": 1.2, "Stackable": false },
+    { "Name": "WEAPON_REVOLVER_LEMAT", "Text": "Revolver LeMat", "Img": "weapon_revolver_lemat.png", "Weight": 1.5, "Stackable": false },
+    
+    { "Name": "WEAPON_PISTOL_VOLCANIC", "Text": "Pistolet Volcanic", "Img": "weapon_pistol_volcanic.png", "Weight": 1.4, "Stackable": false },
+    { "Name": "WEAPON_PISTOL_MAUSER", "Text": "Pistolet Mauser", "Img": "weapon_pistol_mauser.png", "Weight": 1.5, "Stackable": false },
+    { "Name": "WEAPON_PISTOL_SEMIAUTO", "Text": "Pistolet Semi Auto", "Img": "weapon_pistol_semiauto.png", "Weight": 1.0, "Stackable": false },
+    { "Name": "WEAPON_PISTOL_M1899", "Text": "Pistolet M1899", "Img": "weapon_pistol_m1899.png", "Weight": 0.900, "Stackable": false },
+    
+    { "Name": "WEAPON_REPEATER_EVANS", "Text": "Carabine Evans", "Img": "weapon_repeater_evans.png", "Weight": 2.2, "Stackable": false },
+    { "Name": "WEAPON_REPEATER_HENRY", "Text": "Carabine Henry", "Img": "weapon_repeater_henry.png", "Weight": 2.0, "Stackable": false },
+    { "Name": "WEAPON_REPEATER_WINCHESTER", "Text": "Carabine Lancaster", "Img": "weapon_repeater_lancaster.png", "Weight": 1.9, "Stackable": false },
+    { "Name": "WEAPON_REPEATER_CARBINE", "Text": "Carabine", "Img": "weapon_repeater_carbine.png", "Weight": 1.6, "Stackable": false },
+    
+    { "Name": "WEAPON_RIFLE_SPRINGFIELD", "Text": "Fusil springfield", "Img": "weapon_rifle_springfield.png", "Weight": 2.8, "Stackable": false },
+    { "Name": "WEAPON_RIFLE_BOLTACTION", "Text": "Fusil à verrou", "Img": "weapon_rifle_boltaction.png", "Weight": 3.2, "Stackable": false },
+    { "Name": "WEAPON_RIFLE_VARMINT", "Text": "Fusil Varmint", "Img": "weapon_rifle_varmint.png", "Weight": 1.8, "Stackable": false },
+    { "Name": "WEAPON_RIFLE_ELEPHANT", "Text": "Fusil Elephant", "Img": "weapon_rifle_elephant.png", "Weight": 2.2, "Stackable": false },
+    
+    { "Name": "WEAPON_SNIPERRIFLE_CARCANO", "Text": "Fusil Carcano", "Img": "weapon_sniperrifle_carcano.png", "Weight": 2.2, "Stackable": false },
+    { "Name": "WEAPON_SNIPERRIFLE_ROLLINGBLOCK", "Text": "Fusil Rolling Block", "Img": "weapon_sniperrifle_rollingblock.png", "Weight": 2.2, "Stackable": false },
+    
+    { "Name": "WEAPON_SHOTGUN_PUMP", "Text": "Fusil à pompe", "Img": "weapon_shotgun_pump.png", "Weight": 3.0, "Stackable": false },
+    { "Name": "WEAPON_SHOTGUN_DOUBLEBARREL", "Text": "Fusil à double canon", "Img": "weapon_shotgun_doublebarrel.png", "Weight": 2.6, "Stackable": false },
+    { "Name": "WEAPON_SHOTGUN_SEMIAUTO", "Text": "Fusil Semi Automatique", "Img": "weapon_shotgun_semiauto.png", "Weight": 2.6, "Stackable": false },
+    { "Name": "WEAPON_SHOTGUN_REPEATING", "Text": "Fusil à répétition", "Img": "weapon_shotgun_repeating.png", "Weight": 2.6, "Stackable": false },
+    { "Name": "WEAPON_SHOTGUN_SAWEDOFF", "Text": "Fusil à canon scier", "Img": "weapon_shotgun_sawedoff.png", "Weight": 2.6, "Stackable": false },
+    
+    { "Name": "WEAPON_BOW", "Text": "Arc", "Img": "weapon_bow.png", "Weight": 0.8, "Stackable": false },
+    { "Name": "WEAPON_BOW_IMPROVED", "Text": "Arc améliorer", "Img": "weapon_bow_improved.png", "Weight": 1.0, "Stackable": false },
+
+    // Ammos
+    { "Name": "AMMO_RIFLE", "Text": "Mun. fusil", "Img": "ammo_rifle.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_RIFLE_ELEPHANT", "Text": "Mun. fusil elephant", "Img": "ammo_rifle_nitro_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_RIFLE_EXPRESS", "Text": "Mun. fusil express", "Img": "ammo_rifle_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_RIFLE_EXPRESS_EXPLOSIVE", "Text": "Mun. fusil express explosive", "Img": "ammo_rifle_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_RIFLE_HIGH_VELOCITY", "Text": "Mun. fusil tête fendu", "Img": "ammo_rifle_high_velocity.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_22", "Text": "Mun. calibre 22", "Img": "ammo_rifle_2.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_22_TRANQUILIZER", "Text": "Mun. calibre 22", "Img": "ammo_rifle_2.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_REPEATER", "Text": "Mun. carabine", "Img": "ammo_repeater.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REPEATER_EXPRESS", "Text": "Mun. carabine express", "Img": "ammo_repeater_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REPEATER_EXPRESS_EXPLOSIVE", "Text": "Mun. carabine express explosive", "Img": "ammo_repeater_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REPEATER_HIGH_VELOCITY", "Text": "Mun. carabine haute vélocité", "Img": "ammo_repeater_high_velocity.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REPEATER_SPLIT_POINT", "Text": "Mun. carabine tête fendu", "Img": "ammo_repeater_high_velocity.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_REVOLVER", "Text": "Mun. revolver", "Img": "ammo_revolver.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REVOLVER_EXPRESS", "Text": "Mun. revolver express", "Img": "ammo_revolver_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REVOLVER_EXPRESS_EXPLOSIVE", "Text": "Mun. revolver express explosive", "Img": "ammo_revolver_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_REVOLVER_HIGH_VELOCITY", "Text": "Mun. revolver haute vélocité", "Img": "ammo_revolver_high_velocity.png", "Weight":0.5, "Stackable": true },
+    { "Name": "AMMO_REVOLVER_SPLIT_POINT", "Text": "Mun. revolver tête fendu", "Img": "ammo_revolver_high_velocity.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_PISTOL", "Text": "Mun. pistolet", "Img": "ammo_pistol.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_PISTOL_EXPRESS", "Text": "Mun. pistolet express", "Img": "ammo_pistol_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_PISTOL_EXPRESS_EXPLOSIVE", "Text": "Mun. pistolet express explosive", "Img": "ammo_pistol_express.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_PISTOL_HIGH_VELOCITY", "Text": "Mun. pistolet haute vélocité", "Img": "ammo_pistol_high_velocity.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_PISTOL_SPLIT_POINT", "Text": "Mun. pistolet tête fendu", "Img": "ammo_pistol_high_velocity.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_ARROW", "Text": "Flêches", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_DYNAMITE", "Text": "Flêches explosive", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_FIRE", "Text": "Flêches incendiaire", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_IMPROVED", "Text": "Flêches haute velocité", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_CONFUSION", "Text": "Flêches de confusion", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_DISORIENT", "Text": "Flêches de désorientation", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_DRAIN", "Text": "Flêches drain de vie", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_POISON", "Text": "Flêches enpoisonné", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_SMALL_GAME", "Text": "Flêches joueuse", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_TRACKING", "Text": "Flêches de traque", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_TRAIL", "Text": "Flêches tracante", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_ARROW_WOUND", "Text": "Flêches de saignement", "Img": "provision_arrowhead_feldspar.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_BOLAS", "Text": "Bolas", "Img": "weapon_thrown_bolas.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_BOLAS_HAWKMOTH", "Text": "Bolas sphinx", "Img": "weapon_thrown_bolas_hawkmoth.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_BOLAS_INTERTWINED", "Text": "Bolas entrelacé", "Img": "weapon_thrown_bolas_ironspiked.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_BOLAS_IRONSPIKED", "Text": "Bolas pointe de fer", "Img": "weapon_thrown_bolas_intertwined.png", "Weight": 0.5, "Stackable": true },
+    
+    { "Name": "AMMO_CANNON", "Text": "Boulet de canon", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_DYNAMITE", "Text": "Dynamite", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_DYNAMITE_VOLATILE", "Text": "Dynamite volatile", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_HATCHET", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_ANCIENT", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_CLEAVER", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_DOUBLE_BIT", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_DOUBLE_BIT_RUSTED", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_HEWING", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_HUNTER", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_HUNTER_RUSTED", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_HATCHET_VIKING", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_LASSO", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_LASSO_REINFORCED", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_MOLOTOV", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_MOLOTOV_VOLATILE", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_MOONSHINEJUG", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_MOONSHINEJUG_MP", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_POISONBOTTLE", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_THROWING_KNIVES", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_CONFUSE", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_DISORIENT", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_DRAIN", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_IMPROVED", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_JAVIER", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_POISON", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_TRAIL", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_THROWING_KNIVES_WOUND", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_THROWN_ITEM", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_TOMAHAWK", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_TOMAHAWK_ANCIENT", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_TOMAHAWK_HOMING", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_TOMAHAWK_IMPROVED", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_TURRET", "Text": "", "Img": ".png", "Weight": 0.5, "Stackable": true },
+
+    { "Name": "AMMO_SHOTGUN", "Text": "Mun. fusil à pompe", "Img": "ammo_shotgun.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_SHOTGUN_BUCKSHOT_INCENDIARY", "Text": "Mun. chevrotine incendiaire", "Img": "ammo_shotgun.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_SHOTGUN_SLUG", "Text": "Mun. chevrotine", "Img": "ammo_shotgun.png", "Weight": 0.5, "Stackable": true },
+    { "Name": "AMMO_SHOTGUN_SLUG_EXPLOSIVE", "Text": "Mun. chevrotine explosive", "Img": "ammo_shotgun.png", "Weight": 0.5, "Stackable": true },
+]

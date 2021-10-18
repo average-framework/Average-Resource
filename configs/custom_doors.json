@@ -1,0 +1,341 @@
+[
+	// Valentine
+	{
+		"Position": {
+			"X": -306.89,
+			"Y": 780.11,
+			"Z": 117.72
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -309.06,
+			"Y": 779.73,
+			"Z": 117.72
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -301.94,
+			"Y": 771.75,
+			"Z": 117.72
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -311.75,
+			"Y": 774.67,
+			"Z": 117.72
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -311.06,
+			"Y": 770.12,
+			"Z": 117.7
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -302.93,
+			"Y": 767.6,
+			"Z": 117.69
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -302.01,
+			"Y": 762.98,
+			"Z": 117.73
+		},
+		"IsLocked": true,
+		"CanForce": false,
+		"CanLockpick": false,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -307.76,
+			"Y": 766.34,
+			"Z": 117.7
+		},
+		"IsLocked": true,
+		"CanForce": false,
+		"CanLockpick": false,
+		"Range": 2.0,
+		"JobName": "bank_valentine"
+	},
+	{
+		"Position": {
+			"X": -275.86,
+			"Y": 812.11,
+			"Z": 118.41
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_valentine"
+	},
+	{
+		"Position": {
+			"X": -275.03,
+			"Y": 809.27,
+			"Z": 118.36
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_valentine"
+	},
+	{
+		"Position": {
+			"X": -273.47,
+			"Y": 809.96,
+			"Z": 118.36
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_valentine"
+	},
+	{
+		"Position": {
+			"X": -272.06,
+			"Y": 808.25,
+			"Z": 118.36
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_valentine"
+	},
+	{
+		"Position": {
+			"X": -270.77,
+			"Y": 810.02,
+			"Z": 118.39
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_valentine"
+	},
+	{
+		"Position": {
+			"X": -276.04,
+			"Y": 802.72,
+			"Z": 118.41
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_valentine"
+	},
+	{
+		"Position": {
+			"X": -282.81,
+			"Y": 803.95,
+			"Z": 118.39
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "doctor_valentine"
+	},
+	{
+		"Position": {
+			"X": -286.65,
+			"Y": 809.78,
+			"Z": 118.42
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "doctor_valentine"
+	},
+	{
+		"Position": {
+			"X": -290.86,
+			"Y": 813.35,
+			"Z": 118.41
+		},
+		"IsLocked": true,
+		"CanForce": false,
+		"CanLockpick": false,
+		"Range": 2.0,
+		"JobName": "doctor_valentine"
+	},
+	{
+		"Position": {
+			"X": -281.08,
+			"Y": 815.23,
+			"Z": 118.41
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "doctor_valentine"
+	},
+	{
+		"Position": {
+			"X": -283.52,
+			"Y": 784.31,
+			"Z": 118.52
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "gunstore_valentine"
+	},
+	{
+		"Position": {
+			"X": -276.66,
+			"Y": 776.6,
+			"Z": 118.54
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "gunstore_valentine"
+	},
+	{
+		"Position": {
+			"X": 1787.64,
+			"Y": -817.45,
+			"Z": 192.09
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "smuggl"
+	},
+	{
+		"Position": {
+			"X": 1785.37,
+			"Y": -820.44,
+			"Z": 192.09
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "smuggl"
+	}
+	// Blackwater
+	,
+	{
+		"Position": {
+			"X": -757.49,
+			"Y": -1290.23,
+			"Z": 42.84
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "tailor_blackwater"
+	},
+	{
+		"Position": {
+			"X": -766.03,
+			"Y": -1293.81,
+			"Z": 42.83
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "tailor_blackwater"
+	},
+	{
+		"Position": {
+			"X": -757.05,
+			"Y": -1268.49,
+			"Z": 43.06
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_blackwater"
+	},
+	{
+		"Position": {
+			"X": -757.05,
+			"Y": -1269.93,
+			"Z": 43.06
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_blackwater"
+	},
+	{
+		"Position": {
+			"X": -769.14,
+			"Y": -1268.75,
+			"Z": 43.04
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_blackwater"
+	},
+	{
+		"Position": {
+			"X": -765.87,
+			"Y": -1264.71,
+			"Z": 43.02
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_blackwater"
+	},
+	{
+		"Position": {
+			"X": -763.53,
+			"Y": -1262.47,
+			"Z": 43.02
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "sheriff_blackwater"
+	},
+	{
+		"Position": {
+			"X": -809.15,
+			"Y": -1279.2,
+			"Z": 42.66
+		},
+		"IsLocked": false,
+		"Range": 2.0,
+		"JobName": "bank_blackwater"
+	},
+	{
+		"Position": {
+			"X": -817.82,
+			"Y": -1277.67,
+			"Z": 42.65
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_blackwater"
+	},
+	{
+		"Position": {
+			"X": -816.73,
+			"Y": -1276.76,
+			"Z": 42.64
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_blackwater"
+	},
+	{
+		"Position": {
+			"X": -817.79,
+			"Y": -1274.39,
+			"Z": 42.66
+		},
+		"IsLocked": true,
+		"Range": 2.0,
+		"JobName": "bank_blackwater"
+	}
+]

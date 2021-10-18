@@ -1,0 +1,26 @@
+{
+    "DefaultMoney": 10.0,
+    "DefaultBank": 0.0,
+    "DefaultSpawnPosition": [82.92, 54.46, 102.89],
+    "DefaultSpawnHeading": 0.0,
+    "DefaultCamera": {
+        "CamCoordOffset": [4.0, -1.5, 1.0],
+        "PointCamOffset": [-1.0, 0.0, 1.0],
+        "Fov": 35.0
+    },
+    "FaceCamera": {
+        "CamCoordOffset": [4.0, -1.5, 0.0],
+        "PointCamOffset": [-1.0, 0.0, 0.0],
+        "Fov": 1.0
+    },
+    "BodyCamera": {
+        "CamCoordOffset": [4.0, -1.5, 0.0],
+        "PointCamOffset": [-0.9, 0.0, 0.0],
+        "Fov": 5.0
+    },
+    "FootCamera": {
+        "CamCoordOffset": [4.0, -1.5, -0.25],
+        "PointCamOffset": [-0.8, 0.0, -1.0],
+        "Fov": 5.0
+    }
+}

@@ -1,0 +1,253 @@
+[{
+    "Name": "Valentine",
+    "Interact": {
+        "Position": {
+            "X": -767.87,
+            "Y": -1294.98,
+            "Z": 44.04
+        },
+        "Radius": 1.0
+    },
+    "PlayerPosition": {
+        "X": -767.77,
+        "Y":-1294.62,
+        "Z": 43.04,
+        "W": 245.0
+    },
+    "MainCamera": {
+        "Position": {
+            "X": -766.46,
+            "Y": -1295.4,
+            "Z": 44.5
+        },
+        "LookAtOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.10
+        },
+        "Fov": 80.0
+    },
+    "Blip": {
+        "Position": {
+            "X": -762.59,
+            "Y": -1291.83,
+            "Z": 44.03
+        },
+        "Sprite": 1195729388,
+        "Label": "Tailor",
+        "Scale": 1.0
+    },
+    "NPC": {
+        "Position": {
+            "X": -761.54,
+            "Y": -1293.78,
+            "Z": 42.9
+        },
+        "Heading": 0.0,
+        "Model": "s_m_m_tailor_01",
+        "Variation": 0,
+        "Scenario": "GENERIC_STANDING_SCENARIO"
+    },
+    "ClothesCost": [
+        {
+            // Bracelts
+            "Category": "7BC10759",
+            "Price": 0.10
+        },
+        {
+            // RingsLeftHand
+            "Category": "F16A1D23",
+            "Price": 0.40
+        },
+        {
+            // RingsRightHand
+            "Category": "7A6BBD0B",
+            "Price": 0.40
+        },
+        {
+            // HolsterLeft
+            "Category": "B6B6122D",
+            "Price": 20.0
+        },
+        {
+            // Eyewear
+            "Category": "5E47CA6",
+            "Price": 0.20
+        },
+        {
+            // Hats
+            "Category": "9925C067",
+            "Price": 0.30
+        },
+        {
+            // Shirts
+            "Category": "2026C46D",
+            "Price": 0.30
+        },
+        {
+            // Vests
+            "Category": "485EE834",
+            "Price": 0.30
+        },
+        {
+            // Pants
+            "Category": "1D4C528A",
+            "Price": 0.30
+        },
+        {
+            // Spurs
+            "Category": "18729F39",
+            "Price": 0.25
+        },
+        {
+            // Chaps
+            "Category": "3107499B",
+            "Price": 0.20
+        },
+        {
+            // Cloaks
+            "Category": "3C1A74CD",
+            "Price": 0.25
+        },
+        {
+            // Masks
+            "Category": "7505EF42",
+            "Price": 0.40
+        },
+        {
+            // Masks Large
+            "Category": "4A73515C",
+            "Price": 0.40
+        },
+        {
+            // Spats
+            "Category": "514ADCEA",
+            "Price": 0.25
+        },
+        {
+            // Neckwear
+            "Category": "5FC29285",
+            "Price": 0.20
+        },
+        {
+            // Boots
+            "Category": "777EC6EF",
+            "Price": 0.40
+        },
+        {
+            // Accessories
+            "Category": "79D7DF96",
+            "Price": 0.20
+        },
+        {
+            // Gauntlets
+            "Category": "91CE9B20",
+            "Price": 0.20
+        },
+        {
+            // Neckties
+            "Category": "7A96FACA",
+            "Price": 0.20
+        },
+        {
+            // Suspenders
+            "Category": "877A2CF7",
+            "Price": 0.25
+        },
+        {
+            // Gunbelts
+            "Category": "9B2C8B89",
+            "Price": 0.25
+        },
+        {
+            // Belts
+            "Category": "A6D134C6",
+            "Price": 0.25
+        },
+        {
+            // Beltbuckles
+            "Category": "FAE9107F",
+            "Price": 0.25
+        },
+        {
+            // Coats
+            "Category": "E06D30CE",
+            "Price": 0.20
+        },
+        {
+            // CoatsMP
+            "Category": "0662AC34",
+            "Price": 0.20
+        },
+        {
+            // Ponchos
+            "Category": "AF14310B",
+            "Price": 0.30
+        },
+        {
+            // Gloves
+            "Category": "EABE0032",
+            "Price": 0.30
+        },
+        {
+            // Satchels
+            "Category": "94504D26",
+            "Price": 0.30
+        },
+        {
+            // LegAttachements
+            "Category": "F1542D11",
+            "Price": 0.30
+        },
+        {
+            // Loadouts
+            "Category": "83887E88",
+            "Price": 0.40
+        },
+        {
+            // Skirts
+            "Category": "A0E3AB7F",
+            "Price": 0.30
+        },
+        {
+            // HolsterCrossdraw
+            "Category": "49C89D9B",
+            "Price": 0.40
+        },
+        {
+            // HolsterCrossdraw
+            "Category": "49C89D9B",
+            "Price": 0.40
+        },
+        {
+            // HolsterRight
+            "Category": "B9E2FA01",
+            "Price": 0.40
+        },
+        {
+            // FemaleUnknow
+            "Category": "8E84A2AA",
+            "Price": 0.25
+        },
+        {
+            // TalismanBelt
+            "Category": "1AECF7DC",
+            "Price": 0.20
+        },
+        {
+            // TalismanHolster
+            "Category": "7C00A8F0",
+            "Price": 0.20
+        },
+        {
+            // TalismanSatchel
+            "Category": "8EFB276A",
+            "Price": 0.20
+        },
+        {
+            // TalismanWrist
+            "Category": "DB64A390",
+            "Price": 0.20
+        }
+    ]
+}]

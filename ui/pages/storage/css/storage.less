@@ -1,0 +1,624 @@
+@columns: 1fr 1fr 1fr 1fr 1fr;
+@rows: 1fr 1fr 1fr 1fr;
+@gap: 5px;
+@item-width: 88px;
+@item-height: 90px;
+
+.storage {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    // background: linear-gradient(180deg, rgba(14, 15, 17, 0) 0%, rgba(14, 15, 17, 0.25) 25%, rgba(14, 15, 17, 0.85) 75%, rgba(14, 15, 17, 0.9) 100%);
+    background: green;
+    display: flex;
+
+    .content {
+        width: 100%;
+        position: relative;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inv-ctn-center {
+        width: 490px;
+        height: 93%;
+        background: transparent;
+    }
+
+    .inv-bg {
+        width: 600px;
+        height: 864px;
+        background-image: url('../img/inkroller_1a.png');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 600px 864px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .inv-slots-ctn {
+            width: 100%;
+            height: 400px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            overflow: hidden;
+
+            .slots-wrapper {
+                width: 490px;
+                height: 100%;
+                background: transparent;
+                justify-content: start;
+                align-content: flex-start;
+                flex-wrap: wrap;
+                flex-direction: row;
+                overflow-y: visible;
+
+                display: grid;
+                grid-template-columns: @columns;
+                grid-template-rows: @rows;
+                grid-gap: @gap;
+            }
+        }
+    }
+
+    .chest-container {
+        width: 565px;
+        height: 80%;
+        background: transparent;
+
+        .item-container {
+            width: calc(100% + 1px);
+            height: 520px;
+            background: transparent;
+            display: flex;
+            justify-content: start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            flex-direction: row;
+            overflow-y: visible;
+        }
+    }
+
+    .craft-container {
+        width: 565px;
+        height: 80%;
+        background: transparent;
+
+        .item-container {
+            width: calc(100% + 1px);
+            height: 520px;
+            background: transparent;
+            display: flex;
+            justify-content: start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            flex-direction: row;
+            overflow-y: visible;
+        }
+    }
+
+    .searchbar-container {
+        width: 100%;
+        height: calc(100% - 580px);
+        background: transparent;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        .searchbar-input {
+            width: 40%;
+            height: 40px;
+            background: rgba(235, 235, 235, 0.25);
+            border: 3px solid rgba(white, 0.75);
+            border-radius: 20px;
+            color: rgb(235, 235, 235);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+    }
+
+    .key {
+        font-weight: 600;
+        font-size: 14px;
+        color: rgb(15, 15, 15);
+        background: white;
+        border-radius: 4px;
+        padding: 2px 7px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .inv-btn {
+        width: 490px;
+        height: 55px;
+        background-image: url('../img/selection_box_bg_1a.png');
+        background-size: 490px 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.1s all ease-in-out;
+        filter: invert(0.84);
+
+        span {
+            color: black;
+            font-weight: 600;
+        }
+    }
+
+    .inv-btn:hover {
+        filter: invert(0.2);
+    }
+
+    .inv-desc-title {
+        font-size: 28px;
+        color: rgb(255, 255, 255);
+        display: block;
+        text-align: center;
+    }
+
+    .inv-desc-description {
+        font-size: 18px;
+        color: rgb(120, 120, 120);
+        text-align: center;
+    }
+
+    .inv-ico {
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .satchel-img {
+        background-image: url('../img/menu_icon_invite_sent.png');
+        background-size: 76%;
+    }
+
+    .weight-img {
+        background-image: url('../img/itemtype_loot.png');
+        background-size: 80%;
+    }
+
+    .money-img {
+        background-image: url('../img/itemtype_cash.png');
+        background-size: 80%;
+    }
+
+    .craft-img {
+        background-image: url('../img/blip_shop_blacksmith.png');
+        background-size: 76%;
+    }
+
+    .heart-img {
+        background-image: url('../img/itemtype_player_health.png');
+        background-size: 84%;
+    }
+
+    .hunger-img {
+        width: 48px;
+        height: 48px;
+        background-image: url('../img/rpg_overfed.png');
+        background-size: 100%;
+    }
+
+    .hot-img {
+        width: 48px;
+        height: 48px;
+        background-image: url('../img/rpg_hot.png');
+        background-size: 100%;
+    }
+
+    .cold-img {
+        width: 48px;
+        height: 48px;
+        background-image: url('../img/rpg_cold.png');
+        background-size: 100%;
+    }
+
+    .inv-btn-ico {
+        background: rgba(255, 255, 255, 0);
+        border-radius: 5px;
+        border: 2px solid rgba(White, 0);
+        transition: all 0.1s ease-in-out;
+    }
+
+    .inv-btn-ico:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 20px;
+        border: 2px solid rgba(White, 0.75);
+    }
+
+    .inv-top-ctn {
+        width: 100%;
+        height: 40px;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            font-family: 'Segoe UI';
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(235, 235, 235);
+            margin-top: 20px;
+        }
+
+        .disabled {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .menu-separator {
+        width: 2px;
+        height: 34%;
+        background: rgba(235, 235, 235, 0.5);
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: rgba(235, 235, 235, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(235, 235, 235, 0.75);
+    }
+}
+
+.inv-divider {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.inv-slot,
+.craft-item,
+.chest-item {
+    width: @item-width;
+    height: @item-height;
+    background: rgba(#1d1d1d, 0.7);
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.inv-eslot {
+    width: @item-width;
+    height: @item-height;
+    background: rgba(#1d1d1d, 0.7);
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.context-menu {
+    align-items: center;
+    align-content: center;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    padding-left: 10px;
+    z-index: 0;
+    background: transparent;
+
+    ul {
+        li {
+            list-style: none;
+            width: 100%;
+            line-height: 15px;
+            box-sizing: border-box;
+
+            a {
+                display: block;
+                text-decoration: none;
+                font-family: 'Segoe UI';
+                font-size: 16px;
+                font-weight: 600;
+                display: inline-block;
+                color: black;
+                background: rgba(#ffffff, 0.75);
+                border: 3px solid rgba(#1d1d1d, 0);
+                border-radius: 30px;
+                padding: 10px 15px 10px 13px;
+                margin: 2px 0;
+                transition: all 0.2s ease-in-out;
+                will-change: transform;
+
+                span {
+                    margin-right: 5px;
+                }
+
+                &:hover {
+                    background: rgba(#ffffff, 0.85);
+                    border: 3px solid white;
+                }
+            }
+        }
+    }
+}
+
+.inv-slot-center {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img {
+        width: 80px;
+        height: 80px;
+        background: transparent;
+        background-size: cover;
+    }
+}
+
+.inv-slot-bottom {
+    background: transparent;
+    position: relative;
+    margin-top: -26px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inv-slot-count {
+    font-family: crock;
+    font-size: 14px;
+    color: rgb(15, 15, 15);
+    text-align: right;
+    background: rgba(235, 235, 235, 0.75);
+    padding: 0px 6px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.dragging {
+    border: 3px red solid;
+}
+
+.inv-slot:hover,
+.craft-item:hover,
+.chest-item:hover {
+    background: rgba(#8d8e8f, 0.65);
+    border: 3px solid white;
+}
+
+.show {
+    visibility: visible;
+}
+
+span {
+    font-family: crock;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+p {
+    font-family: crock;
+    font-size: 20px;
+    color: rgb(235, 235, 235);
+}
+
+@split-menu-scale-factor: 0.5;
+
+// 490 55
+
+.scroller-down {
+    width: 78.5%;
+    height: 24px;
+    background-image: url('../img/scroller_line_down.png');
+    opacity: 0.5;
+}
+
+.scroller-arrow-bot {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/scroller_arrow_bottom.png');
+    background-position: center;
+    opacity: 0.5;
+}
+
+@keyframes scale-out {
+    from {
+        transform: scale(1.0);
+        opacity: 1.0;
+    }
+
+    to {
+        transform: scale(0.25);
+        opacity: 0;
+    }
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(0.25);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-in {
+    animation-duration: 0.4s;
+    animation-name: scale-in;
+    animation-timing-function: ease-in-out;
+}
+
+.scale-out {
+    animation-duration: 0.4s;
+    animation-name: scale-out;
+    animation-timing-function: ease-in-out;
+}
+
+#inv-splitmenu {
+    background: transparent;
+    width: calc(728px * @split-menu-scale-factor);
+    height: calc(948px * @split-menu-scale-factor);
+    background-image: url('../img/translate_bg_1a.png');
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+
+    .splitmenu-title {
+        font-size: 26px;
+    }
+
+    .splitmenu-top-cnt {
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        grid-gap: 0px;
+    }
+
+    .splitmenu-buttons-cnt {
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inv-btn {
+        width: calc(432px * 0.70); // 240px
+        height: calc(52px * 0.8);
+        background: transparent;
+        background-image: url('../img/selection_box_bg_1d.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-size: 16px;
+        }
+    }
+
+    .inv-btn:hover {
+        filter: invert(0.2);
+    }
+
+    .splitmenu-item-cnt {
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        margin-bottom: 20px;
+
+        .img-icon {
+            width: 96px;
+            height: 96px;
+            background: transparent;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            margin-bottom: 15px;
+            transform: scale(1);
+        }
+    }
+
+    .splitmenu-quantity-cnt {
+        .img {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .arrow-left {
+            background-image: url('../img/selection_arrow_left.png');
+            transition: 0.2s all ease-in-out;
+        }
+
+        .arrow-left:hover,
+        .arrow-right:hover {
+            filter: invert(0.35);
+        }
+
+        .arrow-right {
+            background-image: url('../img/selection_arrow_right.png');
+            transition: 0.2s all ease-in-out;
+        }
+
+        span {
+            color: rgb(235, 235, 235);
+        }
+    }
+}
+
+input[type=range] {
+    width: 100%;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 8px;
+    background: transparent;
+    background-image: url('../img/counter_bg_1b.png');
+    background-position-x: center;
+    background-position-y: center;
+    cursor: pointer;
+    margin-top: -5px;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    /* Add cool effects to your sliders! */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.1s all ease-in-out;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    // background: rgba(255, 255, 255, 0.3);
+}
+
+input[type=range]:hover::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+input[type=range]:focus {
+    outline: none;
+}

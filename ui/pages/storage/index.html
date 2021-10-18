@@ -1,0 +1,168 @@
+<html>
+
+<head>
+    <link rel="stylesheet/less" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet/less" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet/less" type="text/css" href="./css/storage.less" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+</head>
+
+<body>
+    <div id="storage" class="storage">
+        <div class="content">
+            <div id="inventory-container" class="inv-bg">
+                <div class="inv-ctn-center">
+                    <div class="inv-top-ctn">
+                        <div class="inv-btn-ico" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="inv-ico satchel-img"></div>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <div class="inv-ico hot-img" style="margin-left: -16px;"></div>
+                            <span id="inv-weight" style="margin-left: -8px;">16°C</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <div class="inv-ico weight-img"></div>
+                            <span id="inv-weight">25.00/50.00</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <div class="inv-ico money-img"></div>
+                            <span id="inv-money">14550.45</span>
+                        </div>
+
+                        <div class="inv-btn-ico" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="inv-ico craft-img"></div>
+                        </div>
+                    </div>
+
+                    <div class="inv-divider" style="margin-top: 2px;"></div>
+
+                    <div class="inv-slots-ctn">
+                        <div id="inv-slots" class="slots-wrapper">
+                            <!-- <div class="inv-slot" id="${data.id}" data-id="${data.id}" data-slot="${data.slot}">
+                                <div class="inv-slot-center">
+                                    <div class="img" style="background-image: url('./img/weapon_repeater_carbine.png')">
+                                    </div>
+                                </div>
+                                <div class="inv-slot-bottom">
+                                    <span id="${data.id}-count" class="inv-slot-count">${data.count}</span>
+                                </div>
+                                <div id="${data.id}-context" class="context-menu" style="top: 0px; left: 0px;">
+                                    <ul id="${data.id}-context-ul">
+    
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="inv-divider" style="margin-top: 10px;"></div>
+
+                    <div style="height: 230px; margin-top: 10px; overflow: hidden; overflow-y: auto;">
+                        <span class="inv-desc-title">Carabine lancaster</span>
+                        <p class="inv-desc-description">Appuyer sur la touche <span class="key">E</span> pour recharger
+                        </p>
+                    </div>
+
+                    <div class="inv-divider" style="margin-top: 15px;"></div>
+
+                    <div id="inv-close" class="inv-btn" style="margin-top: 10px;">
+                        <span>Fermer</span>
+                    </div>
+
+                    <!-- <div class="searchbar-container">
+                        <input id="inventory-searchbar-input" class="searchbar-input" type="text" value="1" />
+                    </div> -->
+                </div>
+
+                <!-- Split Menu -->
+                <div id="inv-splitmenu" style="display: v;">
+                    <div class="splitmenu-top-cnt">
+                        <div style="display: flex; justify-content: center; align-items: center; margin-top: 34px;">
+                            <span class="splitmenu-title">Pomme</span>
+                        </div>
+
+                        <div class="splitmenu-item-cnt">
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; background: transparent;">
+                                <div class="img-icon" style="background-image: url(./img/consumable_apple.png);"></div>
+                            </div>
+                        </div>
+
+                        <div class="splitmenu-quantity-cnt">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="scroller-down" style="width: 36%;"></div>
+                                <div class="scroller-arrow-bot"></div>
+                                <div class="scroller-down" style="width: 36%;"></div>
+                            </div>
+
+                            <div style="margin-bottom: 15px;">
+                                <div style="display: flex; justify-content: center; align-items: center; margin: 0px 0 5px 0;">
+                                    <span>7/15</span>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <div class="img arrow-left">
+                                    </div>
+    
+                                    <input id="inv-quantity" style="width: 55%; margin: 0px 10px 0px 10px;" type="range" min="1" max="15" step="1" value="1">
+    
+                                    <div class="img arrow-right">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="width: 100%; height: 24px; display: flex; justify-content: center;">
+                                <div class="scroller-down"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="splitmenu-buttons-cnt">
+                        <div>
+                            <div id="inv-split" class="inv-btn">
+                                <span>Séparer</span>
+                            </div>
+                            <div id="inv-close" class="inv-btn" style="margin-top: 5px;">
+                                <span>Annuler</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="craft-container" class="craft-container" style="display: none;">
+                <div class="menu-selection">
+                    <p>Craft</p>
+                </div>
+
+                <div id="craft-items-container" class="item-container">
+
+                </div>
+            </div>
+
+            <div id="chest-container" class="chest-container" style="display: none;">
+                <div class="menu-selection">
+                    <p>Coffre</p>
+                    <div class="menu-separator"></div>
+                    <p id="chest-weight">0/0kg</p>
+                </div>
+
+                <div id="chest-items-container" class="item-container">
+
+                </div>
+
+                <div class="searchbar-container">
+                    <input id="chest-searchbar-input" class="searchbar-input" type="text" value="1" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/storage.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+[
+    {
+        "CategoryName": "americanpaint",
+        "CategoryText": "American Paint"
+    },
+    {
+        "CategoryName": "americanstandardbred",
+        "CategoryText": "American Standard Bred"
+    },
+    {
+        "CategoryName": "andalusian",
+        "CategoryText": "Andalusian"
+    },
+    {
+        "CategoryName": "appaloosa",
+        "CategoryText": "Appaloosa"
+    },
+    {
+        "CategoryName": "arabian",
+        "CategoryText": "Arabian"
+    },
+    {
+        "CategoryName": "ardennes",
+        "CategoryText": "Ardennes"
+    },
+    {
+        "CategoryName": "belgian",
+        "CategoryText": "Belgian"
+    },
+    {
+        "CategoryName": "breton",
+        "CategoryText": "Breton"
+    },
+    {
+        "CategoryName": "buell",
+        "CategoryText": "Buell"
+    },
+    {
+        "CategoryName": "criollo",
+        "CategoryText": "Criollo"
+    },
+    {
+        "CategoryName": "dutchwarmblood",
+        "CategoryText": "Dutch Warn Blood"
+    },
+    {
+        "CategoryName": "hungarianhalfbred",
+        "CategoryText": "Hungarian Half Bred"
+    },
+    {
+        "CategoryName": "kentuckysaddle",
+        "CategoryText": "Kentucky Saddle"
+    },
+    {
+        "CategoryName": "kladruber",
+        "CategoryText": "Kladruber"
+    },
+    {
+        "CategoryName": "missourifoxtrotter",
+        "CategoryText": "Missouri Foxtrotter"
+    },
+    {
+        "CategoryName": "morgan",
+        "CategoryText": "Morgan"
+    },
+    {
+        "CategoryName": "murfreebrood",
+        "CategoryText": "Murfreebrod"
+    },
+    {
+        "CategoryName": "mustang",
+        "CategoryText": "Mustang"
+    },
+    {
+        "CategoryName": "nokota",
+        "CategoryText": "Nokota"
+    },
+    {
+        "CategoryName": "shire",
+        "CategoryText": "Shire"
+    },
+    {
+        "CategoryName": "suffolkpunch",
+        "CategoryText": "Suffolk Punch"
+    },
+    {
+        "CategoryName": "tennesseewalker",
+        "CategoryText": "Tennessee Walker"
+    },
+    {
+        "CategoryName": "thoroughbred",
+        "CategoryText": "Thorough Bred"
+    },
+    {
+        "CategoryName": "turkoman",
+        "CategoryText": "Turkoman"
+    },
+    {
+        "CategoryName": "gypsycob",
+        "CategoryText": "Gypsy Cob"
+    },
+    {
+        "CategoryName": "norfolkroadster",
+        "CategoryText": "Norfolk Roadster"
+    }
+]

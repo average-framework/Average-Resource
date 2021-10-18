@@ -1,0 +1,212 @@
+[
+    {
+        "Model": "huntercart01",
+        "Name": "Charette",
+        "Weight": 120.0
+    },
+    {
+        "Model": "buggy01",
+        "Name": "Boquet",
+        "Weight": 20.0
+    },
+    {
+        "Model": "buggy02",
+        "Name": "Carrick luxe",
+        "Weight": 20.0
+    },
+    {
+        "Model": "buggy03",
+        "Name": "Tilbury",
+        "Weight": 20.0
+    },
+    {
+        "Model": "cart01",
+        "Name": "Charette",
+        "Weight": 50.0
+    },
+    {
+        "Model": "cart02",
+        "Name": "Boquet rustique",
+        "Weight": 20.0
+    },
+    {
+        "Model": "cart03",
+        "Name": "Charette",
+        "Weight": 80.0
+    },
+    {
+        "Model": "cart04",
+        "Name": "Charette",
+        "Weight": 100.0
+    },
+    {
+        "Model": "cart05",
+        "Name": "Charette porte-tonneau",
+        "Weight": 20.0
+    },
+    {
+        "Model": "cart06",
+        "Name": "Grande charette",
+        "Weight": 150.0
+    },
+    {
+        "Model": "cart07",
+        "Name": "Charette",
+        "Weight": 70.0
+    },
+    {
+        "Model": "cart08",
+        "Name": "Charette bâché",
+        "Weight": 70.0
+    },
+    {
+        "Model": "chuckwagon000x",
+        "Name": "Charette bâché",
+        "Weight": 250.0
+    },
+    {
+        "Model": "chuckwagon002x",
+        "Name": "Charette bâché",
+        "Weight": 150.0
+    },
+    {
+        "Model": "gatchuck",
+        "Name": "Charette de voyage",
+        "Weight": 250.0
+    },
+    {
+        "Model": "utilliwag",
+        "Name": "Charette utilitaire",
+        "Weight": 90.0
+    },
+    {
+        "Model": "wagon02x",
+        "Name": "Grande wagonnette",
+        "Weight": 250.0
+    },
+    {
+        "Model": "wagon03x",
+        "Name": "Charette simple",
+        "Weight": 100.0
+    },
+    {
+        "Model": "wagon04x",
+        "Name": "Charette baché",
+        "Weight": 250.0
+    },
+    {
+        "Model": "wagon05x",
+        "Name": "Charette avec coffre",
+        "Weight": 180.0
+    },
+    {
+        "Model": "wagon06x",
+        "Name": "Dilligence simple",
+        "Weight": 100.0
+    },
+    {
+        "Model": "coach2",
+        "Name": "Dilligence moderne",
+        "Weight": 60.0
+    },
+    {
+        "Model": "coach3",
+        "Name": "Clarence",
+        "Weight": 30.0
+    },
+    {
+        "Model": "coach4",
+        "Name": "Clarence",
+        "Weight": 20.0
+    },
+    {
+        "Model": "coach5",
+        "Name": "Clarence",
+        "Weight": 50.0
+    },
+    {
+        "Model": "coach6",
+        "Name": "Charette moderne",
+        "Weight": 20.0
+    },
+    {
+        "Model": "coal_wagon",
+        "Name": "Charette de charbon",
+        "Weight": 100.0
+    },
+    {
+        "Model": "stagecoach001x",
+        "Name": "Dilligence transport",
+        "Weight": 50.0
+    },
+    {
+        "Model": "stagecoach002x",
+        "Name": "Dilligence transport",
+        "Weight": 60.0
+    },
+    {
+        "Model": "stagecoach003x",
+        "Name": "Dilligence transport",
+        "Weight": 50.0
+    },
+    {
+        "Model": "stagecoach004x",
+        "Name": "Dilligence transport blindee",
+        "Weight": 80.0
+    },
+    {
+        "Model": "stagecoach005x",
+        "Name": "Dilligence transport",
+        "Weight": 60.0
+    },
+    {
+        "Model": "stagecoach006x",
+        "Name": "Dilligence voyage",
+        "Weight": 70.0
+    },
+    {
+        "Model": "supplywagon",
+        "Name": "Charette de ravitaillement",
+        "Weight": 250.0
+    },
+    {
+        "Model": "wagonarmoured01x",
+        "Name": "Charette blindé",
+        "Weight": 10.0
+    },
+    {
+        "Model": "wagonCircus01x",
+        "Name": "Charette de cirque",
+        "Weight": 10.0
+    },
+    {
+        "Model": "wagonCircus02x",
+        "Name": "Charette de cirque 2",
+        "Weight": 10.0
+    },
+    {
+        "Model": "wagondairy01x",
+        "Name": "Charette laitière",
+        "Weight": 150.0
+    },
+    {
+        "Model": "wagondoc01x",
+        "Name": "Charette de médecin",
+        "Weight": 150.0
+    },
+    {
+        "Model": "wagonPrison01x",
+        "Name": "Charette de prisonnier",
+        "Weight": 20.0
+    },
+    {
+        "Model": "wagontraveller01x",
+        "Name": "Charette d'itinérant",
+        "Weight": 100.0
+    },
+    {
+        "Model": "wagonwork01x",
+        "Name": "Charette de boulanger",
+        "Weight": 150.0
+    }
+]

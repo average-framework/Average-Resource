@@ -1,0 +1,2037 @@
+{
+    "CraftTables": [{
+            "Name": "indian_wapiti",
+            "Interact": {
+                "Position": {
+                    "X": -2677.28,
+                    "Y": -410.26,
+                    "Z": 148.43
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                    "Name": "indian_wapiti",
+                    "Role": "hunter"
+                },
+                {
+                    "Name": "indian_wapiti",
+                    "Role": "warrior"
+                },
+                {
+                    "Name": "indian_wapiti",
+                    "Role": "shaman"
+                },
+                {
+                    "Name": "indian_wapiti",
+                    "Role": "chief"
+                }
+            ],
+            "Recipes": [
+                "WEAPON_BOW_IMPROVED",
+                "WEAPON_MELEE_KNIFE_JAWBONE",
+                "AMMO_ARROW_FIRE",
+                "WEAPON_THROWN_BOLAS_HAWKMOTH",
+                "WEAPON_THROWN_BOLAS_IRONSPIKED",
+                "WEAPON_THROWN_BOLAS_INTERTWINED",
+                "WEAPON_THROWN_TOMAHAWK",
+                "WEAPON_THROWN_TOMAHAWK_ANCIENT",
+                "provision_stew_01",
+                "provision_stew_02",
+                "provision_stew_03"
+            ]
+        },
+        {
+            "Name": "smuggl_valentine",
+            "Interact": {
+                "Position": {
+                    "X": 1790.74,
+                    "Y": -818.82,
+                    "Z": 189.45
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                "Name": "*"
+            }],
+            "Recipes": [
+                "consumable_pear_liquor",
+                "consumable_offal",
+                "consumable_moonshine"
+            ]
+        },
+        {
+            "Name": "doctor_valentine",
+            "Interact": {
+                "Position": {
+                    "X": -313.8,
+                    "Y": 807.05,
+                    "Z": 119.03
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                    "Name": "doctor_valentine",
+                    "Role": "doctor"
+                },
+                {
+                    "Name": "doctor_valentine",
+                    "Role": "manager"
+                }
+            ],
+            "Recipes": [
+                "consumable_candy",
+                "consumable_cocainegum",
+                "consumable_medicine",
+                "consumable_tobaccogum",
+                "consumable_tonic"
+            ]
+        },
+        {
+            "Name": "saloon_valentine",
+            "Interact": {
+                "Position": {
+                    "X": -289.92,
+                    "Y": 816.26,
+                    "Z": 119.42
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                    "Name": "saloon_valentine",
+                    "Role": "bartender"
+                },
+                {
+                    "Name": "saloon_valentine",
+                    "Role": "manager"
+                }
+            ],
+            "Recipes": [
+                "provision_stew_01",
+                "provision_stew_02",
+                "provision_stew_03",
+                "consumable_whiskey",
+                "consumable_gin",
+                "consumable_rum"
+            ]
+        },
+        {
+            "Name": "saloon_blackwater",
+            "Interact": {
+                "Position": {
+                    "X": -819.42,
+                    "Y": -1319.96,
+                    "Z": 43.68
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                    "Name": "saloon_blackwater",
+                    "Role": "bartender"
+                },
+                {
+                    "Name": "saloon_blackwater",
+                    "Role": "manager"
+                }
+            ],
+            "Recipes": [
+                "provision_stew_01",
+                "provision_stew_02",
+                "provision_stew_03",
+                "consumable_whiskey",
+                "consumable_gin",
+                "consumable_rum"
+            ]
+        },
+        {
+            "Name": "foundries_annesburg",
+            "Interact": {
+                "Position": {
+                    "X": -2396.77,
+                    "Y": -2378.31,
+                    "Z": 61.39
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                    "Name": "mine_annesburg",
+                    "Role": "foreman"
+                },
+                {
+                    "Name": "mine_annesburg",
+                    "Role": "manager"
+                }
+            ],
+            "Recipes": [
+                "provision_iron_ingot",
+                "provision_gold_ingot"
+            ]
+        },
+        {
+            "Name": "gunstore_valentine",
+            "Interact": {
+                "Position": {
+                    "X": -277.22,
+                    "Y": 779.0,
+                    "Z": 119.7
+                },
+                "Heading": 0.0,
+                "Radius": 1.0
+            },
+            "Jobs": [{
+                    "Name": "gunstore_valentine",
+                    "Role": "vendor"
+                },
+                {
+                    "Name": "gunstore_valentine",
+                    "Role": "manager"
+                }
+            ],
+            "Recipes": [
+                // Weapons
+                "WEAPON_MELEE_KNIFE",
+                "WEAPON_MELEE_MACHETE",
+                "WEAPON_MELEE_MACHETE_HORROR",
+                "WEAPON_MELEE_MACHETE_COLLECTOR",
+                "WEAPON_MELEE_HATCHET",
+                "WEAPON_MELEE_HATCHET_HUNTER",
+                "WEAPON_MELEE_HATCHET_DOUBLE_BIT",
+                "WEAPON_MELEE_CLEAVER",
+                "WEAPON_KIT_BINOCULARS",
+                "WEAPON_KIT_BINOCULARS_ADVANCED",
+                "WEAPON_LASSO",
+                "WEAPON_LASSO_REINFORCED",
+                "WEAPON_REVOLVER_CATTLEMAN",
+                "WEAPON_REVOLVER_SCHOFIELD",
+                "WEAPON_REVOLVER_DOUBLEACTION",
+                "WEAPON_REVOLVER_NAVY",
+                "WEAPON_REVOLVER_NAVY_CROSSOVER",
+                "WEAPON_REVOLVER_LEMAT",
+                "WEAPON_PISTOL_VOLCANIC",
+                "WEAPON_PISTOL_MAUSER",
+                "WEAPON_PISTOL_SEMIAUTO",
+                "WEAPON_PISTOL_M1899",
+                "WEAPON_REPEATER_EVANS",
+                "WEAPON_REPEATER_HENRY",
+                "WEAPON_REPEATER_WINCHESTER",
+                "WEAPON_REPEATER_CARBINE",
+                "WEAPON_RIFLE_SPRINGFIELD",
+                "WEAPON_SHOTGUN_PUMP",
+                "WEAPON_SHOTGUN_DOUBLEBARREL",
+                "WEAPON_SHOTGUN_SEMIAUTO",
+                "WEAPON_SHOTGUN_REPEATING",
+                "WEAPON_SHOTGUN_SAWEDOFF",
+                // Ammo
+                "AMMO_RIFLE",
+                "AMMO_RIFLE_EXPRESS",
+                "AMMO_RIFLE_HIGH_VELOCITY",
+                "AMMO_22",
+                "AMMO_22_TRANQUILIZER",
+                "AMMO_REPEATER",
+                "AMMO_REPEATER_EXPRESS",
+                "AMMO_REPEATER_HIGH_VELOCITY",
+                "AMMO_REPEATER_SPLIT_POINT",
+                "AMMO_REVOLVER",
+                "AMMO_REVOLVER_EXPRESS",
+                "AMMO_REVOLVER_HIGH_VELOCITY",
+                "AMMO_REVOLVER_SPLIT_POINT",
+                "AMMO_PISTOL",
+                "AMMO_PISTOL_EXPRESS",
+                "AMMO_PISTOL_HIGH_VELOCITY",
+                "AMMO_PISTOL_SPLIT_POINT",
+                "AMMO_SHOTGUN",
+                "AMMO_SHOTGUN_SLUG"
+            ]
+        }
+    ],
+    "Recipes": [{
+            "RequiredItems": [{
+                "Name": "consumable_beets",
+                "Count": 2
+            }],
+            "GiveItem": {
+                "Name": "consumable_sugarcube",
+                "Count": 1
+            },
+            "AssemblyTime": 15,
+            "FailChance": 10
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_stone",
+                "Count": 5
+            }],
+            "GiveItem": {
+                "Name": "provision_flint",
+                "Count": 5
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_fiber",
+                "Count": 10
+            }],
+            "GiveItem": {
+                "Name": "provision_fabric",
+                "Count": 1
+            },
+            "AssemblyTime": 10,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_fabric",
+                "Count": 15
+            }],
+            "GiveItem": {
+                "Name": "provision_bandage",
+                "Count": 1
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_fiber",
+                "Count": 50
+            }],
+            "GiveItem": {
+                "Name": "provision_rope",
+                "Count": 1
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        //Weapons
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 30
+                },
+                {
+                    "Name": "provision_rope",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_BOW",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 60
+                },
+                {
+                    "Name": "provision_rope",
+                    "Count": 3
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_BOW_IMPROVED",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 20
+                },
+                {
+                    "Name": "provision_fabric",
+                    "Count": 2
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_TORCH",
+                "Count": 1
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        // Throwable
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 20
+                },
+                {
+                    "Name": "provision_fabric",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_feather",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_THROWN_TOMAHAWK",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 20
+                },
+                {
+                    "Name": "provision_fabric",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_feather",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_stone",
+                    "Count": 3
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_THROWN_TOMAHAWK_ANCIENT",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_stone",
+                    "Count": 3
+                },
+                {
+                    "Name": "provision_rope",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_THROWN_BOLAS",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 1,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_stone",
+                    "Count": 5
+                },
+                {
+                    "Name": "provision_rope",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_THROWN_BOLAS_HAWKMOTH",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 1,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_rope",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_THROWN_BOLAS_IRONSPIKED",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 1,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_rope",
+                "Count": 1
+            }],
+            "GiveItem": {
+                "Name": "WEAPON_THROWN_BOLAS_INTERTWINED",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 1,
+            "FailChance": 0
+        },
+        //Ammo
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 50
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 15
+                },
+                {
+                    "Name": "provision_feather",
+                    "Count": 10
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_ARROW",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 20
+                }
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_tree_branch",
+                    "Count": 35
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 20
+                },
+                {
+                    "Name": "provision_feather",
+                    "Count": 25
+                },
+                {
+                    "Name": "consumable_whiskey",
+                    "Count": 5
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_ARROW_FIRE",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 8
+                }
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_iron_ingot",
+                "Count": 1
+            }],
+            "GiveItem": {
+                "Name": "provision_lockpick",
+                "Count": 2
+            },
+            "AssemblyTime": 120,
+            "FailChance": 40
+        },
+        //Foods
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_steak",
+                    "Count": 1
+                },
+                {
+                    "Name": "consumable_carrot",
+                    "Count": 2
+                }
+            ],
+            "GiveItem": {
+                "Name": "provision_stew_01",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_steak",
+                    "Count": 1
+                },
+                {
+                    "Name": "consumable_pear",
+                    "Count": 2
+                }
+            ],
+            "GiveItem": {
+                "Name": "provision_stew_02",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_steak",
+                    "Count": 1
+                },
+                {
+                    "Name": "consumable_thyme",
+                    "Count": 4
+                }
+            ],
+            "GiveItem": {
+                "Name": "provision_stew_03",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "consumable_steak",
+                "Count": 1
+            }],
+            "GiveItem": {
+                "Name": "consumable_steak_cooked_meat",
+                "Count": 1
+            },
+            "AssemblyTime": 10,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_sugarcube",
+                    "Count": 3
+                },
+                {
+                    "Name": "consumable_beets",
+                    "Count": 5
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_whiskey",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_sugarcube",
+                    "Count": 3
+                },
+                {
+                    "Name": "consumable_beets",
+                    "Count": 5
+                },
+                {
+                    "Name": "consumable_peach",
+                    "Count": 5
+                },
+                {
+                    "Name": "consumable_herb_golden_currant",
+                    "Count": 5
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_gin",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_pear",
+                    "Count": 4
+                },
+                {
+                    "Name": "consumable_sugarcube",
+                    "Count": 4
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_rum",
+                "Count": 1
+            },
+            "AssemblyTime": 30,
+            "FailChance": 0
+        },
+        //Alternative
+        {
+            "RequiredItems": [{
+                "Name": "provision_tree_branch",
+                "Count": 25
+            }],
+            "GiveItem": {
+                "Name": "provision_wood_plank",
+                "Count": 1
+            },
+            "AssemblyTime": 20,
+            "FailChance": 40
+        },
+        // Camps
+        {
+            "RequiredItems": [{
+                    "Name": "provision_rope",
+                    "Count": 8
+                },
+                {
+                    "Name": "provision_fabric",
+                    "Count": 50
+                },
+                {
+                    "Name": "provision_wood_plank",
+                    "Count": 9
+                },
+                {
+                    "Name": "provision_stone",
+                    "Count": 8
+                },
+                {
+                    "Name": "provision_iron_ingot",
+                    "Count": 2
+                }
+            ],
+            "GiveItem": {
+                "Name": "kit_camp_01",
+                "Count": 1
+            },
+            "AssemblyTime": 300,
+            "FailChance": 0
+        },
+        // Doctors
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_sugarcube",
+                    "Count": 5
+                },
+                {
+                    "Name": "consumable_herb_golden_currant",
+                    "Count": 5
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_candy",
+                "Count": 1
+            },
+            "AssemblyTime": 300,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_sugarcube",
+                    "Count": 10
+                },
+                {
+                    "Name": "provision_animal_fat",
+                    "Count": 5
+                },
+                {
+                    "Name": "consumable_herb_golden_currant",
+                    "Count": 10
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_cocainegum",
+                "Count": 1
+            },
+            "AssemblyTime": 300,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_cigar",
+                    "Count": 5
+                },
+                {
+                    "Name": "consumable_candy",
+                    "Count": 5
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_tobaccogum",
+                "Count": 1
+            },
+            "AssemblyTime": 300,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_gin",
+                    "Count": 2
+                },
+                {
+                    "Name": "consumable_cocainegum",
+                    "Count": 2
+                },
+                {
+                    "Name": "consumable_cigar",
+                    "Count": 5
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_tonic",
+                "Count": 1
+            },
+            "AssemblyTime": 300,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_sugarcube",
+                    "Count": 10
+                },
+                {
+                    "Name": "consumable_herb_golden_currant",
+                    "Count": 10
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_medicine",
+                "Count": 1
+            },
+            "AssemblyTime": 300,
+            "FailChance": 0
+        },
+        //Smuggls
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_pear",
+                    "Count": 6
+                },
+                {
+                    "Name": "consumable_sugarcube",
+                    "Count": 4
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_pear_liquor",
+                "Count": 1
+            },
+            "AssemblyTime": 30,
+            "FailChance": 15
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_bottle",
+                    "Count": 2
+                },
+                {
+                    "Name": "consumable_pear_liquor",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_offal",
+                "Count": 1
+            },
+            "AssemblyTime": 60,
+            "FailChance": 20
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "consumable_herb_golden_currant",
+                    "Count": 10
+                },
+                {
+                    "Name": "consumable_pear_liquor",
+                    "Count": 1
+                },
+                {
+                    "Name": "consumable_sugarcube",
+                    "Count": 2
+                },
+                {
+                    "Name": "consumable_offal",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "consumable_moonshine",
+                "Count": 1
+            },
+            "AssemblyTime": 120,
+            "FailChance": 35
+        },
+        // Mine Annesburg
+        {
+            "RequiredItems": [{
+                "Name": "provision_crushed_iron",
+                "Count": 3
+            }],
+            "GiveItem": {
+                "Name": "provision_iron_ingot",
+                "Count": 1
+            },
+            "AssemblyTime": 80,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                "Name": "provision_crushed_gold",
+                "Count": 5
+            }],
+            "GiveItem": {
+                "Name": "provision_gold_ingot",
+                "Count": 1
+            },
+            "AssemblyTime": 120,
+            "FailChance": 0
+        },
+        // Weapons
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_KNIFE",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_LASSO",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_LASSO_REINFORCED",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_MACHETE",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_MACHETE_HORROR",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_MACHETE_COLLECTOR",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_HATCHET",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_HATCHET_HUNTER",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_HATCHET_DOUBLE_BIT",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_MELEE_CLEAVER",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_KIT_BINOCULARS",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_KIT_BINOCULARS_ADVANCED",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REVOLVER_CATTLEMAN",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REVOLVER_SCHOFIELD",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REVOLVER_DOUBLEACTION",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REVOLVER_NAVY",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REVOLVER_NAVY_CROSSOVER",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REVOLVER_LEMAT",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_PISTOL_VOLCANIC",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_PISTOL_MAUSER",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_PISTOL_SEMIAUTO",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_PISTOL_M1899",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REPEATER_EVANS",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REPEATER_HENRY",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REPEATER_WINCHESTER",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_REPEATER_CARBINE",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_RIFLE_SPRINGFIELD",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_SHOTGUN_PUMP",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_SHOTGUN_DOUBLEBARREL",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_SHOTGUN_SEMIAUTO",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_SHOTGUN_REPEATING",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "WEAPON_SHOTGUN_SAWEDOFF",
+                "Count": 1
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        // Ammos
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_RIFLE",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_RIFLE_EXPRESS",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_RIFLE_HIGH_VELOCITY",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_22",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_22_TRANQUILIZER",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REPEATER",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REPEATER_EXPRESS",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REPEATER_HIGH_VELOCITY",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REPEATER_SPLIT_POINT",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REVOLVER",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REVOLVER_EXPRESS",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REVOLVER_HIGH_VELOCITY",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_REVOLVER_SPLIT_POINT",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_PISTOL",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_PISTOL_EXPRESS",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_PISTOL_HIGH_VELOCITY",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_PISTOL_SPLIT_POINT",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_SHOTGUN",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        },
+        {
+            "RequiredItems": [{
+                    "Name": "provision_iron_ingot",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_flint",
+                    "Count": 1
+                },
+                {
+                    "Name": "provision_tree_branch",
+                    "Count": 1
+                }
+            ],
+            "GiveItem": {
+                "Name": "AMMO_SHOTGUN_SLUG",
+                "Count": 1,
+                "Data": {
+                    "GIVE_AMMO_COUNT": 3
+                }
+            },
+            "AssemblyTime": 180,
+            "FailChance": 0
+        }
+    ]
+}

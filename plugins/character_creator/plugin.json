@@ -1,0 +1,11 @@
+{
+    "Author": "bub.bl",
+    "Description": "An random description",
+    "Version": "1.0.0",
+    "ReleaseType": "debug",
+    "GithubUrl": "",
+    "Client": "CharacterCreator.Client.net.dll",
+    "Server": "CharacterCreator.Server.net.dll",
+    "UI": "",
+    "Dependencies": []
+}

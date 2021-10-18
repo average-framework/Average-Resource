@@ -1,0 +1,296 @@
+[{
+    "Name": "Valentine",
+    "Interact": {
+        "Position": {
+            "X": -381.93,
+            "Y": 773.96,
+            "Z": 116.11
+        },
+        "Radius": 1.0
+    },
+    "BringCart": {
+        "Position": {
+            "X": -392.91,
+            "Y": 779.32,
+            "Z": 115.91
+        },
+        "Radius": 20.0
+    },
+    "CartPosition": {
+        "X": -387.67,
+        "Y": 777.21,
+        "Z": 115.96
+    },
+    "CartHeading": 184.72,
+    "BuyCamera": {
+        "Position": {
+            "X": -381.13,
+            "Y": 776.46,
+            "Z": 118.29
+        },
+        "LookAtOffset": {
+            "X": 0.0,
+            "Y": -3.0,
+            "Z": 0.0
+        },
+        "Fov": 60.0
+    },
+    "Blip": {
+        "Position": {
+            "X": -381.13,
+            "Y": 773.98,
+            "Z": 116.33
+        },
+        "Sprite": 1938782895,
+        "Label": "Vendeur de charette",
+        "Scale": 1.0
+    },
+    "Npc": {
+        "Position": {
+            "X": -381.13,
+            "Y": 773.98,
+            "Z": 115.13
+        },
+        "Heading": 92.2,
+        "Model": "U_M_M_BWMSTABLEHAND_01",
+        "Variation": 1,
+        "Scenario": "WORLD_HUMAN_WAITING_IMPATIENT"
+    },
+    "Vehicles": [{
+            "Model": "huntercart01",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "buggy01",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "buggy02",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "buggy03",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart01",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart01",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart02",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart03",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart04",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart05",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart06",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart07",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "cart08",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "chuckwagon000x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "chuckwagon002x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "gatchuck",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "utilliwag",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagon02x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagon03x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagon04x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagon05x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagon06x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "coach2",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "coach3",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "coach4",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "coach5",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "coach6",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "coal_wagon",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "stagecoach001x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "stagecoach002x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "stagecoach003x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "stagecoach004x",
+            "RequireJob": [{
+                "Name": "sheriff_valentine",
+                "Role": "marshall"
+            },
+            {
+                "Name": "sheriff_blackwater",
+                "Role": "marshall"
+            }],
+            "Price": 0.0
+        },
+        {
+            "Model": "stagecoach005x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "stagecoach006x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "supplywagon",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagonarmoured01x",
+            "RequireJob": [{
+                "Name": "sheriff_valentine",
+                "Role": "marshall"
+            },
+            {
+                "Name": "sheriff_blackwater",
+                "Role": "marshall"
+            }],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagonCircus01x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagonCircus02x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagondairy01x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagondoc01x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagonPrison01x",
+            "RequireJob": [{
+                "Name": "sheriff_valentine",
+                "Role": "marshall"
+            },
+            {
+                "Name": "sheriff_blackwater",
+                "Role": "marshall"
+            }],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagontraveller01x",
+            "RequireJob": [],
+            "Price": 0.0
+        },
+        {
+            "Model": "wagonwork01x",
+            "RequireJob": [],
+            "Price": 0.0
+        }
+    ]
+}]

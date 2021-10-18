@@ -1,0 +1,236 @@
+body {
+    // background: url('../src/img/background.png')
+}
+
+#compass {
+    width: 250px;
+    height: 250px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // filter: drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.35));
+    transform: scale(0.75, 0.75);
+}
+
+#compass-container {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#compass-background {
+    width: calc(100% - 42px);
+    height: calc(100% - 42px);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 130px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#compass-icons-container {
+    width: calc(100% - 114px);
+    height: calc(100% - 114px);
+    background: rgba(15, 15, 15, 0.75);
+    border: rgba(61, 61, 61, 0.15) solid 32px;
+    border-radius: 130px;
+    position: absolute;
+}
+
+#compass-player-cursor {
+    width: 32px;
+    height: 32px;
+    background-image: url('../src/img/arrow-02.png');
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: transform .75s ease;
+    transform: rotate(0rad);
+    filter: saturate(0%) invert(100%);
+}
+
+#compass-distance {
+    color: rgb(140, 9, 9);
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    margin-top: 48px;
+}
+
+#compass-time {
+    font-size: 16px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: rgb(14, 15, 17);
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+#compass-border {
+    width: 100%;
+    height: 100%;
+    background-image: url('../src/img/compass3.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: transform .75s;
+    transform: rotateZ(0rad);
+    filter: invert(100%) opacity(65%);
+}
+
+.compass-menu-item {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compass-menu-item .heart {
+    background-image: url('../src/img/heart.png');
+}
+
+.compass-menu-item .hunger {
+    width: 18px;
+    height: 18px;
+    background-image: url('../src/img/hunger.png');
+}
+
+.compass-menu-item .thirst {
+    background-image: url('../src/img/water-bottle.png');
+}
+
+.compass-menu-item .hemorrhage {
+    background-image: url('../src/img/blood-drop.png');
+}
+
+.compass-menu-item .stamina {
+    width: 22px;
+    height: 22px;
+    background-image: url('../src/img/flash.png');
+}
+
+.compass-menu-item .micro {
+    width: 18px;
+    height: 18px;
+    background-image: url('../src/img/microphone.png');
+}
+
+.compass-menu {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.compass-menu-item-background {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.25)) invert(100%);
+}
+
+.compass-menu-item-foreground {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    position: absolute;
+    transition: clip 0.5s ease;
+}
+
+#compass-player-health {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-player-hunger {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-player-thirst {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-player-hemorrhage {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-player-stamina {
+    clip: rect(22px, 22px, 22px, 0px);
+}
+
+#compass-player-micro {
+    clip: rect(22px, 22px, 22px, 0px);
+}
+
+#compass-horse-health {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-horse-hunger {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-horse-thirst {
+    clip: rect(20px, 20px, 20px, 0px);
+}
+
+#compass-horse-stamina {
+    clip: rect(18px, 18px, 18px, 0px);
+}
+
+.compass-menu-item:nth-child(1) {
+    transform: translate(4.2em, 1.7em);
+}
+
+.compass-menu-item:nth-child(2) {
+    transform: translate(2.5em, 0.4em);
+}
+
+.compass-menu-item:nth-child(3) {
+    transform: translate(1.5em, 0.1em);
+}
+
+.compass-menu-item:nth-child(4) {
+    transform: translate(1.7em, -0.05em);
+}
+
+.compass-menu-item:nth-child(5) {
+    transform: translate(2.75em, -0.75em);
+}
+
+.compass-menu-item:nth-child(6) {
+    transform: translate(4.2em, -2.1em);
+}
+
+.compass-menu-item:nth-child(7) {
+    transform: translate(6.5em, -11.8em);
+}
+
+.compass-menu-item:nth-child(8) {
+    transform: translate(8.3em, -13.1em);
+}
+
+.compass-menu-item:nth-child(9) {
+    transform: translate(9.2em, -13.4em);
+}
+
+.compass-menu-item:nth-child(10) {
+    transform: translate(9.05em, -13.5em);
+}

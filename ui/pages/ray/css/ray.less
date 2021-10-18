@@ -1,0 +1,149 @@
+#ray {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: fixed;
+
+    a {
+        display: block;
+        text-decoration: none;
+        font-family: 'Segoe UI';
+        font-weight: 600;
+    }
+
+    .crossair,
+    .menu-car,
+    .menu-user {
+        opacity: 1;
+    }
+
+    .crossair {
+        text-align: center;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #FFFFFF;
+        border-radius: 100%;
+        position: absolute;
+        top: calc(50% - 6px);
+        left: calc(50% - 6px);
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        z-index: 200;
+    }
+
+    .crossair.fadeIn {
+        width: 12px;
+        height: 12px;
+        top: calc(50% - 6px);
+        left: calc(50% - 6px);
+        z-index: 200;
+    }
+
+    .crossair.active {
+        width: 18px;
+        height: 18px;
+        top: calc(50% - 9px);
+        left: calc(50% - 9px);
+        background: #FFFFFF url("../img/close.png") no-repeat 4px 4px;
+        background-size: 45%;
+    }
+
+    .container {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+    }
+
+    .container li {
+        list-style: none;
+        width: 50%;
+        line-height: 15px;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        will-change: transform;
+    }
+
+    .container li a {
+        display: block;
+        text-decoration: none;
+        font-family: 'Segoe UI';
+        font-size: 16px;
+        font-weight: 600;
+        display: inline-block;
+        color: rgb(235, 235, 235);
+        background: rgba(14, 15, 17, 0.75);
+        border: 3px solid rgba(14, 15, 17, 0);
+        border-radius: 30px;
+        padding: 10px 15px 10px 13px;
+        margin: 2px 0;
+        transition: all 0.2s ease-in-out;
+        will-change: transform;
+        filter: drop-shadow(0 0 0.15rem rgba(75, 52, 52, 0.95));
+        // backdrop-filter: blur(10px);
+
+        span {
+            margin-right: 5px;
+        }
+
+        &:hover {
+            background: rgba(31, 33, 37, 1);
+            border: 3px solid rgb(46, 49, 54);
+            // color: white;
+        }
+    }
+
+    .container li:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .container li a .emoji, h1 {
+        font-size: 16px;
+        margin-right: 5px;
+        font-weight: 600;
+        // display: inline-block;
+        vertical-align: middle;
+    }
+
+    .container li:nth-child(odd) {
+        text-align: right;
+        right: 60px;
+        -webkit-transform-origin: right center;
+        -ms-transform-origin: right center;
+        transform-origin: right center;
+    }
+
+    .container li:nth-child(even) {
+        left: 60px;
+        -webkit-transform-origin: left center;
+        -ms-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    .container li:nth-child(1),
+    .container li:nth-last-child(2) {
+        right: 20px;
+    }
+
+    .container li:nth-child(2),
+    .container li:nth-last-child(1) {
+        left: 20px;
+    }
+
+    .container.fadeIn {
+        opacity: 1;
+        z-index: 10;
+    }
+}

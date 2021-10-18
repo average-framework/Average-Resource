@@ -1,0 +1,51 @@
+[{
+    "Id": 12290,
+    "Set": "val_bank_front_windows",
+    "Enable": true
+},
+{
+    "Id": 21250,
+    "Set": "front_windows",
+    "Enable": true
+},
+{
+    "Id": 21250,
+    "Set": "6_chair_poker_set",
+    "Enable": true
+},
+{
+    "Id": 37122,
+    "Set": "MUD3_val_hotel_room1b_curtain",
+    "Enable": true
+},
+{
+    "Id": 37122,
+    "Set": "MUD3_val_hotel_room1b_prayercurtain",
+    "Enable": true
+},
+{
+    "Id": 37122,
+    "Set": "LevDes_Val_MUD3",
+    "Enable": true
+},
+{
+    "Id": 37122,
+    "Set": "mud3_val_hotel_room_curtain01",
+    "Enable": true
+},
+{
+    "Id": 37122,
+    "Set": "val_hotel_int_rentSign",
+    "Enable": true
+},
+{
+    "Id": 7170,
+    "Set": "val_jail_int_walla",
+    "Enable": true
+},
+{
+    "Id": 7170,
+    "Set": "val_jail_int_wallb",
+    "Enable": true
+}
+]
