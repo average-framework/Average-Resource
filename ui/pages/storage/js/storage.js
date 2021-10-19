@@ -220,29 +220,26 @@ $(() => {
 
     function createInventoryContextMenu(slotId, contextItems) {
         $(`#slot-${slotId}-context`).hide()
-        
+
         for (var i = 0; i < contextItems.length; i++) {
             var contextItem = contextItems[i]
 
             $(`#slot-${slotId}-context-items`).append(
-                `<li id="slot-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
-                <a href=""><span>${contextItem.emoji}</span>${contextItem.text}</a>
+                `<li class="context-item" id="slot-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
+                    <a id="slot-${slotId}-${contextItem.eventName}-context-item-a" data-slotid="${slotId}" data-eventname="${contextItem.eventName}" href="">
+                        <span id="slot-${slotId}-${contextItem.eventName}-context-item-a-span">${contextItem.emoji}</span>${contextItem.text}
+                    </a>
                 </li>`)
-        }
-
-        for (var i = 0; i < contextItems.length; i++) {
-            var contextItem = contextItems[i]
 
             console.log("try to bind event: " + `#slot-${slotId}-${contextItem.eventName}-context-item`)
-
-            $(`#slot-${slotId}-${contextItem.eventName}-context-item`).unbind().on('click', (e) => {
-                console.log("enculer de merde: " + slotId + ", " + contextItem.eventName)
-                $.post(`https://avg/storage/inv/context_menu`, JSON.stringify({
-                    slotId,
-                    eventName: contextItem.eventName
-                }))
-            })
         }
+
+        $(`.context-item`).unbind().on('click', (e) => {
+            $.post(`https://avg/storage/inv/context_menu`, JSON.stringify({
+                slotId: e.target.getAttribute('data-slotid'),
+                eventName: e.target.getAttribute('data-eventname')
+            }))
+        })
 
         bindInventoryContextMenu(slotId)
     }
