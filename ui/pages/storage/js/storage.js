@@ -8,15 +8,16 @@ $(() => {
     avg.on('init', json => {
         console.log("init: " + json)
         var data = JSON.parse(json)
-        initSlots(data.slotCount)
+        initInventorySlots(data.slotCount)
     })
 
     avg.on('setItemOnEmptySlot', json => {
         console.log("setItemOnEmptySlot: " + json)
         var data = JSON.parse(json)
         setItemOnEmptySlot(data)
-        
+
         bindDragEvents()
+        bindInventoryContextMenu(data.slotId)
     })
 
     avg.on('setItemOnSlot', json => {
@@ -76,6 +77,7 @@ $(() => {
 
         // Need to unbind event to base item
         unbindDragEvents(item.slotId)
+        unbindInventoryContextMenu(item.slotId)
 
         // Target need to set
         $(`#slot-${item.targetSlotId}`).attr('draggable', 'true')
@@ -86,8 +88,11 @@ $(() => {
             'background-image': `url(./img/${item.targetImg}.png)`
         })
 
+        createInventoryContextMenu(item.targetSlotId, item.contextItems)
+
         // Need to bind event to target item
         bindDragEvents()
+        bindInventoryContextMenu(item.targetSlotId)
     }
 
     function setItemOnSlot(item) {
@@ -116,6 +121,8 @@ $(() => {
         $(`#slot-${item.slotId}-img`).css({
             'background-image': `url(./img/${item.img}.png)`
         })
+
+        createInventoryContextMenu(item.slotId, item.contextItems)
     }
 
     function stackItemOnSlot(item) {
@@ -182,34 +189,17 @@ $(() => {
         }
     })
 
-    $("#inventory-searchbar-input").change(function (event) {
-        $.post("https://avg/storage/inv/input_count", JSON.stringify({
-            value: event.target.value
-        }))
-    })
+    // $("#inventory-searchbar-input").change(function (event) {
+    //     $.post("https://avg/storage/inv/input_count", JSON.stringify({
+    //         value: event.target.value
+    //     }))
+    // })
 
-    $("#chest-searchbar-input").change(function (event) {
-        $.post("https://avg/storage/chest/input_count", JSON.stringify({
-            value: event.target.value
-        }))
-    })
-
-    // function invSlotTemplate(data, slotIndex) {
-    //     return `<div draggable="true" class="inv-slot" id="${slotIndex}" data-slotid="${slotIndex}">
-    //                 <div class="inv-slot-center">
-    //                     <div id="${slotIndex}-img" class="img" style="background-image: url('./img/${data.img}.png')">
-    //                     </div>
-    //                 </div>
-    //                 <div class="inv-slot-bottom">
-    //                     <span id="${slotIndex}-count" class="inv-slot-count">${data.count}</span>
-    //                 </div>
-    //                 <div id="${slotIndex}-context" class="context-menu" style="top: 0px; left: 0px;">
-    //                     <ul id="${slotIndex}-context-ul">
-
-    //                     </ul>
-    //                 </div>
-    //             </div>`
-    // }
+    function initInventorySlots(slotCount) {
+        for (var i = 0; i < slotCount; i++) {
+            $('#inv-slots').append(invEmptySlotTemplate(i))
+        }
+    }
 
     function invEmptySlotTemplate(slotId) {
         return `<div class="inv-eslot" id="slot-${slotId}" data-slotid="${slotId}">
@@ -221,289 +211,74 @@ $(() => {
                         <span id="slot-${slotId}-count" class="inv-slot-count" data-slotid="${slotId}"></span>
                     </div>
                     <div id="slot-${slotId}-context" class="context-menu" data-slotid="${slotId}" style="top: 0px; left: 0px;">
-                        <ul id="slot-${slotId}-context-ul" data-slotid="${slotId}">
+                        <ul id="slot-${slotId}-context-items" data-slotid="${slotId}">
 
                         </ul>
                     </div>
                 </div>`
     }
 
-    function initSlots(slotCount) {
-        for (var i = 0; i < slotCount; i++) {
-            $('#inv-slots').append(invEmptySlotTemplate(i))
-        }
-    }
+    function createInventoryContextMenu(slotId, contextItems) {
+        $(`#slot-${slotId}-context`).hide()
+        
+        for (var i = 0; i < contextItems.length; i++) {
+            var contextItem = contextItems[i]
 
-    function clearInventoryRender() {
-        $("#inventory-items-container").empty()
-    }
-
-    function clearChestRender() {
-        $("#chest-items-container").empty()
-    }
-
-    function clearCraftRender() {
-        $("#craft-items-container").empty()
-    }
-
-    function createInventoryItems(items) {
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-            var template = getItemTemplate(item)
-
-            $("#inventory-items-container").append(template)
-            addEventHandlerForInventoryItem("#" + item.id + "-div")
-        }
-
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-            createInventoryContextMenu(item.id, item.menu)
-        }
-    }
-
-    function createChestItems(items) {
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-            var template = getChestItemTemplate(item)
-
-            $("#chest-items-container").append(template)
-            addEventHandlerForChestItem("#" + item.id + "-div")
-        }
-
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-            createChestContextMenu(item.id, item.menu)
-        }
-    }
-
-    function createCraftItems(items) {
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-            var template = getCraftItemTemplate(item)
-
-            $("#craft-items-container").append(template)
-            addEventHandlerForCraftItem("#" + item.id + "-div")
-        }
-
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-            createCraftContextMenu(item.id, item.menu)
-        }
-    }
-
-    function createInventoryContextMenu(id, menuItems) {
-        $("#" + id + "-div-menu-ul").empty()
-
-        for (var i = 0; i < menuItems.length; i++) {
-            var menu = menuItems[i]
-
-            $("#" + id + "-div-menu").hide()
-            $("#" + id + "-div-menu-ul").append(
-                `<li id="${menu.id}-${menu.name}-${menu.eventName}-div-menu-ul-li" data-eventname="${menu.eventName}">
-                    <a href=""><span class="emoji">${menu.emoji}</span>${menu.text}</a>
+            $(`#slot-${slotId}-context-items`).append(
+                `<li id="slot-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
+                <a href=""><span>${contextItem.emoji}</span>${contextItem.text}</a>
                 </li>`)
-
-            addEventHandlerForInventoryContextMenu(id, menu)
         }
-    }
 
-    function createChestContextMenu(id, menuItems) {
-        $("#" + id + "-div-menu-ul").empty()
+        for (var i = 0; i < contextItems.length; i++) {
+            var contextItem = contextItems[i]
 
-        for (var i = 0; i < menuItems.length; i++) {
-            var menu = menuItems[i]
+            console.log("try to bind event: " + `#slot-${slotId}-${contextItem.eventName}-context-item`)
 
-            $("#" + id + "-div-menu").hide()
-            $("#" + id + "-div-menu-ul").append(
-                `<li id="${menu.id}-${menu.name}-${menu.eventName}-div-menu-ul-li" data-eventname="${menu.eventName}">
-                    <a href=""><span class="emoji">${menu.emoji}</span>${menu.text}</a>
-                </li>`)
-
-            addEventHandlerForChestContextMenu(id, menu)
+            $(`#slot-${slotId}-${contextItem.eventName}-context-item`).unbind().on('click', (e) => {
+                console.log("enculer de merde: " + slotId + ", " + contextItem.eventName)
+                $.post(`https://avg/storage/inv/context_menu`, JSON.stringify({
+                    slotId,
+                    eventName: contextItem.eventName
+                }))
+            })
         }
+
+        bindInventoryContextMenu(slotId)
     }
 
-    function createCraftContextMenu(id, menuItems) {
-        $("#" + id + "-div-menu-ul").empty()
-
-        for (var i = 0; i < menuItems.length; i++) {
-            var menu = menuItems[i]
-
-            $("#" + id + "-div-menu").hide()
-            $("#" + id + "-div-menu-ul").append(
-                `<li id="${menu.id}-${menu.name}-${menu.eventName}-div-menu-ul-li" data-eventname="${menu.eventName}">
-                    <a href=""><span class="emoji">${menu.emoji}</span>${menu.text}</a>
-                </li>`)
-
-            addEventHandlerForCraftContextMenu(id, menu)
-        }
+    function unbindInventoryContextMenu(slotId) {
+        $(`#slot-${slotId}-context-items`).empty()
     }
 
-    function addEventHandlerForInventoryContextMenu(id, menu) {
-        $("#" + menu.id + "-" + menu.name + "-" + menu.eventName + "-div-menu-ul-li").click(function (event) {
-            $.post(`https://avg/storage/inv/context_menu`, JSON.stringify({
-                name: menu.name,
-                tempId: id,
-                eventName: menu.eventName
-            }))
-        })
+    function bindInventoryContextMenu(slotId) {
+        console.log("bind inventory context menu: " + slotId + ", " + $(`#slot-${slotId}`).attr("id") + ", " + $(`#slot-${slotId}`).data("slotid"))
 
-        $("#" + id + "-div-menu").mouseleave(function (event) {
-            $(".storage-item-menu").hide()
-            $(".inventory-item").show()
-        })
-    }
+        // Lors d'un move, besoin de supprimer le context menu de "base" dans le ul (unbind les events du context)
+        // Lors d'un move, besoin d'ajouter le context menu de "target" dans le ul (unbind les events du context)
+        // Besoin de cacher l'ancien context menu et d'afficher le nouveau context | OK
 
-    function addEventHandlerForChestContextMenu(id, menu) {
-        $("#" + menu.id + "-" + menu.name + "-" + menu.eventName + "-div-menu-ul-li").click(function (event) {
-            $.post(`https://avg/storage/chest/context_menu`, JSON.stringify({
-                name: menu.name,
-                tempId: id,
-                eventName: menu.eventName
-            }))
-        })
+        $(document).unbind().on('click', `#slot-${slotId}`, (e) => {
+            e.preventDefault()
 
-        $("#" + id + "-div-menu").mouseleave(function (event) {
-            $(".storage-item-menu").hide()
-            $(".inventory-item").show()
-            $(".chest-item").show()
-        })
-    }
+            $('.context-menu').hide()
+            $(`#slot-${slotId}-context`).show()
 
-    function addEventHandlerForCraftContextMenu(id, menu) {
-        $("#" + menu.id + "-" + menu.name + "-" + menu.eventName + "-div-menu-ul-li").click(function (event) {
-            $.post(`https://avg/storage/craft/clickContextMenu`, JSON.stringify({
-                name: menu.name,
-                tempId: id,
-                eventName: menu.eventName
-            }))
-        })
-
-        $("#" + id + "-div-menu").mouseleave(function (event) {
-            $(".storage-item-menu").hide()
-            $(".inventory-item").show()
-            $(".craft-item").show()
-        })
-    }
-
-    function addEventHandlerForInventoryItem(name) {
-        $(name).click(function (event) {
-            event.preventDefault();
-
-            $(".inventory-item").hide()
-            $(".storage-item-menu").hide()
-            $(name).show()
-            $(name + "-menu").show()
-
-            var item = document.getElementById($(name).data("id") + "-div")
+            var item = document.getElementById(`slot-${slotId}`)
             var offsets = item.getBoundingClientRect();
             var top = offsets.top;
             var left = offsets.left;
             var width = item.offsetWidth
             var height = item.offsetHeight
 
-            $(name + "-menu").css("top", top + "px")
-            $(name + "-menu").css("left", left + width + "px")
+            console.log("move context menu to: " + top + ", " + (left + width))
+
+            $(`#slot-${slotId}-context`).css("top", top + "px")
+            $(`#slot-${slotId}-context`).css("left", left + width + "px")
         })
-    }
 
-    function addEventHandlerForChestItem(name) {
-        $(name).click(function (event) {
-            event.preventDefault();
-
-            $(".chest-item").hide()
-            $(".storage-item-menu").hide()
-            $(name).show()
-            $(name + "-menu").show()
-
-            var item = document.getElementById($(name).data("id") + "-div")
-            var offsets = item.getBoundingClientRect();
-            var top = offsets.top;
-            var left = offsets.left;
-            var width = item.offsetWidth
-            var height = item.offsetHeight
-
-            $(name + "-menu").css("top", top + "px")
-            $(name + "-menu").css("left", left + width + "px")
+        $(`#slot-${slotId}-context`).unbind().on('mouseleave', e => {
+            $(`#slot-${slotId}-context`).hide()
         })
-    }
-
-    function addEventHandlerForCraftItem(name) {
-        $(name).click(function (event) {
-            event.preventDefault();
-
-            $(".craft-item").hide()
-            $(".storage-item-menu").hide()
-
-            $(name).show()
-            $(name + "-menu").show()
-
-            var item = document.getElementById($(name).data("id") + "-div")
-            var offsets = item.getBoundingClientRect();
-            var top = offsets.top;
-            var left = offsets.left;
-            var width = item.offsetWidth
-            var height = item.offsetHeight
-
-            $(name + "-menu").css("top", top + "px")
-            $(name + "-menu").css("left", left + width + "px")
-        })
-    }
-
-    function getItemTemplate(data) {
-        return `<div id="${data.id}-div" data-id="${data.id}" class="inventory-item">
-                    <div class="storage-item-top">
-                        <p id="${data.id}-div-count" style="font-size: 14px; font-weight: 600; color: rgb(235,235,235); margin-top: 5px">${data.count}</p>
-                    </div>
-                    <div class="storage-item-center">
-                        <div class="img" style="background-image: url('./img/${data.img}')"></div>
-                    </div>
-                    <div class="storage-item-bottom">
-                        <p id="${data.id}-div-text">${data.text}</p>
-                    </div>
-                    <div id="${data.id}-div-menu" class="storage-item-menu" style="top: 0px; left: 0px;">
-                        <ul id="${data.id}-div-menu-ul">
-                            
-                        </ul>
-                    </div>
-                </div>`
-    }
-
-    function getChestItemTemplate(data) {
-        return `<div id="${data.id}-div" data-id="${data.id}" class="chest-item">
-                    <div class="storage-item-top">
-                        <p id="${data.id}-div-count" style="font-size: 14px; font-weight: 600; color: rgb(235,235,235); margin-top: 5px">${data.count}</p>
-                    </div>
-                    <div class="storage-item-center">
-                        <div class="img" style="background-image: url('./img/${data.img}')"></div>
-                    </div>
-                    <div class="storage-item-bottom">
-                        <p id="${data.id}-div-text">${data.text}</p>
-                    </div>
-                    <div id="${data.id}-div-menu" class="storage-item-menu" style="top: 0px; left: 0px;">
-                        <ul id="${data.id}-div-menu-ul">
-                            
-                        </ul>
-                    </div>
-                </div>`
-    }
-
-    function getCraftItemTemplate(data) {
-        return `<div id="${data.id}-div" data-id="${data.id}" class="craft-item">
-                    <div class="storage-item-top">
-                        
-                    </div>
-                    <div class="storage-item-center">
-                        <div class="img" style="background-image: url('./img/${data.img}')"></div>
-                    </div>
-                    <div class="storage-item-bottom">
-                        <p id="${data.id}-div-text">${data.text}</p>
-                    </div>
-                    <div id="${data.id}-div-menu" class="storage-item-menu" style="top: 0px; left: 0px;">
-                        <ul id="${data.id}-div-menu-ul">
-                            
-                        </ul>
-                    </div>
-                </div>`
     }
 })

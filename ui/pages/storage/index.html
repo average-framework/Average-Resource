@@ -43,17 +43,23 @@
 
                     <div class="inv-slots-ctn">
                         <div id="inv-slots" class="slots-wrapper">
-                            <!-- <div class="inv-slot" id="${data.id}" data-id="${data.id}" data-slot="${data.slot}">
-                                <div class="inv-slot-center">
-                                    <div class="img" style="background-image: url('./img/weapon_repeater_carbine.png')">
+                            <!-- <div class="inv-eslot" id="slot-${slotId}" data-slotid="${slotId}">
+                                <div class="inv-slot-center" data-slotid="${slotId}">
+                                    <div id="slot-${slotId}-img" class="img" data-slotid="${slotId}" style="background-image: url('')">
                                     </div>
                                 </div>
-                                <div class="inv-slot-bottom">
-                                    <span id="${data.id}-count" class="inv-slot-count">${data.count}</span>
+                                <div class="inv-slot-bottom" data-slotid="${slotId}">
+                                    <span id="slot-${slotId}-count" class="inv-slot-count" data-slotid="${slotId}"></span>
                                 </div>
-                                <div id="${data.id}-context" class="context-menu" style="top: 0px; left: 0px;">
-                                    <ul id="${data.id}-context-ul">
-    
+                                <div id="slot-${slotId}-context" class="context-menu" data-slotid="${slotId}" style="top: 0px; left: 0px;">
+                                    <ul id="slot-${slotId}-context-list" data-slotid="${slotId}">
+                                        <li id="${menu.id}-${menu.eventName}-context-item" data-eventname="${menu.eventName}">
+                                            <a href=""><span>${menu.emoji}</span>${menu.text}</a>
+                                        </li>
+                                        
+                                        <li id="${menu.id}-${menu.eventName}-context-item" data-eventname="${menu.eventName}">
+                                            <a href=""><span>😀</span>Manger une banane !</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div> -->
