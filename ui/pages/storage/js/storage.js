@@ -50,6 +50,30 @@ $(() => {
         updateItemRender(data)
     })
 
+    avg.on('removeItemOnSlot', json => {
+        console.log("removeItemOnSlot: " + json)
+        var data = JSON.parse(json)
+        removeItemOnSlot(data)
+    })
+
+    function removeItemOnSlot(data) {
+        // Remove event on slot
+        // Need to unbind event for this slot
+        // $(`#slot-${data.slotId}`).off('click')
+        unbindDragEvents(data.slotId)
+        unbindInventoryContextMenu(data.slotId)
+
+        $(`#slot-${data.slotId}`).attr('draggable', 'false')
+        $(`#slot-${data.slotId}`).removeClass('inv-slot')
+        $(`#slot-${data.slotId}`).addClass('inv-eslot')
+        $(`#slot-${data.slotId}-count`).text('')
+        $(`#slot-${data.slotId}-img`).css({
+            'background-image': `url()`
+        })
+
+        unbindClickEventForEmptySlot()
+    }
+
     function updateItemRender(data) {
         $(`#slot-${data.slotId}`).attr('draggable', 'true')
         $(`#slot-${data.slotId}`).removeClass('inv-eslot')
@@ -104,11 +128,11 @@ $(() => {
         $(document).on('click', '#inv-splitmenu-left-btn', function () {
             var step = $('#inv-splitmenu-input').attr('step')
             var min = new Number($('#inv-splitmenu-input').attr('min'))
-            var max =  new Number($('#inv-splitmenu-input').attr('max'))
+            var max = new Number($('#inv-splitmenu-input').attr('max'))
 
             invSplitValue -= new Number(step)
 
-            if(invSplitValue < min) {
+            if (invSplitValue < min) {
                 invSplitValue = min
             }
 
@@ -119,11 +143,11 @@ $(() => {
         $(document).on('click', '#inv-splitmenu-right-btn', function () {
             var step = $('#inv-splitmenu-input').attr('step')
             var min = new Number($('#inv-splitmenu-input').attr('min'))
-            var max =  new Number($('#inv-splitmenu-input').attr('max'))
+            var max = new Number($('#inv-splitmenu-input').attr('max'))
 
             invSplitValue += new Number(step)
 
-            if(invSplitValue > max) {
+            if (invSplitValue > max) {
                 invSplitValue = max
             }
 
@@ -169,9 +193,20 @@ $(() => {
         })
     }
 
+    function unbindClickEventForEmptySlot() {
+        $(`.inv-eslot`).off('click')
+    }
+
     function moveItemOnEmptySlot(item) {
         // Base need to clear
         console.log("base: " + item.slotId + ", target: " + item.targetSlotId)
+        
+        // $(`#slot-${data.slotId}`).off('click')
+        
+        // Need to unbind event to base item
+        unbindDragEvents(item.slotId)
+        unbindInventoryContextMenu(item.slotId)
+        
         $(`#slot-${item.slotId}`).attr('draggable', 'false')
         $(`#slot-${item.slotId}`).removeClass('inv-slot')
         $(`#slot-${item.slotId}`).addClass('inv-eslot')
@@ -179,10 +214,6 @@ $(() => {
         $(`#slot-${item.slotId}-img`).css({
             'background-image': `url()`
         })
-
-        // Need to unbind event to base item
-        unbindDragEvents(item.slotId)
-        unbindInventoryContextMenu(item.slotId)
 
         // Target need to set
         $(`#slot-${item.targetSlotId}`).attr('draggable', 'true')
@@ -198,6 +229,9 @@ $(() => {
         // Need to bind event to target item
         bindDragEvents()
         bindInventoryContextMenu(item.targetSlotId)
+        
+        // Unbind click event on empty slot after item moving
+        unbindClickEventForEmptySlot()
     }
 
     function setItemOnSlot(item) {
