@@ -1,85 +1,128 @@
 $(() => {
     console.log("create slots")
 
-    $('#inv-close').click(() => {
+    $(`#inv-close`).click(() => {
         $.post("https://avg/storage/close", JSON.stringify({}))
     })
 
-    avg.on('init', json => {
+    avg.on(`init`, json => {
         console.log("init: " + json)
         var data = JSON.parse(json)
-        initInventorySlots(data.slotCount)
+        initSlots(data.slotCount, data.type)
     })
 
-    avg.on('setItemOnEmptySlot', json => {
+    avg.on(`setItemOnEmptySlot`, json => {
         console.log("setItemOnEmptySlot: " + json)
         var data = JSON.parse(json)
         setItemOnEmptySlot(data)
 
-        bindDragEvents()
-        bindInventoryContextMenu(data.slotId)
+        bindDragEvents(data.type)
+        bindContextMenu(data.slotId, data.type)
     })
 
-    avg.on('setItemOnSlot', json => {
+    avg.on(`setItemOnSlot`, json => {
         console.log("setItemOnSlot: " + json)
         var data = JSON.parse(json)
         setItemOnSlot(data)
     })
 
-    avg.on('moveItemOnEmptySlot', json => {
+    avg.on(`moveItemOnEmptySlot`, json => {
         console.log("moveItemOnEmptySlot: " + json)
         var data = JSON.parse(json)
         moveItemOnEmptySlot(data)
     })
 
-    avg.on('stackItemOnSlot', json => {
+    avg.on(`stackItemOnSlot`, json => {
         console.log("stackItemOnSlot: " + json)
         var data = JSON.parse(json)
         stackItemOnSlot(data)
     })
 
-    avg.on('showInvSplitMenu', json => {
+    avg.on(`showInvSplitMenu`, json => {
         console.log("showInvSplitMenu: " + json)
         var data = JSON.parse(json)
         showInvSplitMenu(data)
     })
 
-    avg.on('updateItemRender', json => {
-        console.log("updateItemRender: " + json)
+    avg.on(`updateSlotRender`, json => {
+        console.log("updateSlotRender: " + json)
         var data = JSON.parse(json)
-        updateItemRender(data)
+        updateSlotRender(data)
     })
 
-    avg.on('removeItemOnSlot', json => {
+    avg.on(`removeItemOnSlot`, json => {
         console.log("removeItemOnSlot: " + json)
         var data = JSON.parse(json)
         removeItemOnSlot(data)
     })
 
     function removeItemOnSlot(data) {
+        var slotClass = ""
+        var slotEmptyClass = ""
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotClass = "inv-slot"
+                slotEmptyClass = "inv-eslot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = "veh-slot"
+                slotEmptyClass = "veh-eslot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = "chest-slot"
+                slotEmptyClass = "chest-eslot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
         // Remove event on slot
         // Need to unbind event for this slot
-        // $(`#slot-${data.slotId}`).off('click')
-        unbindDragEvents(data.slotId)
-        unbindInventoryContextMenu(data.slotId)
+        unbindDragEvents(data.slotId, data.type)
+        unbindContextMenu(data.slotId, data.type)
 
-        $(`#slot-${data.slotId}`).attr('draggable', 'false')
-        $(`#slot-${data.slotId}`).removeClass('inv-slot')
-        $(`#slot-${data.slotId}`).addClass('inv-eslot')
-        $(`#slot-${data.slotId}-count`).text('')
-        $(`#slot-${data.slotId}-img`).css({
+        $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `false`)
+        $(`#${slotPrefix}-${data.slotId}`).removeClass(slotClass)
+        $(`#${slotPrefix}-${data.slotId}`).addClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.slotId}-count`).text(``)
+        $(`#${slotPrefix}-${data.slotId}-img`).css({
             'background-image': `url()`
         })
 
-        unbindClickEventForEmptySlot()
+        unbindClickEventForEmptySlot(data.type)
     }
 
-    function updateItemRender(data) {
-        $(`#slot-${data.slotId}`).attr('draggable', 'true')
-        $(`#slot-${data.slotId}`).removeClass('inv-eslot')
-        $(`#slot-${data.slotId}`).addClass('inv-slot')
-        $(`#slot-${data.slotId}-count`).text(data.count)
-        $(`#slot-${data.slotId}-img`).css({
+    function updateSlotRender(data) {
+        var slotClass = ""
+        var slotEmptyClass = ""
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotClass = "inv-slot"
+                slotEmptyClass = "inv-eslot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = "veh-slot"
+                slotEmptyClass = "veh-eslot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = "chest-slot"
+                slotEmptyClass = "chest-eslot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
+        $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `true`)
+        $(`#${slotPrefix}-${data.slotId}`).removeClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.slotId}`).addClass(slotClass)
+        $(`#${slotPrefix}-${data.slotId}-count`).text(data.count)
+        $(`#${slotPrefix}-${data.slotId}-img`).css({
             'background-image': `url(./img/${data.img}.png)`
         })
     }
@@ -87,48 +130,61 @@ $(() => {
     var invSplitValue = 0
 
     function showInvSplitMenu(data) {
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotPrefix = "inv"
+                break;
+            case "veh":
+                slotPrefix = "veh"
+                break;
+            case "chest":
+                slotPrefix = "chest"
+                break;
+        }
+
         invSplitValue = data.defaultValue
 
-        $('#inv-splitmenu-title').text(data.title)
-        $('#inv-splitmenu-input').prop('min', data.minValue)
-        $('#inv-splitmenu-input').prop('max', data.maxValue)
-        $('#inv-splitmenu-input').prop('value', data.defaultValue)
-        $('#inv-splitmenu-img').css({
+        $(`#${slotPrefix}-splitmenu-title`).text(data.title)
+        $(`#${slotPrefix}-splitmenu-input`).prop(`min`, data.minValue)
+        $(`#${slotPrefix}-splitmenu-input`).prop(`max`, data.maxValue)
+        $(`#${slotPrefix}-splitmenu-input`).prop(`value`, data.defaultValue)
+        $(`#${slotPrefix}-splitmenu-img`).css({
             'background-image': `url(./img/${data.img}.png)`
         })
-        $('#inv-splitmenu').addClass('scale-in')
-        $('#inv-splitmenu').removeClass('scale-out')
-        $('#inv-splitmenu-quantity').text(data.defaultValue)
-        $('#inv-splitmenu').css({
-            'display': 'inline'
+        $(`#${slotPrefix}-splitmenu`).addClass(`scale-in`)
+        $(`#${slotPrefix}-splitmenu`).removeClass(`scale-out`)
+        $(`#${slotPrefix}-splitmenu-quantity`).text(data.defaultValue)
+        $(`#${slotPrefix}-splitmenu`).css({
+            'display': `inline`
         })
 
-        $('#inv-splitmenu-split-btn').unbind().on('click', (e) => {
+        $(`#${slotPrefix}-splitmenu-split-btn`).unbind().on(`click`, (e) => {
             console.log("split button")
-            $.post("https://avg/storage/inv/split/result", JSON.stringify({
+            $.post(`https://avg/storage/${slotPrefix}/split/result`, JSON.stringify({
                 slotId: data.slotId,
                 minValue: data.minValue,
                 maxValue: data.maxValue,
                 value: invSplitValue
             }))
-            hideInvSplitMenu()
+            hideSplitMenu(slotPrefix)
         })
 
-        $('#inv-splitmenu-close-btn').unbind().on('click', (e) => {
+        $(`#${slotPrefix}-splitmenu-close-btn`).unbind().on(`click`, (e) => {
             console.log("close button")
-            $.post("https://avg/storage/inv/split/close", JSON.stringify({}))
-            hideInvSplitMenu()
+            $.post(`https://avg/storage/${slotPrefix}/split/close`, JSON.stringify({}))
+            hideSplitMenu(slotPrefix)
         })
 
-        $(document).on('input', '#inv-splitmenu-input', function () {
+        $(document).on(`input`, `#${slotPrefix}-splitmenu-input`, function () {
             invSplitValue = new Number($(this).val())
-            $('#inv-splitmenu-quantity').text(invSplitValue)
+            $(`#${slotPrefix}-splitmenu-quantity`).text(invSplitValue)
         });
 
-        $(document).on('click', '#inv-splitmenu-left-btn', function () {
-            var step = $('#inv-splitmenu-input').attr('step')
-            var min = new Number($('#inv-splitmenu-input').attr('min'))
-            var max = new Number($('#inv-splitmenu-input').attr('max'))
+        $(document).on(`click`, `#${slotPrefix}-splitmenu-left-btn`, function () {
+            var step = $(`#${slotPrefix}-splitmenu-input`).attr(`step`)
+            var min = new Number($(`#${slotPrefix}-splitmenu-input`).attr(`min`))
 
             invSplitValue -= new Number(step)
 
@@ -136,14 +192,13 @@ $(() => {
                 invSplitValue = min
             }
 
-            $('#inv-splitmenu-input').val(invSplitValue)
-            $('#inv-splitmenu-quantity').text(invSplitValue)
+            $(`#${slotPrefix}-splitmenu-input`).val(invSplitValue)
+            $(`#${slotPrefix}-splitmenu-quantity`).text(invSplitValue)
         });
 
-        $(document).on('click', '#inv-splitmenu-right-btn', function () {
-            var step = $('#inv-splitmenu-input').attr('step')
-            var min = new Number($('#inv-splitmenu-input').attr('min'))
-            var max = new Number($('#inv-splitmenu-input').attr('max'))
+        $(document).on(`click`, `#${slotPrefix}-splitmenu-right-btn`, function () {
+            var step = $(`#${slotPrefix}-splitmenu-input`).attr(`step`)
+            var max = new Number($(`#${slotPrefix}-splitmenu-input`).attr(`max`))
 
             invSplitValue += new Number(step)
 
@@ -151,41 +206,71 @@ $(() => {
                 invSplitValue = max
             }
 
-            $('#inv-splitmenu-input').val(invSplitValue)
-            $('#inv-splitmenu-quantity').text(invSplitValue)
+            $(`#${slotPrefix}-splitmenu-input`).val(invSplitValue)
+            $(`#${slotPrefix}-splitmenu-quantity`).text(invSplitValue)
         });
     }
 
-    function hideInvSplitMenu() {
-        $('#inv-splitmenu').removeClass('scale-in')
-        $('#inv-splitmenu').addClass('scale-out')
+    function hideSplitMenu(slotPrefix) {
+        $(`#${slotPrefix}-splitmenu`).removeClass(`scale-in`)
+        $(`#${slotPrefix}-splitmenu`).addClass(`scale-out`)
 
         setTimeout(() => {
-            $('#inv-splitmenu').css({
-                'display': 'none'
+            $(`#${slotPrefix}-splitmenu`).css({
+                'display': `none`
             })
         }, 200);
     }
 
-    function unbindDragEvents(id) {
-        $(`#slot-${id}`).off('dragstart')
-        $(`#slot-${id}`).off('dragend')
+    function unbindDragEvents(slotId, type) {
+        switch (type) {
+            case "inv":
+                $(`#slot-${slotId}`).off(`dragstart`)
+                $(`#slot-${slotId}`).off(`dragend`)
+                break;
+            case "veh":
+                $(`#slot-veh-${slotId}`).off(`dragstart`)
+                $(`#slot-veh-${slotId}`).off(`dragend`)
+                break;
+            case "chest":
+                $(`#slot-chest-${slotId}`).off(`dragstart`)
+                $(`#slot-chest-${slotId}`).off(`dragend`)
+                break;
+        }
     }
 
-    function bindDragEvents() {
-        $(`.inv-slot`).unbind().on('dragstart', (e) => {
-            console.log('dragstart: ' + e.target.getAttribute('data-slotid'))
+    function bindDragEvents(type) {
+        var slotClass = ""
+        var eventType = ""
+
+        switch (type) {
+            case "inv":
+                slotClass = ".inv-slot"
+                eventType = "inv"
+                break;
+            case "veh":
+                slotClass = ".veh-slot"
+                eventType = "veh"
+                break;
+            case "chest":
+                slotClass = ".chest-slot"
+                eventType = "chest"
+                break;
+        }
+
+        $(slotClass).unbind().on(`dragstart`, (e) => {
+            console.log(`dragstart: ` + e.target.getAttribute(`data-slotid`))
         })
 
-        $(`.inv-slot`).unbind().on('dragend', (e) => {
+        $(slotClass).unbind().on(`dragend`, (e) => {
             var elem = document.elementFromPoint(e.clientX, e.clientY)
-            var slotId = e.target.getAttribute('data-slotid')
-            var targetSlotId = elem.getAttribute('data-slotid')
+            var slotId = e.target.getAttribute(`data-slotid`)
+            var targetSlotId = elem.getAttribute(`data-slotid`)
 
-            // Si l'object n'est pas un slot et que l'id du slot n'est pas égale a lui même
+            // Si l`object n`est pas un slot et que l`id du slot n`est pas égale a lui même
             // alors on post le déplacement du slot au serveur
             if (slotId != undefined && targetSlotId != undefined && slotId != targetSlotId) {
-                $.post("https://avg/storage/drop_slot", JSON.stringify({
+                $.post(`https://avg/storage/${eventType}/drop_slot`, JSON.stringify({
                     slotId,
                     targetSlotId
                 }))
@@ -193,161 +278,248 @@ $(() => {
         })
     }
 
-    function unbindClickEventForEmptySlot() {
-        $(`.inv-eslot`).off('click')
+    function unbindClickEventForEmptySlot(type) {
+        switch (type) {
+            case "inv":
+                $(`.inv-eslot`).off(`click`)
+                break;
+            case "veh":
+                $(`.veh-eslot`).off(`click`)
+                break;
+            case "chest":
+                $(`.chest-eslot`).off(`click`)
+                break;
+        }
     }
 
-    function moveItemOnEmptySlot(item) {
+    function moveItemOnEmptySlot(data) {
+        var slotClass = ""
+        var slotEmptyClass = ""
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotClass = "inv-slot"
+                slotEmptyClass = "inv-eslot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = "veh-slot"
+                slotEmptyClass = "veh-eslot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = "chest-slot"
+                slotEmptyClass = "chest-eslot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
         // Base need to clear
-        console.log("base: " + item.slotId + ", target: " + item.targetSlotId)
-        
-        // $(`#slot-${data.slotId}`).off('click')
-        
+        console.log("base: " + data.slotId + ", target: " + data.targetSlotId)
+
+        // $(`#slot-${data.slotId}`).off(`click`)
+
         // Need to unbind event to base item
-        unbindDragEvents(item.slotId)
-        unbindInventoryContextMenu(item.slotId)
-        
-        $(`#slot-${item.slotId}`).attr('draggable', 'false')
-        $(`#slot-${item.slotId}`).removeClass('inv-slot')
-        $(`#slot-${item.slotId}`).addClass('inv-eslot')
-        $(`#slot-${item.slotId}-count`).text('')
-        $(`#slot-${item.slotId}-img`).css({
+        unbindDragEvents(data.slotId, data.type)
+        unbindContextMenu(data.slotId, data.type)
+
+        $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `false`)
+        $(`#${slotPrefix}-${data.slotId}`).removeClass(slotClass)
+        $(`#${slotPrefix}-${data.slotId}`).addClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.slotId}-count`).text(``)
+        $(`#${slotPrefix}-${data.slotId}-img`).css({
             'background-image': `url()`
         })
 
         // Target need to set
-        $(`#slot-${item.targetSlotId}`).attr('draggable', 'true')
-        $(`#slot-${item.targetSlotId}`).removeClass('inv-eslot')
-        $(`#slot-${item.targetSlotId}`).addClass('inv-slot')
-        $(`#slot-${item.targetSlotId}-count`).text(item.targetCount)
-        $(`#slot-${item.targetSlotId}-img`).css({
-            'background-image': `url(./img/${item.targetImg}.png)`
+        $(`#${slotPrefix}-${data.targetSlotId}`).attr(`draggable`, `true`)
+        $(`#${slotPrefix}-${data.targetSlotId}`).removeClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.targetSlotId}`).addClass(slotClass)
+        $(`#${slotPrefix}-${data.targetSlotId}-count`).text(data.targetCount)
+        $(`#${slotPrefix}-${data.targetSlotId}-img`).css({
+            'background-image': `url(./img/${data.targetImg}.png)`
         })
 
-        createInventoryContextMenu(item.targetSlotId, item.contextItems)
+        createContextMenu(data.targetSlotId, data.contextItems, data.type)
 
         // Need to bind event to target item
-        bindDragEvents()
-        bindInventoryContextMenu(item.targetSlotId)
-        
+        bindDragEvents(data.type)
+        bindContextMenu(data.targetSlotId, data.type)
+
         // Unbind click event on empty slot after item moving
-        unbindClickEventForEmptySlot()
+        unbindClickEventForEmptySlot(data.type)
     }
 
-    function setItemOnSlot(item) {
-        $(`#slot-${item.slotId}`).attr('draggable', 'true')
-        $(`#slot-${item.slotId}`).removeClass('inv-eslot')
-        $(`#slot-${item.slotId}`).addClass('inv-slot')
-        $(`#slot-${item.slotId}-count`).text(item.count)
-        $(`#slot-${item.slotId}-img`).css({
-            'background-image': `url(./img/${item.img}.png)`
+    function setItemOnSlot(data) {
+        var slotClass = ""
+        var slotEmptyClass = ""
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotClass = "inv-slot"
+                slotEmptyClass = "inv-eslot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = "veh-slot"
+                slotEmptyClass = "veh-eslot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = "chest-slot"
+                slotEmptyClass = "chest-eslot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
+        $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `true`)
+        $(`#${slotPrefix}-${data.slotId}`).removeClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.slotId}`).addClass(slotClass)
+        $(`#${slotPrefix}-${data.slotId}-count`).text(data.count)
+        $(`#${slotPrefix}-${data.slotId}-img`).css({
+            'background-image': `url(./img/${data.img}.png)`
         })
 
-        $(`#slot-${item.targetSlotId}`).attr('draggable', 'true')
-        $(`#slot-${item.targetSlotId}`).removeClass('inv-eslot')
-        $(`#slot-${item.targetSlotId}`).addClass('inv-slot')
-        $(`#slot-${item.targetSlotId}-count`).text(item.targetCount)
-        $(`#slot-${item.targetSlotId}-img`).css({
-            'background-image': `url(./img/${item.targetImg}.png)`
+        $(`#${slotPrefix}-${data.targetSlotId}`).attr(`draggable`, `true`)
+        $(`#${slotPrefix}-${data.targetSlotId}`).removeClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.targetSlotId}`).addClass(slotClass)
+        $(`#${slotPrefix}-${data.targetSlotId}-count`).text(data.targetCount)
+        $(`#${slotPrefix}-${data.targetSlotId}-img`).css({
+            'background-image': `url(./img/${data.targetImg}.png)`
         })
     }
 
-    function setItemOnEmptySlot(item) {
-        $(`#slot-${item.slotId}`).attr('draggable', 'true')
-        $(`#slot-${item.slotId}`).removeClass('inv-eslot')
-        $(`#slot-${item.slotId}`).addClass('inv-slot')
-        $(`#slot-${item.slotId}-count`).text(item.count)
-        $(`#slot-${item.slotId}-img`).css({
-            'background-image': `url(./img/${item.img}.png)`
+    function setItemOnEmptySlot(data) {
+        var slotClass = ""
+        var slotEmptyClass = ""
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotClass = "inv-slot"
+                slotEmptyClass = "inv-eslot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = "veh-slot"
+                slotEmptyClass = "veh-eslot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = "chest-slot"
+                slotEmptyClass = "chest-eslot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
+        console.log("set item on empty slot: " + `#${slotPrefix}-${data.slotId}` + ", " + data.type + ", " + slotClass + ", " + slotEmptyClass)
+
+        $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `true`)
+        $(`#${slotPrefix}-${data.slotId}`).removeClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.slotId}`).addClass(slotClass)
+        $(`#${slotPrefix}-${data.slotId}-count`).text(data.count)
+        $(`#${slotPrefix}-${data.slotId}-img`).css({
+            'background-image': `url(./img/${data.img}.png)`
         })
 
-        createInventoryContextMenu(item.slotId, item.contextItems)
+        createContextMenu(data.slotId, data.contextItems, data.type)
     }
 
-    function stackItemOnSlot(item) {
-        $(`#slot-${item.slotId}`).attr('draggable', 'true')
-        $(`#slot-${item.slotId}`).removeClass('inv-eslot')
-        $(`#slot-${item.slotId}`).addClass('inv-slot')
-        $(`#slot-${item.slotId}-count`).text(item.count)
-        $(`#slot-${item.slotId}-img`).css({
-            'background-image': `url(./img/${item.img}.png)`
+    function stackItemOnSlot(data) {
+        var slotClass = ""
+        var slotEmptyClass = ""
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotClass = "inv-slot"
+                slotEmptyClass = "inv-eslot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = "veh-slot"
+                slotEmptyClass = "veh-eslot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = "chest-slot"
+                slotEmptyClass = "chest-eslot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
+        $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `true`)
+        $(`#${slotPrefix}-${data.slotId}`).removeClass(slotEmptyClass)
+        $(`#${slotPrefix}-${data.slotId}`).addClass(slotClass)
+        $(`#${slotPrefix}-${data.slotId}-count`).text(data.count)
+        $(`#${slotPrefix}-${data.slotId}-img`).css({
+            'background-image': `url(./img/${data.img}.png)`
         })
     }
 
-    avg.on('open', data => {
+    avg.on(`open`, data => {
         avg.show()
         avg.focus()
 
         $("#storage").fadeIn(200)
     })
 
-    avg.on('close', data => {
+    avg.on(`close`, data => {
         $("#storage").fadeOut(200, () => {
             avg.hide()
         })
     })
 
-    avg.on('render_inventory', json => {
-        var data = JSON.parse(json)
-
-        $("#inventory-container").fadeIn(0)
-        $("#chest-container").fadeOut(0)
-        $("#craft-container").fadeOut(0)
-        $("#inventory-weight").text(data.weight + "/" + data.maxWeight + "kg")
-
-        clearInventoryRender()
-        createInventoryItems(data.items)
-    })
-
-    avg.on('render_chest', json => {
-        var data = JSON.parse(json)
-
-        $("#inventory-container").fadeIn(0)
-        $("#chest-container").fadeIn(0)
-        $("#craft-container").fadeOut(0)
-        $("#chest-weight").text(data.weight + "/" + data.maxWeight + "kg")
-
-        clearChestRender()
-        createChestItems(data.items)
-    })
-
-    avg.on('render_craft', json => {
-        var data = JSON.parse(json)
-
-        $("#inventory-container").fadeIn(0)
-        $("#chest-container").fadeOut(0)
-        $("#craft-container").fadeIn(0)
-
-        clearCraftRender()
-        createCraftItems(data.items)
-    })
-
-    document.addEventListener('keydown', function (event) {
+    document.addEventListener(`keydown`, function (event) {
         if (event.keyCode == 27) {
             $.post("https://avg/storage/close", JSON.stringify({}))
         }
     })
 
-    // $("#inventory-searchbar-input").change(function (event) {
-    //     $.post("https://avg/storage/inv/input_count", JSON.stringify({
-    //         value: event.target.value
-    //     }))
-    // })
+    function initSlots(slotCount, type) {
+        var slotPrefix = ""
 
-    function initInventorySlots(slotCount) {
+        switch (type) {
+            case "inv":
+                slotPrefix = "inv"
+                break;
+            case "veh":
+                slotPrefix = "veh"
+                break;
+            case "chest":
+                slotPrefix = "chest"
+                break;
+        }
+
         for (var i = 0; i < slotCount; i++) {
-            $('#inv-slots').append(invEmptySlotTemplate(i))
+            $(`#${slotPrefix}-slots`).append(emptySlotTemplate(i, slotPrefix))
         }
     }
 
-    function invEmptySlotTemplate(slotId) {
-        return `<div class="inv-eslot" id="slot-${slotId}" data-slotid="${slotId}">
-                    <div class="inv-slot-center" data-slotid="${slotId}">
-                        <div id="slot-${slotId}-img" class="img" data-slotid="${slotId}" style="background-image: url('')">
+    function emptySlotTemplate(slotId, type) {
+        var slotPrefix = ""
+
+        switch (type) {
+            case "inv":
+                slotPrefix = "inv"
+                break;
+            case "veh":
+                slotPrefix = "veh"
+                break;
+            case "chest":
+                slotPrefix = "chest"
+                break;
+        }
+
+        return `<div class="${slotPrefix}-eslot" id="slot-${slotId}" data-slotid="${slotId}">
+                    <div class="${slotPrefix}-slot-center" data-slotid="${slotId}">
+                        <div id="slot-${slotId}-img" class="img" data-slotid="${slotId}" style="background-image: url()">
                         </div>
                     </div>
-                    <div class="inv-slot-bottom" data-slotid="${slotId}">
-                        <span id="slot-${slotId}-count" class="inv-slot-count" data-slotid="${slotId}"></span>
+                    <div class="${slotPrefix}-slot-bottom" data-slotid="${slotId}">
+                        <span id="slot-${slotId}-count" class="${slotPrefix}-slot-count" data-slotid="${slotId}"></span>
                     </div>
                     <div id="slot-${slotId}-context" class="context-menu" data-slotid="${slotId}" style="top: 0px; left: 0px;">
                         <ul id="slot-${slotId}-context-items" data-slotid="${slotId}">
@@ -357,55 +529,101 @@ $(() => {
                 </div>`
     }
 
-    function createInventoryContextMenu(slotId, contextItems) {
-        $(`#slot-${slotId}-context`).hide()
+    function createContextMenu(slotId, contextItems, type) {
+        var slotPrefix = ""
+        var contextPrefix = ""
+
+        switch (type) {
+            case "inv":
+                slotPrefix = "slot"
+                contextPrefix = "inv"
+                break;
+            case "veh":
+                slotPrefix = "slot-veh"
+                contextPrefix = "veh"
+                break;
+            case "chest":
+                slotPrefix = "slot-chest"
+                contextPrefix = "chest"
+                break;
+        }
+
+        $(`#${slotPrefix}-${slotId}-context`).hide()
 
         for (var i = 0; i < contextItems.length; i++) {
             var contextItem = contextItems[i]
 
-            $(`#slot-${slotId}-context-items`).append(
-                `<li class="context-item" id="slot-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
-                    <a id="slot-${slotId}-${contextItem.eventName}-context-item-a" data-slotid="${slotId}" data-eventname="${contextItem.eventName}" href="">
-                        <span id="slot-${slotId}-${contextItem.eventName}-context-item-a-span" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">${contextItem.emoji}</span>${contextItem.text}
+            $(`#${slotPrefix}-${slotId}-context-items`).append(
+                `<li class="context-item" id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
+                    <a id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a" data-slotid="${slotId}" data-eventname="${contextItem.eventName}" href="">
+                        <span id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a-span" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">${contextItem.emoji}</span>${contextItem.text}
                     </a>
                 </li>`)
 
-            console.log("try to bind event: " + `#slot-${slotId}-${contextItem.eventName}-context-item`)
+            console.log("try to bind event: " + `#${slotPrefix}-${slotId}-${contextItem.eventName}-context-item`)
         }
 
-        $(`.context-item`).unbind().on('click', (e) => {
-            $.post(`https://avg/storage/inv/context_menu`, JSON.stringify({
-                slotId: e.target.getAttribute('data-slotid'),
-                eventName: e.target.getAttribute('data-eventname')
+        $(`.context-item`).unbind().on(`click`, (e) => {
+            $.post(`https://avg/storage/${contextPrefix}/context_menu`, JSON.stringify({
+                slotId: e.target.getAttribute(`data-slotid`),
+                eventName: e.target.getAttribute(`data-eventname`)
             }))
         })
 
-        bindInventoryContextMenu(slotId)
+        bindContextMenu(slotId)
     }
 
-    function unbindInventoryContextMenu(slotId) {
-        $(`#slot-${slotId}-context-items`).empty()
+    function unbindContextMenu(slotId, type) {
+        switch (type) {
+            case "inv":
+                $(`#slot-${slotId}-context-items`).empty()
+                break;
+            case "veh":
+                $(`#slot-veh-${slotId}-context-items`).empty()
+                break;
+            case "chest":
+                $(`#slot-chest-${slotId}-context-items`).empty()
+                break;
+        }
     }
 
-    function bindInventoryContextMenu(slotId) {
-        console.log("bind inventory context menu: " + slotId + ", " + $(`#slot-${slotId}`).attr("id") + ", " + $(`#slot-${slotId}`).data("slotid"))
+    function bindContextMenu(slotId, type) {
+        // Lors d`un move, besoin de supprimer le context menu de "base" dans le ul (unbind les events du context) | ?
+        // Lors d`un move, besoin d`ajouter le context menu de "target" dans le ul (unbind les events du context) | ?
+        // Besoin de cacher l`ancien context menu et d`afficher le nouveau context | OK
 
-        // Lors d'un move, besoin de supprimer le context menu de "base" dans le ul (unbind les events du context) | ?
-        // Lors d'un move, besoin d'ajouter le context menu de "target" dans le ul (unbind les events du context) | ?
-        // Besoin de cacher l'ancien context menu et d'afficher le nouveau context | OK
+        var slotClass = ""
+        var slotPrefix = ""
 
-        $('.inv-slot').on('click', (e) => {
+        switch (type) {
+            case "inv":
+                slotClass = ".inv-slot"
+                slotPrefix = "slot"
+                break;
+            case "veh":
+                slotClass = ".veh-slot"
+                slotPrefix = "slot-veh"
+                break;
+            case "chest":
+                slotClass = ".chest-slot"
+                slotPrefix = "slot-chest"
+                break;
+        }
+
+        console.log("bind inventory context menu: " + slotId + ", " + $(`#${slotPrefix}-${slotId}`).attr("id") + ", " + $(`#${slotPrefix}-${slotId}`).data("slotid"))
+
+        $(slotClass).on(`click`, (e) => {
             e.preventDefault()
 
             var currentSlotId = e.target.getAttribute("data-slotid")
             console.log("currentSlotId: " + currentSlotId)
 
-            $('.context-menu').hide()
-            $(`#slot-${currentSlotId}-context`).show()
+            $(`.context-menu`).hide()
+            $(`#${slotPrefix}-${currentSlotId}-context`).show()
 
-            console.log("inv slot click: " + e.target.id + ", " + slotId + ", " + currentSlotId)
+            console.log("slot click: " + e.target.id + ", " + slotId + ", " + currentSlotId)
 
-            var item = document.getElementById(`slot-${currentSlotId}`)
+            var item = document.getElementById(`${slotPrefix}-${currentSlotId}`)
             var offsets = item.getBoundingClientRect();
             var top = offsets.top;
             var left = offsets.left;
@@ -414,12 +632,12 @@ $(() => {
 
             console.log("move context menu to: " + currentSlotId + ", " + top + ", " + (left + width))
 
-            $(`#slot-${currentSlotId}-context`).css("top", top + "px")
-            $(`#slot-${currentSlotId}-context`).css("left", left + width + "px")
+            $(`#${slotPrefix}-${currentSlotId}-context`).css("top", top + "px")
+            $(`#${slotPrefix}-${currentSlotId}-context`).css("left", left + width + "px")
         })
 
-        $(`#slot-${slotId}-context`).unbind().on('mouseleave', e => {
-            $(`#slot-${slotId}-context`).hide()
+        $(`#${slotPrefix}-${slotId}-context`).unbind().on(`mouseleave`, e => {
+            $(`#${slotPrefix}-${slotId}-context`).hide()
         })
     }
 })
