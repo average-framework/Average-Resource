@@ -89,13 +89,13 @@
                 <div id="inv-splitmenu" style="display: none;">
                     <div class="splitmenu-top-cnt">
                         <div style="display: flex; justify-content: center; align-items: center; margin-top: 34px;">
-                            <span class="splitmenu-title">Pomme</span>
+                            <span id="inv-splitmenu-title" class="splitmenu-title">Pomme</span>
                         </div>
 
                         <div class="splitmenu-item-cnt">
                             <div
                                 style="display: flex; justify-content: center; align-items: center; background: transparent;">
-                                <div class="img-icon" style="background-image: url(./img/consumable_apple.png);"></div>
+                                <div id="inv-splitmenu-img" class="img-icon" style="background-image: url(./img/consumable_apple.png);"></div>
                             </div>
                         </div>
 
@@ -108,15 +108,15 @@
 
                             <div style="margin-bottom: 15px;">
                                 <div style="display: flex; justify-content: center; align-items: center; margin: 0px 0 5px 0;">
-                                    <span>7/15</span>
+                                    <span id="inv-splitmenu-quantity">0</span>
                                 </div>
                                 <div style="display: flex; justify-content: center; align-items: center;">
-                                    <div class="img arrow-left">
+                                    <div id="inv-splitmenu-left-btn" class="img arrow-left">
                                     </div>
     
-                                    <input id="inv-quantity" style="width: 55%; margin: 0px 10px 0px 10px;" type="range" min="1" max="15" step="1" value="1">
+                                    <input id="inv-splitmenu-input" style="width: 55%; margin: 0px 10px 0px 10px;" type="range" min="1" max="15" step="1" value="1">
     
-                                    <div class="img arrow-right">
+                                    <div id="inv-splitmenu-right-btn" class="img arrow-right">
                                     </div>
                                 </div>
                             </div>
@@ -129,10 +129,10 @@
 
                     <div class="splitmenu-buttons-cnt">
                         <div>
-                            <div id="inv-split" class="inv-btn">
+                            <div id="inv-splitmenu-split-btn" class="inv-btn">
                                 <span>Séparer</span>
                             </div>
-                            <div id="inv-close" class="inv-btn" style="margin-top: 5px;">
+                            <div id="inv-splitmenu-close-btn" class="inv-btn" style="margin-top: 5px;">
                                 <span>Annuler</span>
                             </div>
                         </div>

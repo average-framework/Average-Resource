@@ -38,6 +38,82 @@ $(() => {
         stackItemOnSlot(data)
     })
 
+    avg.on('showInvSplitMenu', json => {
+        console.log("showInvSplitMenu: " + json)
+        var data = JSON.parse(json)
+        showInvSplitMenu(data)
+    })
+
+    avg.on('updateItemRender', json => {
+        console.log("updateItemRender: " + json)
+        var data = JSON.parse(json)
+        updateItemRender(data)
+    })
+
+    function updateItemRender(data) {
+        $(`#slot-${data.slotId}`).attr('draggable', 'true')
+        $(`#slot-${data.slotId}`).removeClass('inv-eslot')
+        $(`#slot-${data.slotId}`).addClass('inv-slot')
+        $(`#slot-${data.slotId}-count`).text(data.count)
+        $(`#slot-${data.slotId}-img`).css({
+            'background-image': `url(./img/${data.img}.png)`
+        })
+    }
+
+    var invSplitValue = 0
+
+    function showInvSplitMenu(data) {
+        invSplitValue = data.defaultValue
+
+        $('#inv-splitmenu-title').text(data.title)
+        $('#inv-splitmenu-input').prop('min', data.minValue)
+        $('#inv-splitmenu-input').prop('max', data.maxValue)
+        $('#inv-splitmenu-input').prop('value', data.defaultValue)
+        $('#inv-splitmenu-img').css({
+            'background-image': `url(./img/${data.img}.png)`
+        })
+        $('#inv-splitmenu').addClass('scale-in')
+        $('#inv-splitmenu').removeClass('scale-out')
+        $('#inv-splitmenu-quantity').text(data.defaultValue)
+        $('#inv-splitmenu').css({
+            'display': 'inline'
+        })
+
+        $('#inv-splitmenu-split-btn').unbind().on('click', (e) => {
+            console.log("split button")
+            $.post("https://avg/storage/inv/split/result", JSON.stringify({
+                slotId: data.slotId,
+                minValue: data.minValue,
+                maxValue: data.maxValue,
+                value: invSplitValue
+            }))
+            hideInvSplitMenu()
+        })
+
+        $('#inv-splitmenu-close-btn').unbind().on('click', (e) => {
+            console.log("close button")
+            $.post("https://avg/storage/inv/split/close", JSON.stringify({}))
+            hideInvSplitMenu()
+        })
+
+        $(document).on('input', '#inv-splitmenu-input', function () {
+            invSplitValue = $(this).val()
+            console.log("test value: " + invSplitValue)
+            $('#inv-splitmenu-quantity').text(invSplitValue)
+        });
+    }
+
+    function hideInvSplitMenu() {
+        $('#inv-splitmenu').removeClass('scale-in')
+        $('#inv-splitmenu').addClass('scale-out')
+
+        setTimeout(() => {
+            $('#inv-splitmenu').css({
+                'display': 'none'
+            })
+        }, 200);
+    }
+
     function unbindDragEvents(id) {
         $(`#slot-${id}`).off('dragstart')
         $(`#slot-${id}`).off('dragend')
@@ -227,7 +303,7 @@ $(() => {
             $(`#slot-${slotId}-context-items`).append(
                 `<li class="context-item" id="slot-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
                     <a id="slot-${slotId}-${contextItem.eventName}-context-item-a" data-slotid="${slotId}" data-eventname="${contextItem.eventName}" href="">
-                        <span id="slot-${slotId}-${contextItem.eventName}-context-item-a-span">${contextItem.emoji}</span>${contextItem.text}
+                        <span id="slot-${slotId}-${contextItem.eventName}-context-item-a-span" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">${contextItem.emoji}</span>${contextItem.text}
                     </a>
                 </li>`)
 
@@ -251,27 +327,51 @@ $(() => {
     function bindInventoryContextMenu(slotId) {
         console.log("bind inventory context menu: " + slotId + ", " + $(`#slot-${slotId}`).attr("id") + ", " + $(`#slot-${slotId}`).data("slotid"))
 
-        // Lors d'un move, besoin de supprimer le context menu de "base" dans le ul (unbind les events du context)
-        // Lors d'un move, besoin d'ajouter le context menu de "target" dans le ul (unbind les events du context)
+        // Lors d'un move, besoin de supprimer le context menu de "base" dans le ul (unbind les events du context) | ?
+        // Lors d'un move, besoin d'ajouter le context menu de "target" dans le ul (unbind les events du context) | ?
         // Besoin de cacher l'ancien context menu et d'afficher le nouveau context | OK
 
-        $(document).unbind().on('click', `#slot-${slotId}`, (e) => {
+        // $(document).on('click', `#slot-${slotId}`, (e) => {
+        //     e.preventDefault()
+
+        //     $('.context-menu').hide()
+        //     $(`#slot-${slotId}-context`).show()
+
+        //     var item = document.getElementById(`slot-${slotId}`)
+        //     var offsets = item.getBoundingClientRect();
+        //     var top = offsets.top;
+        //     var left = offsets.left;
+        //     var width = item.offsetWidth
+        //     var height = item.offsetHeight
+
+        //     console.log("move context menu to: " + top + ", " + (left + width))
+
+        //     $(`#slot-${slotId}-context`).css("top", top + "px")
+        //     $(`#slot-${slotId}-context`).css("left", left + width + "px")
+        // })
+
+        $('.inv-slot').on('click', (e) => {
             e.preventDefault()
 
-            $('.context-menu').hide()
-            $(`#slot-${slotId}-context`).show()
+            var currentSlotId = e.target.getAttribute("data-slotid")
+            console.log("currentSlotId: " + currentSlotId)
 
-            var item = document.getElementById(`slot-${slotId}`)
+            $('.context-menu').hide()
+            $(`#slot-${currentSlotId}-context`).show()
+
+            console.log("inv slot click: " + e.target.id + ", " + slotId + ", " + currentSlotId)
+
+            var item = document.getElementById(`slot-${currentSlotId}`)
             var offsets = item.getBoundingClientRect();
             var top = offsets.top;
             var left = offsets.left;
             var width = item.offsetWidth
             var height = item.offsetHeight
 
-            console.log("move context menu to: " + top + ", " + (left + width))
+            console.log("move context menu to: " + currentSlotId + ", " + top + ", " + (left + width))
 
-            $(`#slot-${slotId}-context`).css("top", top + "px")
-            $(`#slot-${slotId}-context`).css("left", left + width + "px")
+            $(`#slot-${currentSlotId}-context`).css("top", top + "px")
+            $(`#slot-${currentSlotId}-context`).css("left", left + width + "px")
         })
 
         $(`#slot-${slotId}-context`).unbind().on('mouseleave', e => {
