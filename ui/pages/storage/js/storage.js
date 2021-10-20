@@ -97,8 +97,37 @@ $(() => {
         })
 
         $(document).on('input', '#inv-splitmenu-input', function () {
-            invSplitValue = $(this).val()
-            console.log("test value: " + invSplitValue)
+            invSplitValue = new Number($(this).val())
+            $('#inv-splitmenu-quantity').text(invSplitValue)
+        });
+
+        $(document).on('click', '#inv-splitmenu-left-btn', function () {
+            var step = $('#inv-splitmenu-input').attr('step')
+            var min = new Number($('#inv-splitmenu-input').attr('min'))
+            var max =  new Number($('#inv-splitmenu-input').attr('max'))
+
+            invSplitValue -= new Number(step)
+
+            if(invSplitValue < min) {
+                invSplitValue = min
+            }
+
+            $('#inv-splitmenu-input').val(invSplitValue)
+            $('#inv-splitmenu-quantity').text(invSplitValue)
+        });
+
+        $(document).on('click', '#inv-splitmenu-right-btn', function () {
+            var step = $('#inv-splitmenu-input').attr('step')
+            var min = new Number($('#inv-splitmenu-input').attr('min'))
+            var max =  new Number($('#inv-splitmenu-input').attr('max'))
+
+            invSplitValue += new Number(step)
+
+            if(invSplitValue > max) {
+                invSplitValue = max
+            }
+
+            $('#inv-splitmenu-input').val(invSplitValue)
             $('#inv-splitmenu-quantity').text(invSplitValue)
         });
     }
@@ -330,25 +359,6 @@ $(() => {
         // Lors d'un move, besoin de supprimer le context menu de "base" dans le ul (unbind les events du context) | ?
         // Lors d'un move, besoin d'ajouter le context menu de "target" dans le ul (unbind les events du context) | ?
         // Besoin de cacher l'ancien context menu et d'afficher le nouveau context | OK
-
-        // $(document).on('click', `#slot-${slotId}`, (e) => {
-        //     e.preventDefault()
-
-        //     $('.context-menu').hide()
-        //     $(`#slot-${slotId}-context`).show()
-
-        //     var item = document.getElementById(`slot-${slotId}`)
-        //     var offsets = item.getBoundingClientRect();
-        //     var top = offsets.top;
-        //     var left = offsets.left;
-        //     var width = item.offsetWidth
-        //     var height = item.offsetHeight
-
-        //     console.log("move context menu to: " + top + ", " + (left + width))
-
-        //     $(`#slot-${slotId}-context`).css("top", top + "px")
-        //     $(`#slot-${slotId}-context`).css("left", left + width + "px")
-        // })
 
         $('.inv-slot').on('click', (e) => {
             e.preventDefault()
