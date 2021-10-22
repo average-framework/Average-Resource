@@ -277,10 +277,6 @@ $(() => {
                 slotClass = ".inv-slot"
                 eventType = "inv"
                 break;
-            case "veh":
-                slotClass = ".veh-slot"
-                eventType = "veh"
-                break;
             case "chest":
                 slotClass = ".chest-slot"
                 eventType = "chest"
@@ -290,14 +286,18 @@ $(() => {
         $(slotClass).off(`dragend`).on(`dragend`, (e) => {
             var elem = document.elementFromPoint(e.clientX, e.clientY)
             var slotId = e.target.getAttribute(`data-slotid`)
+            var slotSourceType = e.target.getAttribute(`data-slottype`)
             var targetSlotId = elem.getAttribute(`data-slotid`)
+
+            console.log("drop target: " + slotId + ", " + targetSlotId)
 
             // Si l`object n`est pas un slot et que l`id du slot n`est pas égale a lui même
             // alors on post le déplacement du slot au serveur
             if (slotId != undefined && targetSlotId != undefined && slotId != targetSlotId) {
                 $.post(`https://avg/storage/${eventType}/drop_slot`, JSON.stringify({
                     slotId,
-                    targetSlotId
+                    targetSlotId,
+                    slotSourceType
                 }))
             }
         })
@@ -484,9 +484,29 @@ $(() => {
         $("#storage").fadeIn(200)
     })
 
+    avg.on(`inventory_open`, data => {
+        $("#inventory-container").fadeIn(200)
+    })
+
+    avg.on(`chest_open`, data => {
+        $("#chest-container").fadeIn(200)
+    })
+
     avg.on(`close`, data => {
         $("#storage").fadeOut(200, () => {
             avg.hide()
+        })
+    })
+
+    avg.on(`inventory_close`, data => {
+        $("#inventory-container").fadeOut(200, () => {
+            $("#inventory-container").hide()
+        })
+    })
+
+    avg.on(`chest_close`, data => {
+        $("#chest-container").fadeOut(200, () => {
+            $("#chest-container").hide()
         })
     })
 
@@ -531,16 +551,16 @@ $(() => {
                 break;
         }
 
-        return `<div class="${slotPrefix}-eslot" id="slot-${slotId}" data-slotid="${slotId}">
-                    <div class="${slotPrefix}-slot-center" data-slotid="${slotId}">
-                        <div id="slot-${slotId}-img" class="img" data-slotid="${slotId}" style="background-image: url()">
+        return `<div class="${slotPrefix}-eslot" id="slot-${slotId}" data-slotid="${slotId}" data-slottype="${type}">
+                    <div class="${slotPrefix}-slot-center" data-slotid="${slotId}" data-slottype="${type}">
+                        <div id="slot-${slotId}-img" class="img" data-slotid="${slotId}" data-slottype="${type}" style="background-image: url()">
                         </div>
                     </div>
-                    <div class="${slotPrefix}-slot-bottom" data-slotid="${slotId}">
-                        <span id="slot-${slotId}-count" class="${slotPrefix}-slot-count" data-slotid="${slotId}"></span>
+                    <div class="${slotPrefix}-slot-bottom" data-slotid="${slotId}" data-slottype="${type}">
+                        <span id="slot-${slotId}-count" class="${slotPrefix}-slot-count" data-slotid="${slotId}" data-slottype="${type}"></span>
                     </div>
-                    <div id="slot-${slotId}-context" class="context-menu" data-slotid="${slotId}" style="top: 0px; left: 0px;">
-                        <ul id="slot-${slotId}-context-items" data-slotid="${slotId}">
+                    <div id="slot-${slotId}-context" class="context-menu" data-slotid="${slotId}" data-slottype="${type}"style="top: 0px; left: 0px;">
+                        <ul id="slot-${slotId}-context-items" data-slotid="${slotId}" data-slottype="${type}">
 
                         </ul>
                     </div>
@@ -647,12 +667,12 @@ $(() => {
         $(slotClass).off(`mouseenter`).on(`mouseenter`, e => {
             $.post(`https://avg/storage/${type}/item_info`, JSON.stringify({
                 slotId: e.target.getAttribute(`data-slotid`)
-            }), function(json) {
+            }), function (json) {
                 var data = JSON.parse(json)
                 $(`#${type}-info-title`).text(data[0].title)
                 $(`#${type}-info-desc`).text(data[0].description)
                 $(`#${type}-item-weight`).text(data[0].weight)
-                $(`#${type}-sellable`).text(data[0].isSellable)
+                $(`#${type}-item-sellable`).text(data[0].isSellable)
             })
         })
 
