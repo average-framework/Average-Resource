@@ -651,6 +651,8 @@ $(() => {
                 var data = JSON.parse(json)
                 $(`#${type}-info-title`).text(data[0].title)
                 $(`#${type}-info-desc`).text(data[0].description)
+                $(`#${type}-item-weight`).text(data[0].weight)
+                $(`#${type}-sellable`).text(data[0].isSellable)
             })
         })
 
