@@ -1,18 +1,14 @@
 $(() => {
-    console.log("create slots")
-
     $(`#inv-close`).click(() => {
         $.post("https://avg/storage/close", JSON.stringify({}))
     })
 
     avg.on(`init`, json => {
-        console.log("init: " + json)
         var data = JSON.parse(json)
         initSlots(data.slotCount, data.type)
     })
 
     avg.on(`setItemOnEmptySlot`, json => {
-        console.log("setItemOnEmptySlot: " + json)
         var data = JSON.parse(json)
         setItemOnEmptySlot(data)
 
@@ -21,40 +17,75 @@ $(() => {
     })
 
     avg.on(`setItemOnSlot`, json => {
-        console.log("setItemOnSlot: " + json)
         var data = JSON.parse(json)
         setItemOnSlot(data)
     })
 
     avg.on(`moveItemOnEmptySlot`, json => {
-        console.log("moveItemOnEmptySlot: " + json)
         var data = JSON.parse(json)
         moveItemOnEmptySlot(data)
     })
 
     avg.on(`stackItemOnSlot`, json => {
-        console.log("stackItemOnSlot: " + json)
         var data = JSON.parse(json)
         stackItemOnSlot(data)
     })
 
     avg.on(`showInvSplitMenu`, json => {
-        console.log("showInvSplitMenu: " + json)
         var data = JSON.parse(json)
         showInvSplitMenu(data)
     })
 
     avg.on(`updateSlotRender`, json => {
-        console.log("updateSlotRender: " + json)
         var data = JSON.parse(json)
         updateSlotRender(data)
     })
 
     avg.on(`removeItemOnSlot`, json => {
-        console.log("removeItemOnSlot: " + json)
         var data = JSON.parse(json)
         removeItemOnSlot(data)
     })
+
+    avg.on(`setWeight`, json => {
+        var data = JSON.parse(json)
+        setWeight(data)
+    })
+
+    avg.on(`setTemperature`, json => {
+        var data = JSON.parse(json)
+        setTemperature(data)
+    })
+
+    avg.on(`setTime`, json => {
+        var data = JSON.parse(json)
+        setTime(data)
+    })
+
+    function setTime(data) {
+        $(`#inv-time`).text(`${data.time}`)
+    }
+
+    function setTemperature(data) {
+        $(`#inv-temperature`).text(`${data.temperature}`)
+    }
+
+    function setWeight(data) {
+        var slotPrefix = ""
+
+        switch (data.type) {
+            case "inv":
+                slotPrefix = "inv"
+                break;
+            case "veh":
+                slotPrefix = "veh"
+                break;
+            case "chest":
+                slotPrefix = "chest"
+                break;
+        }
+
+        $(`#${slotPrefix}-weight`).text(`${data.weight}/${data.maxWeight}`)
+    }
 
     function removeItemOnSlot(data) {
         var slotClass = ""
@@ -160,8 +191,7 @@ $(() => {
             'display': `inline`
         })
 
-        $(`#${slotPrefix}-splitmenu-split-btn`).unbind().on(`click`, (e) => {
-            console.log("split button")
+        $(`#${slotPrefix}-splitmenu-split-btn`).off(`click`).on(`click`, (e) => {
             $.post(`https://avg/storage/${slotPrefix}/split/result`, JSON.stringify({
                 slotId: data.slotId,
                 minValue: data.minValue,
@@ -171,8 +201,7 @@ $(() => {
             hideSplitMenu(slotPrefix)
         })
 
-        $(`#${slotPrefix}-splitmenu-close-btn`).unbind().on(`click`, (e) => {
-            console.log("close button")
+        $(`#${slotPrefix}-splitmenu-close-btn`).off(`click`).on(`click`, (e) => {
             $.post(`https://avg/storage/${slotPrefix}/split/close`, JSON.stringify({}))
             hideSplitMenu(slotPrefix)
         })
@@ -258,11 +287,7 @@ $(() => {
                 break;
         }
 
-        $(slotClass).unbind().on(`dragstart`, (e) => {
-            console.log(`dragstart: ` + e.target.getAttribute(`data-slotid`))
-        })
-
-        $(slotClass).unbind().on(`dragend`, (e) => {
+        $(slotClass).off(`dragend`).on(`dragend`, (e) => {
             var elem = document.elementFromPoint(e.clientX, e.clientY)
             var slotId = e.target.getAttribute(`data-slotid`)
             var targetSlotId = elem.getAttribute(`data-slotid`)
@@ -314,11 +339,6 @@ $(() => {
                 slotPrefix = "slot-chest"
                 break;
         }
-
-        // Base need to clear
-        console.log("base: " + data.slotId + ", target: " + data.targetSlotId)
-
-        // $(`#slot-${data.slotId}`).off(`click`)
 
         // Need to unbind event to base item
         unbindDragEvents(data.slotId, data.type)
@@ -413,8 +433,6 @@ $(() => {
                 slotPrefix = "slot-chest"
                 break;
         }
-
-        console.log("set item on empty slot: " + `#${slotPrefix}-${data.slotId}` + ", " + data.type + ", " + slotClass + ", " + slotEmptyClass)
 
         $(`#${slotPrefix}-${data.slotId}`).attr(`draggable`, `true`)
         $(`#${slotPrefix}-${data.slotId}`).removeClass(slotEmptyClass)
@@ -559,11 +577,9 @@ $(() => {
                         <span id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a-span" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">${contextItem.emoji}</span>${contextItem.text}
                     </a>
                 </li>`)
-
-            console.log("try to bind event: " + `#${slotPrefix}-${slotId}-${contextItem.eventName}-context-item`)
         }
 
-        $(`.context-item`).unbind().on(`click`, (e) => {
+        $(`.context-item`).off(`click`).on(`click`, (e) => {
             $.post(`https://avg/storage/${contextPrefix}/context_menu`, JSON.stringify({
                 slotId: e.target.getAttribute(`data-slotid`),
                 eventName: e.target.getAttribute(`data-eventname`)
@@ -610,18 +626,12 @@ $(() => {
                 break;
         }
 
-        console.log("bind inventory context menu: " + slotId + ", " + $(`#${slotPrefix}-${slotId}`).attr("id") + ", " + $(`#${slotPrefix}-${slotId}`).data("slotid"))
-
         $(slotClass).on(`click`, (e) => {
             e.preventDefault()
 
             var currentSlotId = e.target.getAttribute("data-slotid")
-            console.log("currentSlotId: " + currentSlotId)
-
             $(`.context-menu`).hide()
             $(`#${slotPrefix}-${currentSlotId}-context`).show()
-
-            console.log("slot click: " + e.target.id + ", " + slotId + ", " + currentSlotId)
 
             var item = document.getElementById(`${slotPrefix}-${currentSlotId}`)
             var offsets = item.getBoundingClientRect();
@@ -630,13 +640,21 @@ $(() => {
             var width = item.offsetWidth
             var height = item.offsetHeight
 
-            console.log("move context menu to: " + currentSlotId + ", " + top + ", " + (left + width))
-
             $(`#${slotPrefix}-${currentSlotId}-context`).css("top", top + "px")
             $(`#${slotPrefix}-${currentSlotId}-context`).css("left", left + width + "px")
         })
 
-        $(`#${slotPrefix}-${slotId}-context`).unbind().on(`mouseleave`, e => {
+        $(slotClass).off(`mouseenter`).on(`mouseenter`, e => {
+            $.post(`https://avg/storage/${type}/item_info`, JSON.stringify({
+                slotId: e.target.getAttribute(`data-slotid`)
+            }), function(json) {
+                var data = JSON.parse(json)
+                $(`#${type}-info-title`).text(data[0].title)
+                $(`#${type}-info-desc`).text(data[0].description)
+            })
+        })
+
+        $(`#${slotPrefix}-${slotId}-context`).off(`mouseleave`).on(`mouseleave`, e => {
             $(`#${slotPrefix}-${slotId}-context`).hide()
         })
     }

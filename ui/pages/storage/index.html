@@ -15,23 +15,22 @@
             <div id="inventory-container" class="inv-bg">
                 <div class="inv-ctn-center">
                     <div class="inv-top-ctn">
-                        <div class="inv-btn-ico" style="display: flex; justify-content: center; align-items: center;">
-                            <div class="inv-ico satchel-img"></div>
-                        </div>
-
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <div class="inv-ico hot-img" style="margin-left: -16px;"></div>
-                            <span id="inv-weight" style="margin-left: -8px;">16°C</span>
-                        </div>
+                        <span style="margin-left: 4px; opacity: 1;">Sacoche</span>
 
                         <div style="display: flex; justify-content: center; align-items: center;">
                             <div class="inv-ico weight-img"></div>
-                            <span id="inv-weight">25.00/50.00</span>
+                            <span id="inv-weight">14.00/30.00</span>
                         </div>
 
                         <div style="display: flex; justify-content: center; align-items: center;">
-                            <div class="inv-ico money-img"></div>
-                            <span id="inv-money">14550.45</span>
+                            <div id="inv-temperature-img" class="inv-ico hot-img" style="margin-left: -10px;"></div>
+                            <span id="inv-time" style="margin-left: -8px;">10h00</span>
+                            <span id="inv-time" style="margin-left: 8px;">/</span>
+                            <span id="inv-temperature" style="margin-left: 8px;">20°C</span>
+                        </div>
+
+                        <div class="inv-btn-ico" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="inv-ico satchel-img"></div>
                         </div>
 
                         <div class="inv-btn-ico" style="display: flex; justify-content: center; align-items: center;">
@@ -69,8 +68,8 @@
                     <div class="inv-divider" style="margin-top: 10px;"></div>
 
                     <div style="height: 230px; margin-top: 10px; overflow: hidden; overflow-y: auto;">
-                        <span class="inv-desc-title">Carabine lancaster</span>
-                        <p class="inv-desc-description">Appuyer sur la touche <span class="key">E</span> pour recharger
+                        <span id="inv-info-title" class="inv-desc-title">Carabine lancaster</span>
+                        <p id="inv-info-desc" class="inv-desc-description">Appuyer sur la touche <span class="key">E</span> pour recharger
                         </p>
                     </div>
 
@@ -79,10 +78,6 @@
                     <div id="inv-close" class="inv-btn" style="margin-top: 10px;">
                         <span>Fermer</span>
                     </div>
-
-                    <!-- <div class="searchbar-container">
-                        <input id="inventory-searchbar-input" class="searchbar-input" type="text" value="1" />
-                    </div> -->
                 </div>
 
                 <!-- Split Menu -->
