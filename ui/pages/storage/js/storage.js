@@ -1,4 +1,6 @@
 $(() => {
+    var invSplitValue = 0
+
     $(`#inv-close`).click(() => {
         $.post("https://avg/storage/close", JSON.stringify({}))
     })
@@ -98,11 +100,6 @@ $(() => {
                 slotEmptyClass = "inv-eslot"
                 slotPrefix = "slot"
                 break;
-            case "veh":
-                slotClass = "veh-slot"
-                slotEmptyClass = "veh-eslot"
-                slotPrefix = "slot-veh"
-                break;
             case "chest":
                 slotClass = "chest-slot"
                 slotEmptyClass = "chest-eslot"
@@ -137,11 +134,6 @@ $(() => {
                 slotEmptyClass = "inv-eslot"
                 slotPrefix = "slot"
                 break;
-            case "veh":
-                slotClass = "veh-slot"
-                slotEmptyClass = "veh-eslot"
-                slotPrefix = "slot-veh"
-                break;
             case "chest":
                 slotClass = "chest-slot"
                 slotEmptyClass = "chest-eslot"
@@ -158,17 +150,12 @@ $(() => {
         })
     }
 
-    var invSplitValue = 0
-
     function showInvSplitMenu(data) {
         var slotPrefix = ""
 
         switch (data.type) {
             case "inv":
                 slotPrefix = "inv"
-                break;
-            case "veh":
-                slotPrefix = "veh"
                 break;
             case "chest":
                 slotPrefix = "chest"
@@ -192,17 +179,18 @@ $(() => {
         })
 
         $(`#${slotPrefix}-splitmenu-split-btn`).off(`click`).on(`click`, (e) => {
-            $.post(`https://avg/storage/${slotPrefix}/split/result`, JSON.stringify({
+            $.post(`https://avg/storage/split/result`, JSON.stringify({
                 slotId: data.slotId,
                 minValue: data.minValue,
                 maxValue: data.maxValue,
-                value: invSplitValue
+                value: invSplitValue,
+                slotType: slotPrefix
             }))
             hideSplitMenu(slotPrefix)
         })
 
         $(`#${slotPrefix}-splitmenu-close-btn`).off(`click`).on(`click`, (e) => {
-            $.post(`https://avg/storage/${slotPrefix}/split/close`, JSON.stringify({}))
+            $.post(`https://avg/storage/${data.type}/split/close`, JSON.stringify({}))
             hideSplitMenu(slotPrefix)
         })
 
@@ -257,10 +245,6 @@ $(() => {
                 $(`#slot-${slotId}`).off(`dragstart`)
                 $(`#slot-${slotId}`).off(`dragend`)
                 break;
-            case "veh":
-                $(`#slot-veh-${slotId}`).off(`dragstart`)
-                $(`#slot-veh-${slotId}`).off(`dragend`)
-                break;
             case "chest":
                 $(`#slot-chest-${slotId}`).off(`dragstart`)
                 $(`#slot-chest-${slotId}`).off(`dragend`)
@@ -288,16 +272,18 @@ $(() => {
             var slotId = e.target.getAttribute(`data-slotid`)
             var slotSourceType = e.target.getAttribute(`data-slottype`)
             var targetSlotId = elem.getAttribute(`data-slotid`)
+            var slotTargetType = elem.getAttribute(`data-slottype`)
 
-            console.log("drop target: " + slotId + ", " + targetSlotId)
+            console.log("drop target: " + slotId + ", " + slotSourceType + ", " + targetSlotId + ", " + slotTargetType)
 
             // Si l`object n`est pas un slot et que l`id du slot n`est pas égale a lui même
             // alors on post le déplacement du slot au serveur
             if (slotId != undefined && targetSlotId != undefined && slotId != targetSlotId) {
-                $.post(`https://avg/storage/${eventType}/drop_slot`, JSON.stringify({
+                $.post(`https://avg/storage/drop_slot`, JSON.stringify({
                     slotId,
                     targetSlotId,
-                    slotSourceType
+                    slotSourceType,
+                    slotTargetType
                 }))
             }
         })
@@ -307,9 +293,6 @@ $(() => {
         switch (type) {
             case "inv":
                 $(`.inv-eslot`).off(`click`)
-                break;
-            case "veh":
-                $(`.veh-eslot`).off(`click`)
                 break;
             case "chest":
                 $(`.chest-eslot`).off(`click`)
@@ -327,11 +310,6 @@ $(() => {
                 slotClass = "inv-slot"
                 slotEmptyClass = "inv-eslot"
                 slotPrefix = "slot"
-                break;
-            case "veh":
-                slotClass = "veh-slot"
-                slotEmptyClass = "veh-eslot"
-                slotPrefix = "slot-veh"
                 break;
             case "chest":
                 slotClass = "chest-slot"
@@ -382,11 +360,6 @@ $(() => {
                 slotEmptyClass = "inv-eslot"
                 slotPrefix = "slot"
                 break;
-            case "veh":
-                slotClass = "veh-slot"
-                slotEmptyClass = "veh-eslot"
-                slotPrefix = "slot-veh"
-                break;
             case "chest":
                 slotClass = "chest-slot"
                 slotEmptyClass = "chest-eslot"
@@ -422,11 +395,6 @@ $(() => {
                 slotEmptyClass = "inv-eslot"
                 slotPrefix = "slot"
                 break;
-            case "veh":
-                slotClass = "veh-slot"
-                slotEmptyClass = "veh-eslot"
-                slotPrefix = "slot-veh"
-                break;
             case "chest":
                 slotClass = "chest-slot"
                 slotEmptyClass = "chest-eslot"
@@ -455,11 +423,6 @@ $(() => {
                 slotClass = "inv-slot"
                 slotEmptyClass = "inv-eslot"
                 slotPrefix = "slot"
-                break;
-            case "veh":
-                slotClass = "veh-slot"
-                slotEmptyClass = "veh-eslot"
-                slotPrefix = "slot-veh"
                 break;
             case "chest":
                 slotClass = "chest-slot"
@@ -523,9 +486,6 @@ $(() => {
             case "inv":
                 slotPrefix = "inv"
                 break;
-            case "veh":
-                slotPrefix = "veh"
-                break;
             case "chest":
                 slotPrefix = "chest"
                 break;
@@ -537,30 +497,30 @@ $(() => {
     }
 
     function emptySlotTemplate(slotId, type) {
+        var slotClass = ""
         var slotPrefix = ""
 
         switch (type) {
             case "inv":
-                slotPrefix = "inv"
-                break;
-            case "veh":
-                slotPrefix = "veh"
+                slotClass = "inv"
+                slotPrefix = "slot"
                 break;
             case "chest":
-                slotPrefix = "chest"
+                slotClass = "chest"
+                slotPrefix = "slot-chest"
                 break;
         }
 
-        return `<div class="${slotPrefix}-eslot" id="slot-${slotId}" data-slotid="${slotId}" data-slottype="${type}">
-                    <div class="${slotPrefix}-slot-center" data-slotid="${slotId}" data-slottype="${type}">
-                        <div id="slot-${slotId}-img" class="img" data-slotid="${slotId}" data-slottype="${type}" style="background-image: url()">
+        return `<div class="${slotClass}-eslot" id="${slotPrefix}-${slotId}" data-slotid="${slotId}" data-slottype="${type}">
+                    <div class="${slotClass}-slot-center" data-slotid="${slotId}" data-slottype="${type}">
+                        <div id="${slotPrefix}-${slotId}-img" class="img" data-slotid="${slotId}" data-slottype="${type}" style="background-image: url()">
                         </div>
                     </div>
-                    <div class="${slotPrefix}-slot-bottom" data-slotid="${slotId}" data-slottype="${type}">
-                        <span id="slot-${slotId}-count" class="${slotPrefix}-slot-count" data-slotid="${slotId}" data-slottype="${type}"></span>
+                    <div class="${slotClass}-slot-bottom" data-slotid="${slotId}" data-slottype="${type}">
+                        <span id="${slotPrefix}-${slotId}-count" class="${slotClass}-slot-count" data-slotid="${slotId}" data-slottype="${type}"></span>
                     </div>
-                    <div id="slot-${slotId}-context" class="context-menu" data-slotid="${slotId}" data-slottype="${type}"style="top: 0px; left: 0px;">
-                        <ul id="slot-${slotId}-context-items" data-slotid="${slotId}" data-slottype="${type}">
+                    <div id="${slotPrefix}-${slotId}-context" class="context-menu" data-slotid="${slotId}" data-slottype="${type}"style="top: 0px; left: 0px;">
+                        <ul id="${slotPrefix}-${slotId}-context-items" data-slotid="${slotId}" data-slottype="${type}">
 
                         </ul>
                     </div>
@@ -576,10 +536,6 @@ $(() => {
                 slotPrefix = "slot"
                 contextPrefix = "inv"
                 break;
-            case "veh":
-                slotPrefix = "slot-veh"
-                contextPrefix = "veh"
-                break;
             case "chest":
                 slotPrefix = "slot-chest"
                 contextPrefix = "chest"
@@ -592,17 +548,18 @@ $(() => {
             var contextItem = contextItems[i]
 
             $(`#${slotPrefix}-${slotId}-context-items`).append(
-                `<li class="context-item" id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">
-                    <a id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a" data-slotid="${slotId}" data-eventname="${contextItem.eventName}" href="">
-                        <span id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a-span" data-slotid="${slotId}" data-eventname="${contextItem.eventName}">${contextItem.emoji}</span>${contextItem.text}
+                `<li class="context-item" id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item" data-slotid="${slotId}" data-slottype="${type}" data-eventname="${contextItem.eventName}">
+                    <a id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a" data-slotid="${slotId}" data-slottype="${type}" data-eventname="${contextItem.eventName}" href="">
+                        <span id="${slotPrefix}-${slotId}-${contextItem.eventName}-context-item-a-span" data-slotid="${slotId}" data-slottype="${type}" data-eventname="${contextItem.eventName}">${contextItem.emoji}</span>${contextItem.text}
                     </a>
                 </li>`)
         }
 
         $(`.context-item`).off(`click`).on(`click`, (e) => {
-            $.post(`https://avg/storage/${contextPrefix}/context_menu`, JSON.stringify({
+            $.post(`https://avg/storage/context_menu`, JSON.stringify({
                 slotId: e.target.getAttribute(`data-slotid`),
-                eventName: e.target.getAttribute(`data-eventname`)
+                eventName: e.target.getAttribute(`data-eventname`),
+                slotSourceType: e.target.getAttribute(`data-slottype`)
             }))
         })
 
@@ -613,9 +570,6 @@ $(() => {
         switch (type) {
             case "inv":
                 $(`#slot-${slotId}-context-items`).empty()
-                break;
-            case "veh":
-                $(`#slot-veh-${slotId}-context-items`).empty()
                 break;
             case "chest":
                 $(`#slot-chest-${slotId}-context-items`).empty()
@@ -635,10 +589,6 @@ $(() => {
             case "inv":
                 slotClass = ".inv-slot"
                 slotPrefix = "slot"
-                break;
-            case "veh":
-                slotClass = ".veh-slot"
-                slotPrefix = "slot-veh"
                 break;
             case "chest":
                 slotClass = ".chest-slot"
@@ -664,15 +614,15 @@ $(() => {
             $(`#${slotPrefix}-${currentSlotId}-context`).css("left", left + width + "px")
         })
 
-        $(slotClass).off(`mouseenter`).on(`mouseenter`, e => {
-            $.post(`https://avg/storage/${type}/item_info`, JSON.stringify({
+        $(".inv-slot").off(`mouseenter`).on(`mouseenter`, e => {
+            $.post(`https://avg/storage/item_info`, JSON.stringify({
                 slotId: e.target.getAttribute(`data-slotid`)
             }), function (json) {
                 var data = JSON.parse(json)
-                $(`#${type}-info-title`).text(data[0].title)
-                $(`#${type}-info-desc`).text(data[0].description)
-                $(`#${type}-item-weight`).text(data[0].weight)
-                $(`#${type}-item-sellable`).text(data[0].isSellable)
+                $(`#inv-info-title`).text(data[0].title)
+                $(`#inv-info-desc`).text(data[0].description)
+                $(`#inv-item-weight`).text(data[0].weight)
+                $(`#inv-item-sellable`).text(data[0].isSellable)
             })
         })
 
