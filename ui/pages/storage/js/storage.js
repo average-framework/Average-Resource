@@ -78,9 +78,6 @@ $(() => {
             case "inv":
                 slotPrefix = "inv"
                 break;
-            case "veh":
-                slotPrefix = "veh"
-                break;
             case "chest":
                 slotPrefix = "chest"
                 break;
@@ -278,7 +275,7 @@ $(() => {
 
             // Si l`object n`est pas un slot et que l`id du slot n`est pas égale a lui même
             // alors on post le déplacement du slot au serveur
-            if (slotId != undefined && targetSlotId != undefined && slotId != targetSlotId) {
+            if (slotId != undefined && targetSlotId != undefined/* && slotId != targetSlotId*/) {
                 $.post(`https://avg/storage/drop_slot`, JSON.stringify({
                     slotId,
                     targetSlotId,
