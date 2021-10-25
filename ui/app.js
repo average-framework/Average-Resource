@@ -94,6 +94,7 @@ window.addEventListener('message', e => {
     const frameName = data.frame || null;
 
     if (event == 'ui:load_frame') {
+        console.log("try to load ui frame: " + frameName + ", " + data.zIndex)
         load(frameName, './pages/' + frameName + '/index.html', data.zIndex);
         return;
     }
@@ -102,7 +103,7 @@ window.addEventListener('message', e => {
         var f = frames.find(x => x.id == "frame-" + frameName)
         if (f == undefined || f == null) return;
         var frame = document.getElementById(f.id)
-        frame.contentWindow.avg.emit(data.requestType, data.message);
+        frame.contentWindow.avg.emit(data.requestType, typeof data.message === "object" ? JSON.stringify(data.message) : data.message);
         return;
     }
 
