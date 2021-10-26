@@ -14,20 +14,24 @@ body {
 }
 
 h1 {
-    color: white;
+    color: rgb(225, 225, 225);
     font-size: 30px;
 }
 
-h2, h3 {
+h2,
+h3 {
     color: rgb(150, 150, 150);
     font-size: 18px;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0px 15px 0px 15px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: crock;
     font-weight: 400;
     text-align: center;
@@ -38,7 +42,9 @@ h3 {
     margin-left: 4px;
 }
 
-.separator-down, .separator-up, .separator-arrow {
+.separator-down,
+.separator-up,
+.separator-arrow {
     opacity: 0.5;
 }
 
@@ -88,7 +94,8 @@ h3 {
     background-image: url('../../src/img/itemtype_cash.png');
 }
 
-.arrow-left, .arrow-right {
+.arrow-left,
+.arrow-right {
     width: 18px;
     height: 18px;
 }
@@ -160,7 +167,12 @@ h3 {
     padding-top: 5px;
 }
 
-.btn, .store-btn, .select-btn {
+.btn,
+.store-btn,
+.select-btn,
+.textbox-btn,
+.vector2-btn,
+.vector3-btn {
     width: 100%;
     height: 48px;
     background-image: url('../../src/img/selection_box_bg_1d.png');
@@ -176,10 +188,58 @@ h3 {
     filter: invert(0);
 }
 
+.btn:hover,
+.store-btn:hover,
+.select-btn:hover,
+.textbox-btn:hover,
+.vector2-btn:hover,
+.vector3-btn:hover {
+    .btn-text {
+        color: rgb(255, 255, 255);
+    }
+
+    .store-btn-text {
+        color: rgb(255, 255, 255);
+    }
+
+    .crafting-highlight {
+        opacity: 1;
+    }
+}
+
 .btn:hover {
     .crafting-highlight {
         opacity: 1;
     }
+}
+
+.btn-text {
+    white-space: nowrap;
+}
+
+.textbox-btn {
+    justify-content: space-between;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    font-family: hapnadb;
+    border-radius: 3px;
+    background: rgb(25, 25, 25);
+    color: rgb(225, 225, 225);
+    text-align: center;
+    outline: none;
+    margin-right: 15px;
+}
+
+input[type=text]::selection {
+    background: rgba(206, 202, 202, 0.15);
+}
+
+input[type=text]::placeholder {
+    color: rgb(100, 100, 100);
 }
 
 .select-btn {
@@ -203,10 +263,6 @@ h3 {
             filter: invert(0.1);
         }
     }
-
-    // .btn-text {
-    //     color: rgb(255, 255, 255);
-    // }
 }
 
 .store-btn {
@@ -250,20 +306,6 @@ h3 {
     transition: 0.1s all ease-in-out;
 }
 
-.btn:hover, .store-btn:hover, .select-btn:hover {
-    .btn-text {
-        color: rgb(255, 255, 255);
-    }
-
-    .store-btn-text {
-        color: rgb(255, 255, 255);
-    }
-
-    .crafting-highlight {
-        opacity: 1;
-    }
-}
-
 .menu-btn {
     width: 100%;
     height: 55px;
@@ -276,7 +318,7 @@ h3 {
     justify-content: center;
     align-items: center;
     transition: 0.1s all ease-in-out;
-    color: white;
+    color: rgb(225, 225, 225);
     font-family: crock;
     font-size: 20px;
     font-weight: 400;
@@ -323,31 +365,11 @@ h3 {
 }
 
 .banner-title {
-    color: white;
+    color: rgb(225, 225, 225);
     font-family: crock;
     font-weight: 400;
     font-size: 26px;
     text-align: center;
-}
-
-input[type=text] {
-    width: 100%;
-    height: 30px;
-    font-size: 14px;
-    font-family: crock;
-    border-radius: 3px;
-    background: rgba(10, 10, 10, 0.85);
-    color: rgb(225, 225, 225);
-    text-align: center;
-    outline: none;
-}
-
-input[type=text]::selection {
-    background: rgba(206, 202, 202, 0.15);
-}
-
-input[type=text]::placeholder {
-    color: rgb(100, 100, 100);
 }
 
 .btn-menu-img {
