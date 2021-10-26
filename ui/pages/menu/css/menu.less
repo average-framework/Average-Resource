@@ -42,13 +42,23 @@ h3 {
     margin-left: 4px;
 }
 
+.separator-cnt {
+    width: 100%;
+    height: 24px;
+    display: flex;
+}
+
 .separator-down,
 .separator-up,
-.separator-arrow {
+.separator-arrow,
+.separator-arrow-up,
+.separator-divider-up,
+.separator-divider-down {
     opacity: 0.5;
 }
 
-.separator-arrow {
+.separator-arrow,
+.separator-arrow-up {
     width: 24px;
     height: 24px;
     background-image: url('../../src/img/scroller_arrow_bottom.png');
@@ -57,7 +67,12 @@ h3 {
     background-position-y: center;
 }
 
-.separator-down {
+.separator-arrow-up {
+    background-image: url('../../src/img/scroller_arrow_top.png');
+}
+
+.separator-down,
+.separator-up {
     width: 100%;
     height: 24px;
     background-image: url('../../src/img/scroller_line_down.png');
@@ -68,13 +83,21 @@ h3 {
 }
 
 .separator-up {
+    background-image: url('../../src/img/scroller_line_up.png');
+}
+
+.separator-divider-down {
+    width: 100%;
+    height: 24px;
+    background-image: url('../../src/img/scroller_line_down.png');
+    background-size: 100% 24px;
+}
+
+.separator-divider-up {
     width: 100%;
     height: 24px;
     background-image: url('../../src/img/scroller_line_up.png');
-    background-size: 24px 24px;
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: repeat-x;
+    background-size: 100% 24px;
 }
 
 .ico {
@@ -98,6 +121,7 @@ h3 {
 .arrow-right {
     width: 18px;
     height: 18px;
+    filter: invert(0.5);
 }
 
 .arrow-left {
@@ -130,11 +154,13 @@ h3 {
 
     ::-webkit-scrollbar-thumb {
         border-radius: 5px;
-        background: rgba(86, 18, 18, 0.75);
+        // background: rgba(86, 18, 18, 0.75);
+        background: rgba(255, 255, 255, 0.25);
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: rgba(86, 18, 18, 1);
+        // background: rgba(86, 18, 18, 1);
+        background: rgba(255, 255, 255, 0.4);
     }
 }
 
@@ -172,7 +198,10 @@ h3 {
 .select-btn,
 .textbox-btn,
 .vector2-btn,
-.vector3-btn {
+.vector3-btn,
+.redirect-btn,
+.checkbox-btn,
+.slider-btn {
     width: 100%;
     height: 48px;
     background-image: url('../../src/img/selection_box_bg_1d.png');
@@ -193,7 +222,10 @@ h3 {
 .select-btn:hover,
 .textbox-btn:hover,
 .vector2-btn:hover,
-.vector3-btn:hover {
+.vector3-btn:hover,
+.redirect-btn:hover,
+.checkbox-btn:hover,
+.slider-btn:hover {
     .btn-text {
         color: rgb(255, 255, 255);
     }
@@ -217,8 +249,214 @@ h3 {
     white-space: nowrap;
 }
 
+.checkbox-btn {
+    justify-content: space-between;
+
+    .checkbox-cnt {
+        cursor: pointer;
+        display: block;
+
+        input {
+            // position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 22px;
+            width: 22px;
+        }
+
+        .checkmark {
+            position: absolute;
+            // top: 0;
+            // left: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 3px;
+            background: rgb(25, 25, 25);
+            -webkit-appearance: none;
+            pointer-events: none;
+        }
+
+        // .checkmark:hover {
+        //     background: rgb(10, 10, 10)
+        // }
+
+        .checkmark:checked {
+            background-image: url('../img/checked.png');
+            background-size: 18px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+
+    .checkbox-cnt:hover input~.checkmark {
+        content: "";
+        background-color: rgb(10, 10, 10)
+    }
+
+    .checkbox-cnt input:checked~.checkmark {
+        background-image: url('../../src/img/tick.png');
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 80% 80%;
+        background-repeat: no-repeat;
+    }
+
+    .checkbox-cnt input:checked~.checkmark:after {
+        display: block;
+    }
+}
+
+.slider-btn {
+    justify-content: space-between;
+
+    .slider-cnt {
+        width: 100%;
+        margin-right: 15px;
+    }
+}
+
+.redirect-btn {
+    justify-content: space-between;
+}
+
+.redirect-btn:hover {
+    .ico {
+        filter: invert(0.1);
+    }
+}
+
 .textbox-btn {
     justify-content: space-between;
+}
+
+.horse-store-info {
+    width: 100%;
+    display: grid;
+    gap: 5px;
+}
+
+.stats-cnt {
+    width: 100%;
+    height: 28px;
+    background: transparent;
+    display: flex;
+
+    .stats {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: rgb(225, 225, 225);
+            font-family: hapnadb;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .stats-bg-5,
+        .stats-bg-4 {
+            width: 250px; //250
+            height: 10px;
+            background-image: url('../../src/img/stats_5.png');
+            background-size: 100% 10px;
+            background-repeat: no-repeat;
+            opacity: 0.25;
+        }
+
+        .stats-fill-5,
+        .stats-fill-4 {
+            width: 0px;
+            height: 10px;
+            background-image: url('../../src/img/stats_5.png');
+            background-size: 250px 10px;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+
+        .stats-bg-4 {
+            background-image: url('../../src/img/stats_4.png');
+        }
+
+        .stats-fill-4 {
+            background-image: url('../../src/img/stats_4.png');
+        }
+    }
+}
+
+input[type=range] {
+    width: 100%;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+.label-btn {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .label-cnt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ico {
+            filter: invert(0);
+        }
+
+        .btn-text {
+            font-size: 24px;
+            margin-left: 5px;
+            color: rgb(225, 225, 225);
+        }
+    }
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    background: transparent;
+    background-image: url('../../src/img/counter_bg_1b.png');
+    background-position-x: center;
+    background-position-y: center;
+    cursor: pointer;
+    margin-top: -5px;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    /* Add cool effects to your sliders! */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.1s all ease-in-out;
+}
+
+// input[type=range]:focus::-webkit-slider-runnable-track {
+//     // background: rgba(255, 255, 255, 0.3);
+// }
+
+input[type=range]:hover::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+input[type=range]:focus {
+    outline: none;
 }
 
 input[type=text] {
@@ -309,7 +547,7 @@ input[type=text]::placeholder {
 .menu-btn {
     width: 100%;
     height: 55px;
-    background-image: url('../../src/img/selection_box_bg_1d.png');
+    background-image: url('../../src/img/selection_box_bg_1a.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -376,23 +614,4 @@ input[type=text]::placeholder {
     background-size: 16px 16px;
     background-repeat: no-repeat;
     margin-right: 12px;
-}
-
-.checkmark {
-    width: 22px;
-    height: 22px;
-    border-radius: 3px;
-    background: rgb(20, 20, 20);
-    -webkit-appearance: none;
-}
-
-.checkmark:hover {
-    background: rgb(0, 0, 0)
-}
-
-.checkmark:checked {
-    background-image: url('../img/checked.png');
-    background-size: 18px;
-    background-position: center;
-    background-repeat: no-repeat;
 }
