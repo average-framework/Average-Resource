@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet/less" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet/less" type="text/css" href="./../src/css/fonts.css" />
     <link rel="stylesheet/less" type="text/css" href="./css/index.css" />
     <link rel="stylesheet/less" type="text/css" href="./css/menu.less" />
 
@@ -12,26 +12,75 @@
 <body>
     <div id="menu" class="menu">
         <div class="content">
-            <div class="banner">
-                <div class="banner-img">
-                    <div style="margin-top: -15px;">
-                        <h2 id="banner-title"></h2>
-                        <h2 id="banner-desc"></h2>
-                    </div>
+            <div class="banner-cnt">
+                <div class="banner">
+                    <h2 id="banner-title" class="banner-title">LOWER ACCESSORIES</h2>
                 </div>
             </div>
 
-            <div id="category-container" class="category">
-                <div class="category-img d-flex jst-cnt" style="overflow-x: scroll;">
-                    <div id="category-item-container" class="d-flex jst-cnt aln-cnt" style="height: 100%; margin-left: 2px;">
-                     
-                    </div>
-                </div>
-            </div>
+            <div class="menu-container">
+                <div class="content-container">
+                    <div id="container" class="container" style="background: transparent;">
+                        <div id="top-container" class="top-container">
+                            <div class="btn">
+                                <span class="btn-text">Enculer</span>
+                                <div class="crafting-highlight"></div>
+                            </div>
 
-            <div id="menu-container" class="container">
-                <div id="item-container" class="item-container">
-                  
+                            <div class="store-btn">
+                                <span class="btn-text">Enculer</span>
+                                <div style="display: flex; align-items: flex-start; margin-right: 15px;">
+                                    <span class="store-btn-text">$10</span>
+                                    <span class="store-btn-text td-under" style="font-size: 16px; margin-top: 3px; margin-left: 2px;">10</span>
+                                </div>
+                                <div class="crafting-highlight"></div>
+                            </div>
+
+                            <div class="select-btn">
+                                <span class="btn-text">Color</span>
+                                <div class="select-cnt">
+                                    <div class="ico arrow-left"></div>
+                                    <span class="btn-text">Crimson</span>
+                                    <div class="ico arrow-right"></div>
+                                </div>
+                                <div class="crafting-highlight"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 100%; height: 24px; display: flex;">
+                        <div class="separator-down"></div>
+                        <div class="separator-arrow"></div>
+                        <div class="separator-down"></div>
+                    </div>
+
+                    <div id="middle-container" class="container" style="overflow: hidden;">
+                        <!-- Store Item Info -->
+                        <div id="store-item-info" style="width: 100%; padding: 30px 0px;">
+                            <h1>Handgun Ammo</h1>
+                            <h2 style="margin-top: 10px;">Description</h2>
+                            <div
+                                style="display: flex; justify-content: space-around; align-items: center; margin-top: 20px; margin-bottom: 0px;">
+                                <div style="display: flex; justify-content: flex-start; align-items: center;">
+                                    <div class="ico weight-ico"></div>
+                                    <h3>10.00</h3>
+                                </div>
+                                <div style="display: flex; justify-content: flex-start; align-items: center;">
+                                    <div class="ico dollar-ico"></div>
+                                    <h3>10.00</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator-up"></div>
+
+                    <div id="bottom-container" class="container" style="overflow: hidden;">
+                        <div id="item-container" class="btn-container">
+                            <span class="menu-btn">Acheter</span>
+                            <span class="menu-btn">Fermer</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

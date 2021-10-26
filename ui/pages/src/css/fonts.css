@@ -1,0 +1,24 @@
+@font-face {
+    font-family: crock;
+    src: url('../fonts/crock.ttf');
+}
+
+@font-face {
+    font-family: headliner;
+    src: url('../fonts/headliner.ttf');
+}
+
+@font-face {
+    font-family: wbb;
+    src: url('../fonts/western_bang_bang.otf') format('truetype');
+}
+
+@font-face {
+    font-family: hapna;
+    src: url('../fonts/hapna-slab-serif.ttf');
+}
+
+@font-face {
+    font-family: hapnadb;
+    src: url('../fonts/hapna-slab-serif-demi-bold.ttf');
+}

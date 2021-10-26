@@ -1,11 +1,10 @@
 $(() => {
-    $("#menu").fadeOut(0)
+    // $("#menu").fadeOut(0)
 
     avg.on('open', data => {
         // Need to show frame
         // $("#frame-" + data.plugin).fadeIn(250)
         $("#banner-title").text(data.title)
-        $("#banner-desc").text(data.description)
         $("#menu").fadeIn(200)
         
         avg.show()
