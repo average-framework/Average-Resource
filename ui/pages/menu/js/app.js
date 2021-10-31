@@ -1,126 +1,230 @@
 $(() => {
     // $("#menu").fadeOut(0)
 
-    avg.on('open', data => {
+    avg.on('open', json => {
+        var data = JSON.parse(json)
         // Need to show frame
         // $("#frame-" + data.plugin).fadeIn(250)
-        $("#banner-title").text(data.title)
+        $("#banner-title").text(data.bannerTitle)
         $("#menu").fadeIn(200)
-        
+
         avg.show()
         avg.focus()
     })
 
-    avg.on('close', data => {
+    avg.on('close', json => {
         $("#menu").fadeOut(200, () => {
             avg.hide()
         })
     })
 
-    avg.on('render', data => {
-        createItems(data.items)
-        
-        if(data.tabs.length > 0) {
-            $('#category-container').show()
-            $('#menu-container').css({'height': (495) + 'px'})
-            createTabs(data.tabs)
-        } else {
-            $('#category-container').hide()
-            $('#menu-container').css({'height': (495 + 84) + 'px'})
-        }
+    avg.on('render', json => {
+        var data = JSON.parse(json)
+        createItems(data)
     })
 
-    avg.on('render_item', data => {
+    avg.on('render_item', json => {
+        var data = JSON.parse(json)
+
         if (data.visible) {
-            $("#" + data.name + "-div").fadeIn(0)
+            $(`#${data.id}`).fadeIn(0)
         } else {
-            $("#" + data.name + "-div").fadeOut(0)
+            $(`#${data.id}`).fadeOut(0)
         }
 
-        if (data.type == "button") {
-            $("#" + data.name + "-div-h1").text(data.text)
-        } else if (data.type == "button_container") {
-            $("#" + data.name + "-div-h1").text(data.text)
-        } else if (data.type == "label") {
-            $("#" + data.name + "-div-h1").text(data.text)
-        } else if (data.type == "richtext") {
-            $("#" + data.name + "-span").text(data.text)
-        } else if (data.type == "checkbox") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-checkbox").prop("checked", data.isChecked)
-        } else if (data.type == "two_checkbox") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-checkbox-1").prop("checked", data.isChecked1)
-            $("#" + data.name + "-div-checkbox-2").prop("checked", data.isChecked2)
-        } else if (data.type == "list") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-h1-itemname").text(data.itemName)
-        } else if (data.type == "selector") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            if (data.isFloating) {
-                $("#" + data.name + "-div-h1-itemname").text(data.value.toFixed(2) + "/" + data.max.toFixed(2))
-            } else {
-                $("#" + data.name + "-div-h1-itemname").text(data.value + "/" + data.max)
-            }
-        } else if (data.type == "bar") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-h1-description").text(data.description)
-            $("#" + data.name + "-btn-bar-container").empty()
-            $("#" + data.name + "-btn-bar-container").append(getMenuBar(data.step, data.value))
-        } else if (data.type == "textbox") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-textbox").prop("minLength", data.minLength)
-            $("#" + data.name + "-div-textbox").prop("maxLength", data.maxLength)
-            $("#" + data.name + "-div-textbox").prop("pattern", data.pattern)
-            $("#" + data.name + "-div-textbox").prop("placeholder", data.placeholder)
-            $("#" + data.name + "-div-textbox").prop("value", data.value)
-        } else if (data.type == "vector2input") {
-            $("#" + data.name + "-div-h1-1").text(data.text1)
-            $("#" + data.name + "-div-h1-2").text(data.text2)
-            $("#" + data.name + "-div-textbox-1").prop("minLength", data.minLength)
-            $("#" + data.name + "-div-textbox-1").prop("maxLength", data.maxLength)
-            $("#" + data.name + "-div-textbox-1").prop("pattern", data.pattern)
-            $("#" + data.name + "-div-textbox-1").prop("placeholder", data.placeholder)
-            $("#" + data.name + "-div-textbox-1").prop("value", data.value)
-            $("#" + data.name + "-div-textbox-2").prop("minLength", data.minLength)
-            $("#" + data.name + "-div-textbox-2").prop("maxLength", data.maxLength)
-            $("#" + data.name + "-div-textbox-2").prop("pattern", data.pattern)
-            $("#" + data.name + "-div-textbox-2").prop("placeholder", data.placeholder)
-            $("#" + data.name + "-div-textbox-2").prop("value", data.value)
-        } else if (data.type == "vector3input") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-textbox-1").prop("minLength", data.minLength1)
-            $("#" + data.name + "-div-textbox-1").prop("maxLength", data.maxLength1)
-            $("#" + data.name + "-div-textbox-1").prop("pattern", data.pattern1)
-            $("#" + data.name + "-div-textbox-1").prop("placeholder", data.placeholder1)
-            $("#" + data.name + "-div-textbox-1").prop("value", data.value1)
-            $("#" + data.name + "-div-textbox-2").prop("minLength", data.minLength2)
-            $("#" + data.name + "-div-textbox-2").prop("maxLength", data.maxLength2)
-            $("#" + data.name + "-div-textbox-2").prop("pattern", data.pattern2)
-            $("#" + data.name + "-div-textbox-2").prop("placeholder", data.placeholder2)
-            $("#" + data.name + "-div-textbox-2").prop("value", data.value2)
-            $("#" + data.name + "-div-textbox-3").prop("minLength", data.minLength3)
-            $("#" + data.name + "-div-textbox-3").prop("maxLength", data.maxLength3)
-            $("#" + data.name + "-div-textbox-3").prop("pattern", data.pattern3)
-            $("#" + data.name + "-div-textbox-3").prop("placeholder", data.placeholder3)
-            $("#" + data.name + "-div-textbox-3").prop("value", data.value3)
-        } else if (data.type == "textarea") {
-            $("#" + data.name + "-div-h1").text(data.text)
-            $("#" + data.name + "-div-textarea").prop("minLength", data.minLength)
-            $("#" + data.name + "-div-textarea").prop("maxLength", data.maxLength)
-            $("#" + data.name + "-div-textarea").prop("pattern", data.pattern)
-            $("#" + data.name + "-div-textarea").prop("placeholder", data.placeholder)
-            $("#" + data.name + "-div-textarea").prop("value", data.value)
-        } else if (data.type == "tab") {
-            if (data.isSelected) {
-                $("#" + data.name + "-div").addClass("btn-cat-selected")
-                $("#" + data.name + "-div").removeClass("btn-cat")
-            } else {
-                $("#" + data.name + "-div").addClass("btn-cat")
-                $("#" + data.name + "-div").removeClass("btn-cat-selected")
+        // Active ou Désactive l'item si la propriété disabled à la valeur true / false
+        $(`#${data.id}`).attr('disabled', data.disabled)
+
+        if (data.type == "ButtonItem") {
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "RedirectButtonItem") {
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "StoreButtonItem") {
+            $(`#${data.id}-dollar`).text(data.dollar)
+            $(`#${data.id}-cent`).text(data.cent)
+        } else if (data.type == "TextboxItem") {
+            $(`#${data.id}-input`).prop("minLength", data.minLength)
+            $(`#${data.id}-input`).prop("maxLength", data.maxLength)
+            $(`#${data.id}-input`).prop("placeholder", data.placeHolder)
+            $(`#${data.id}-input`).prop("value", data.value)
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "Vector2Item") {
+            $(`#${data.id}-primary-input`).prop("minLength", data.primaryMinLength)
+            $(`#${data.id}-primary-input`).prop("maxLength", data.primaryMaxLength)
+            $(`#${data.id}-primary-input`).prop("placeholder", data.primaryPlaceHolder)
+            $(`#${data.id}-primary-input`).prop("value", data.primaryValue)
+            $(`#${data.id}-secondary-input`).prop("minLength", data.secondaryMinLength)
+            $(`#${data.id}-secondary-input`).prop("maxLength", data.secondaryMaxLength)
+            $(`#${data.id}-secondary-input`).prop("placeholder", data.secondaryPlaceHolder)
+            $(`#${data.id}-secondary-input`).prop("value", data.secondaryValue)
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "Vector3Item") {
+            $(`#${data.id}-primary-input`).prop("minLength", data.primaryMinLength)
+            $(`#${data.id}-primary-input`).prop("maxLength", data.primaryMaxLength)
+            $(`#${data.id}-primary-input`).prop("placeholder", data.primaryPlaceHolder)
+            $(`#${data.id}-primary-input`).prop("value", data.primaryValue)
+            $(`#${data.id}-secondary-input`).prop("minLength", data.secondaryMinLength)
+            $(`#${data.id}-secondary-input`).prop("maxLength", data.secondaryMaxLength)
+            $(`#${data.id}-secondary-input`).prop("placeholder", data.secondaryPlaceHolder)
+            $(`#${data.id}-secondary-input`).prop("value", data.secondaryValue)
+            $(`#${data.id}-tertiary-input`).prop("minLength", data.tertiaryMinLength)
+            $(`#${data.id}-tertiary-input`).prop("maxLength", data.tertiaryMaxLength)
+            $(`#${data.id}-tertiary-input`).prop("placeholder", data.tertiaryPlaceHolder)
+            $(`#${data.id}-tertiary-input`).prop("value", data.tertiaryValue)
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "SelectItem") {
+            $(`#${data.id}-text`).text(data.text)
+            $(`#${data.id}-item`).text(data.item)
+        } else if (data.type == "SliderItem") {
+            $(`#${data.id}-slider`).prop("min", data.min)
+            $(`#${data.id}-slider`).prop("max", data.max)
+            $(`#${data.id}-slider`).prop("step", data.step)
+            $(`#${data.id}-slider`).prop("value", data.value)
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "SelectSliderItem") {
+            $(`#${data.id}-slider`).prop("min", data.min)
+            $(`#${data.id}-slider`).prop("max", data.max)
+            $(`#${data.id}-slider`).prop("step", data.step)
+            $(`#${data.id}-slider`).prop("value", data.value)
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "CheckboxItem") {
+            $(`#${data.id}-checkbox`).prop("checked", data.isChecked)
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "BottomButtonItem") {
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "LabelItem") {
+            $(`#${data.id}-text`).text(data.text)
+        } else if (data.type == "StoreMenuInfo") {
+            $(`#${data.id}-title`).text(data.title)
+            $(`#${data.id}-description`).text(data.description)
+            $(`#${data.id}-weight`).text(data.weight)
+            $(`#${data.id}-sellablePrice`).text(data.sellablePrice)
+        } else if (data.type == "StatsMenuInfo") {
+            for (var i = 0; i < data.items.length; i++) {
+                var stat = data.items[i]
+                $(`#${stat.id}-label`).text(stat.label)
+                $(`#${stat.id}-fill`).css({
+                    'width': stat.percentage * 250 + 'px'
+                })
             }
         }
     })
+
+    function createItems(data) {
+        clearTopContainerRender()
+        clearBottomContainerRender()
+        clearMiddleContainerRender()
+
+        for (var i = 0; i < data.topContainer.length; i++) {
+            var item = data.topContainer[i]
+
+            switch (item.type) {
+                case "ButtonItem":
+                    var template = getButtonItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForButtonItem(item)
+                    break;
+                case "RedirectButtonItem":
+                    var template = getRedirectButtonItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForButtonItem(item)
+                    break;
+                case "StoreButtonItem":
+                    var template = getStoreButtonItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForButtonItem(item)
+                    break;
+                case "TextboxItem":
+                    var template = getTextboxItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForTextboxItem(item)
+                    break;
+                case "Vector2Item":
+                    var template = getVector2ItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForVector2Item(item)
+                    break;
+                case "Vector3Item":
+                    var template = getVector3ItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForVector3Item(item)
+                    break;
+                case "SelectItem":
+                    var template = getSelectItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForSelectItem(item)
+                    break;
+                case "SliderItem":
+                    var template = getSliderItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForSliderItem(item)
+                    break;
+                case "SelectSliderItem":
+                    var template = getSelectSliderItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForSelectSliderItem(item)
+                    break;
+                case "CheckboxItem":
+                    var template = getCheckboxItemTemplate(item)
+                    $("#top-container").append(template)
+                    addEventHandlerForCheckboxItem(item)
+                    break;
+                case "SeparatorItem":
+                    var template = null
+
+                    switch (item.separatorType) {
+                        case 0:
+                            template = getSeparatorUpItemTemplate(item)
+                            break;
+                        case 1:
+                            template = getSeparatorDownItemTemplate(item)
+                            break;
+                        case 2:
+                            template = getSeparatorUpArrowItemTemplate(item)
+                            break;
+                        case 3:
+                            template = getSeparatorDownArrowItemTemplate(item)
+                            break;
+                    }
+
+                    $("#top-container").append(template)
+                    break;
+            }
+        }
+
+        for (var i = 0; i < data.bottomContainer.length; i++) {
+            var item = data.bottomContainer[i]
+
+            switch (item.type) {
+                case "BottomButtonItem":
+                    var template = getBottomButtonItemTemplate(item)
+                    $("#bottom-container").append(template)
+                    addEventHandlerForButtonItem(item)
+                    break;
+                case "LabelItem":
+                    var template = getLabelItemTemplate(item)
+                    $("#bottom-container").append(template)
+                    break;
+            }
+        }
+
+        switch (data.middleContainer.type) {
+            case "StoreMenuInfo":
+                var template = getStoreMenuInfoTemplate(data.middleContainer)
+                $("#middle-container").append(template)
+                break;
+            case "StatsMenuInfo":
+                var template = getStatsMenuInfoTemplate(data.middleContainer)
+                $("#middle-container").append(template)
+
+                for (var i = 0; i < data.middleContainer.items.length; i++) {
+                    var stat = data.middleContainer.items[i]
+                    var template = getStatTemplate(stat)
+                    $(`#${data.middleContainer.id}-container`).append(template)
+                }
+                break;
+        }
+    }
 
     document.addEventListener('keydown', function (event) {
         $.post("https://avg/menu/keydown", JSON.stringify({
@@ -128,431 +232,337 @@ $(() => {
         }))
     })
 
-    function addEventHandlerForButton(name) {
-        $(name).click(function (event) {
+    function addEventHandlerForButtonItem(item) {
+        $(`#${item.id}`).unbind().on('click', function (e) {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: $(name).data("id")
+                id: e.target.id,
+                type: $(this).data("type")
             }))
         })
     }
 
-    function addEventHandlerForButtonContainer(name) {
-        $(name).click(function (event) {
+    function addEventHandlerForTextboxItem(item) {
+        $(`#${item.id}-input`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: $(name).data("id")
+                id: item.id,
+                value: e.target.value,
+                type: $(`#${item.id}`).data("type")
             }))
         })
     }
 
-    function addEventHandlerForCheckboxItem(name) {
-        $(name).click(function (event) {
+    function addEventHandlerForVector2Item(item) {
+        $(`#${item.id}-primary-input`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                    name: $(name).data("id"),
-                    isChecked: $("#" + $(name).data("id") + "-div-checkbox").prop("checked")
-                }),
-                (isChecked) => {
-                    $("#" + $(name).data("id") + "-div-checkbox").prop("checked", isChecked)
-                })
-        })
-    }
-
-    function addEventHandlerForTwoCheckboxItem(name) {
-        $(name).click(function (event) {
-            $.post("https://avg/menu/on_click", JSON.stringify({
-                    name: $(name).data("id"),
-                    isChecked1: $("#" + $(name).data("id") + "-div-checkbox-1").prop("checked"),
-                    isChecked2: $("#" + $(name).data("id") + "-div-checkbox-2").prop("checked")
-                }),
-                (result) => {
-                    $("#" + $(name).data("id") + "-div-checkbox-1").prop("checked", result.isChecked1)
-                    $("#" + $(name).data("id") + "-div-checkbox-2").prop("checked", result.isChecked2)
-                })
-        })
-    }
-
-    function addEventHandlerForListItem(name) {
-        $(name + "-lb").click(function (event) {
-            $.post("https://avg/menu/on_click", JSON.stringify({
-                    name: $(name + "-lb").data("id"),
-                    operator: "-"
-                }),
-                (itemName) => {
-                    $("#" + $(name + "-lb").data("id") + "-div-h1-itemname").text(itemName)
-                })
+                id: item.id,
+                primaryValue: $(`#${item.id}-primary-input`).val(),
+                secondaryValue: $(`#${item.id}-secondary-input`).val(),
+                type: $(`#${item.id}`).data("type")
+            }))
         })
 
-        $(name + "-rb").click(function (event) {
+        $(`#${item.id}-secondary-input`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                    name: $(name + "-rb").data("id"),
-                    operator: "+"
-                }),
-                (itemName) => {
-                    $("#" + $(name + "-rb").data("id") + "-div-h1-itemname").text(itemName)
-                })
-        })
-    }
-
-    function addEventHandlerForSelectorItem(name) {
-        $(name + "-lb").click(function (event) {
-            $.post("https://avg/menu/on_click", JSON.stringify({
-                    name: $(name + "-lb").data("id"),
-                    operator: "-"
-                }),
-                (itemName) => {
-                    $("#" + $(name + "-lb").data("id") + "-div-h1-itemname").text(itemName)
-                })
-        })
-
-        $(name + "-rb").click(function (event) {
-            $.post("https://avg/menu/on_click", JSON.stringify({
-                    name: $(name + "-rb").data("id"),
-                    operator: "+"
-                }),
-                (itemName) => {
-                    $("#" + $(name + "-rb").data("id") + "-div-h1-itemname").text(itemName)
-                })
-        })
-    }
-
-    function addEventHandlerForTextboxItem(name) {
-        var elem = document.getElementById(name + "-textbox")
-        elem.addEventListener("input", (event) => {
-            console.log("key: " + event.target.value)
-            $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem.dataset.id,
-                value: event.target.value
+                id: item.id,
+                primaryValue: $(`#${item.id}-primary-input`).val(),
+                secondaryValue: $(`#${item.id}-secondary-input`).val(),
+                type: $(`#${item.id}`).data("type")
             }))
         })
     }
 
-    function addEventHandlerForVector2InputItem(name) {
-        var elem1 = document.getElementById(name + "-textbox-1")
-        var elem2 = document.getElementById(name + "-textbox-2")
-
-        elem1.addEventListener("input", (event) => {
-            console.log("input1: " + elem2.dataset.id + ", " + event.target.value)
+    function addEventHandlerForVector3Item(item) {
+        $(`#${item.id}-primary-input`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem1.dataset.id,
-                value1: event.target.value
+                id: item.id,
+                primaryValue: $(`#${item.id}-primary-input`).val(),
+                secondaryValue: $(`#${item.id}-secondary-input`).val(),
+                tertiaryValue: $(`#${item.id}-tertiary-input`).val(),
+                type: $(`#${item.id}`).data("type")
             }))
         })
 
-        elem2.addEventListener("input", (event) => {
-            console.log("input2: " + elem2.dataset.id + ", " + event.target.value)
+        $(`#${item.id}-secondary-input`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem2.dataset.id,
-                value2: event.target.value
+                id: item.id,
+                primaryValue: $(`#${item.id}-primary-input`).val(),
+                secondaryValue: $(`#${item.id}-secondary-input`).val(),
+                tertiaryValue: $(`#${item.id}-tertiary-input`).val(),
+                type: $(`#${item.id}`).data("type")
             }))
         })
-    }
 
-    function addEventHandlerForVector3InputItem(name) {
-        var elem1 = document.getElementById(name + "-textbox-1")
-        var elem2 = document.getElementById(name + "-textbox-2")
-        var elem3 = document.getElementById(name + "-textbox-3")
-
-        elem1.addEventListener("input", (event) => {
+        $(`#${item.id}-tertiary-input`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem1.dataset.id,
-                value1: event.target.value
+                id: item.id,
+                primaryValue: $(`#${item.id}-primary-input`).val(),
+                secondaryValue: $(`#${item.id}-secondary-input`).val(),
+                tertiaryValue: $(`#${item.id}-tertiary-input`).val(),
+                type: $(`#${item.id}`).data("type")
             }))
         })
+    }
 
-        elem2.addEventListener("input", (event) => {
+    function addEventHandlerForSelectItem(item) {
+        $(`#${item.id}-previous`).unbind().on('click', function (e) {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem2.dataset.id,
-                value2: event.target.value
+                id: item.id,
+                selectType: "-",
+                type: $(`#${item.id}`).data("type")
             }))
         })
 
-        elem3.addEventListener("input", (event) => {
+        $(`#${item.id}-next`).unbind().on('click', function (e) {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem3.dataset.id,
-                value3: event.target.value
+                id: item.id,
+                selectType: "+",
+                type: $(`#${item.id}`).data("type")
             }))
         })
     }
 
-    function addEventHandlerForTextAreaItem(name) {
-        var elem = document.getElementById(name + "-textarea")
-        elem.addEventListener("input", (event) => {
+    function addEventHandlerForSliderItem(item) {
+        $(`#${item.id}-slider`).unbind().on("input", (e) => {
             $.post("https://avg/menu/on_click", JSON.stringify({
-                name: elem.dataset.id,
-                value: event.target.value
+                id: item.id,
+                value: e.target.value,
+                type: $(`#${item.id}`).data("type")
             }))
         })
     }
 
-    function addEventHandlerForTabItem(name) {
-        $(name).click(function (event) {
-            $.post("https://avg/menu/on_tab_click", JSON.stringify({
-                name: $(name).data("id")
+    function addEventHandlerForSelectSliderItem(item) {
+        $(`#${item.id}-slider`).unbind().on("input", (e) => {
+            $.post("https://avg/menu/on_click", JSON.stringify({
+                id: item.id,
+                value: e.target.value,
+                selectType: "*",
+                type: $(`#${item.id}`).data("type")
+            }))
+        })
+
+        $(`#${item.id}-previous`).unbind().on('click', function (e) {
+            $.post("https://avg/menu/on_click", JSON.stringify({
+                id: item.id,
+                value: $(`#${item.id}-slider`).val(),
+                selectType: "-",
+                type: $(`#${item.id}`).data("type")
+            }))
+        })
+
+        $(`#${item.id}-next`).unbind().on('click', function (e) {
+            $.post("https://avg/menu/on_click", JSON.stringify({
+                id: item.id,
+                value: $(`#${item.id}-slider`).val(),
+                selectType: "+",
+                type: $(`#${item.id}`).data("type")
             }))
         })
     }
 
-    function clearRender() {
-        $("#item-container").empty()
+    function addEventHandlerForCheckboxItem(item) {
+        $(`#${item.id}-checkbox`).unbind().on("change", (e) => {
+            $.post("https://avg/menu/on_click", JSON.stringify({
+                id: item.id,
+                isChecked: e.target.checked,
+                type: $(`#${item.id}`).data("type")
+            }))
+        })
     }
 
-    function clearTabRender() {
-        $("#category-item-container").empty()
+    function clearTopContainerRender() {
+        $("#top-container").empty()
     }
 
-    function createTabs(tabs) {
-        clearTabRender()
-
-        for (var i = 0; i < tabs.length; i++) {
-            var tab = tabs[i]
-
-            var template = getMenuTabItemTemplate(tab)
-            $("#category-item-container").append(template)
-            addEventHandlerForTabItem("#" + tab.name + "-div")
-        }
+    function clearBottomContainerRender() {
+        $("#bottom-container").empty()
     }
 
-    function createItems(items) {
-        clearRender()
-
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i]
-
-            switch (item.type) {
-                case "button":
-                    var template = getMenuButtonTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForButton("#" + item.name + "-div")
-                    break;
-                case "label":
-                    var template = getMenuLabelTemplate(item)
-                    $("#item-container").append(template)
-                    break;
-                case "vector2input":
-                    var template = getMenuVector2InputTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForVector2InputItem(item.name + "-div")
-                    break;
-                case "vector3input":
-                    var template = getMenuVector3InputTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForVector3InputItem(item.name + "-div")
-                    break;
-                case "richtext":
-                    var template = getMenuRichTextTemplate(item)
-                    $("#item-container").append(template)
-                    break;
-                case "two_checkbox":
-                    var template = getMenuTwoCheckboxInputItemTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForTwoCheckboxItem("#" + item.name + "-div")
-                    break;
-                case "button_container":
-                    var template = getMenuButtonContainerTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForButtonContainer("#" + item.name + "-div")
-                    break;
-                case "checkbox":
-                    var template = getMenuCheckboxItemTemplate(item)
-                    $("#item-container").append(template)
-                    $("#" + item.name + "-div-checkbox").prop("checked", item.isChecked)
-                    addEventHandlerForCheckboxItem("#" + item.name + "-div")
-                    break;
-                case "list":
-                    var template = getMenuListItemTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForListItem("#" + item.name + "-div")
-                    break;
-                case "selector":
-                    var template = getMenuSelectorItemTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForSelectorItem("#" + item.name + "-div")
-                    break;
-                case "bar":
-                    var template = getMenuBarItemTemplate(item)
-                    $("#item-container").append(template)
-                    $("#" + item.name + "-btn-bar-container").append(getMenuBar(item.step, item.value))
-                    break;
-                case "textbox":
-                    var template = getMenuTextboxItemTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForTextboxItem(item.name + "-div")
-                    break;
-                case "textarea":
-                    var template = getMenuTextAreaItemTemplate(item)
-                    $("#item-container").append(template)
-                    addEventHandlerForTextAreaItem(item.name + "-div")
-                    break;
-            }
-        }
+    function clearMiddleContainerRender() {
+        $("#middle-container").empty()
     }
 
-    function getMenuTabItemTemplate(item) {
-        return `<div id="${item.name}-div" class="${item.isSelected ? "btn-cat-selected" : "btn-cat"}" data-id="${item.name}">
-                    <div id="${item.name}-div-img" class="btn-cat-img" style="background-image: url('${item.iconpath}')"></div>
+    // style="display: ${item.visible ? "flex" : "none"}"
+
+    // Top Container
+    function getButtonItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="btn" style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <div class="crafting-highlight npe"></div>
                 </div>`
     }
 
-    function getMenuButtonTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red x-cnt" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text" id="${item.name}-div-h1">${item.text}</h1>
-                </div>`
-    }
-
-    function getMenuLabelTemplate(item) {
-        return `<div id="${item.name}-div" class="btn black x-cnt" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text" id="${item.name}-div-h1" data-id="${item.name}" style="font-size: 18px;">${item.text}</h1>
-                </div>`
-    }
-
-    function getMenuVector2InputTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <div class="d-flex aln-cnt">
-                        <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1-1">${item.text1}</h1>
-                        <input id="${item.name}-div-textbox-1" data-id="${item.name}" class="mrg-lf-10 mrg-rg-10" type="text" minLength="${item.minLength1}" maxLength="${item.maxLength1}" pattern="${item.pattern1}" placeholder="${item.placeholder1}" value="${item.value1}" />
+    function getRedirectButtonItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="redirect-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <div class="npe" style="display: flex; align-items: flex-start; margin-right: 15px;">
+                        <div class="ico arrow-right npe"></div>
                     </div>
+                    <div class="crafting-highlight npe"></div>
+                </div>`
+    }
 
-                    <div class="d-flex aln-cnt">
-                        <h1 class="btn-text" id="${item.name}-div-h1-2">${item.text2}</h1>
-                        <input id="${item.name}-div-textbox-2" data-id="${item.name}" class="mrg-lf-10 mrg-rg-15" type="text" minLength="${item.minLength2}" maxLength="${item.maxLength2}" pattern="${item.pattern2}" placeholder="${item.placeholder2}" value="${item.value2}" />
+    function getStoreButtonItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="store-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <div class="npe" style="display: flex; align-items: flex-start; margin-right: 15px;">
+                        <span id="${item.id}-dollar" class="store-btn-text npe">${item.dollar}</span>
+                        <span id="${item.id}-cent" class="store-btn-text td-under npe"
+                            style="font-size: 16px; margin-top: 3px; margin-left: 2px;">${item.cent}</span>
                     </div>
+                    <div class="crafting-highlight"></div>
                 </div>`
     }
 
-    function getMenuVector3InputTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1">${item.text}</h1>
-                    <input id="${item.name}-div-textbox-1" data-id="${item.name}" class="mrg-lf-10 mrg-rg-10" type="text" minLength="${item.minLength1}" maxLength="${item.maxLength1}" pattern="${item.pattern1}" placeholder="${item.placeholder1}" value="${item.value1}" />
-                    <input id="${item.name}-div-textbox-2" data-id="${item.name}" class="mrg-rg-10" type="text" minLength="${item.minLength2}" maxLength="${item.maxLength2}" pattern="${item.pattern2}" placeholder="${item.placeholder2}" value="${item.value2}" />
-                    <input id="${item.name}-div-textbox-3" data-id="${item.name}" class="mrg-rg-15" type="text" minLength="${item.minLength3}" maxLength="${item.maxLength3}" pattern="${item.pattern3}" placeholder="${item.placeholder3}" value="${item.value3}" />
+    function getTextboxItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="textbox-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <input id="${item.id}-input" type="text" minLength="${item.minLength}" maxLength="${item.maxLength}" placeholder="${item.placeHolder}" value="${item.value}"></input>
+                    <div class="crafting-highlight"></div>
                 </div>`
     }
 
-    function getMenuRichTextTemplate(item) {
-        return `<div class="span-cnt" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <span class="span-text" id="${item.name}-span">${item.text}</span>
+    function getVector2ItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="vector2-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <input id="${item.id}-primary-input" type="text" minLength="${item.primaryMinLength}" maxLength="${item.primaryMaxLength}" placeholder="${item.primaryPlaceHolder}" value="${item.primaryValue}"></input>
+                    <input id="${item.id}-secondary-input" type="text" minLength="${item.secondaryMinLength}" maxLength="${item.secondaryMaxLength}" placeholder="${item.secondaryPlaceHolder}" value="${item.secondaryValue}"></input>
+                    <div class="crafting-highlight"></div>
                 </div>`
     }
 
-    function getMenuTwoCheckboxInputItemTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red x-cnt" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <div class="d-flex aln-cnt">
-                        <h1 class="btn-text mrg-rg-5" id="${item.name}-div-h1-1">${item.text1}</h1>
-                        <input id="${item.name}-div-checkbox-1" class="checkmark mrg-rg-15" type="checkbox"/>
+    function getVector3ItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="vector3-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <input id="${item.id}-primary-input" type="text" minLength="${item.primaryMinLength}" maxLength="${item.primaryMaxLength}" placeholder="${item.primaryPlaceHolder}" value="${item.primaryValue}"></input>
+                    <input id="${item.id}-secondary-input" type="text" minLength="${item.secondaryMinLength}" maxLength="${item.secondaryMaxLength}" placeholder="${item.secondaryPlaceHolder}" value="${item.secondaryValue}"></input>
+                    <input id="${item.id}-tertiary-input" type="text" minLength="${item.tertiaryMinLength}" maxLength="${item.tertiaryMaxLength}" placeholder="${item.tertiaryPlaceHolder}" value="${item.tertiaryValue}"></input>
+                    <div class="crafting-highlight"></div>
+                </div>`
+    }
+
+    function getSelectItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="select-btn" ${item.disabled ? "disabled" : ""}style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">Color</span>
+                    <div class="select-cnt">
+                        <div id="${item.id}-previous" class="ico arrow-left"></div>
+                        <span id="${item.id}-item" class="btn-text npe">${item.item}</span>
+                        <div id="${item.id}-next" class="ico arrow-right"></div>
                     </div>
+                    <div class="crafting-highlight"></div>
+                </div>`
+    }
 
-                    <div class="separator"></div>
+    function getSliderItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="slider-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <div class="slider-cnt">
+                        <input id="${item.id}-slider" type="range" min="${item.min}" max="${item.max}" step="${item.step}" value="${item.value}">
+                    </div>
+                    <div class="crafting-highlight"></div>
+                </div>`
+    }
 
-                    <div class="d-flex aln-cnt">
-                        <input id="${item.name}-div-checkbox-2" class="checkmark mrg-lf-15" type="checkbox"/>
-                        <h1 class="btn-text mrg-lf-5" id="${item.name}-div-h1-2">${item.text2}</h1>
+    function getSelectSliderItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="slider-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
+                    <div class="slider-cnt">
+                        <div id="${item.id}-previous" class="ico arrow-left"></div>    
+                        <input id="${item.id}-slider" type="range" min="${item.min}" max="${item.max}" step="${item.step}" value="${item.value}">
+                        <div id="${item.id}-next" class="ico arrow-right"></div>
+                    </div>
+                    <div class="crafting-highlight"></div>
+                </div>`
+    }
+
+    function getCheckboxItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="checkbox-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-text" class="btn-text">${item.text}</span>
+                    <div class="checkbox-cnt"
+                        style="display: flex; align-items: flex-start; margin-right: 15px;">
+                        <input id="${item.id}-checkbox" type="checkbox" checked="${item.isChecked}"">
+                        <span class="checkmark npe"></span>
+                    </div>
+                    <div class="crafting-highlight"></div>
+                </div>`
+    }
+
+    function getSeparatorUpItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="separator-cnt" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div class="separator-divider-up"></div>
+                </div>`
+    }
+
+    function getSeparatorDownItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="separator-cnt" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div class="separator-divider-down"></div>
+                </div>`
+    }
+
+    function getSeparatorUpArrowItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="separator-cnt" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div class="separator-up"></div>
+                    <div class="separator-arrow-up"></div>
+                    <div class="separator-up"></div>
+                </div>`
+    }
+
+    function getSeparatorDownArrowItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="separator-cnt" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div class="separator-down"></div>
+                    <div class="separator-arrow"></div>
+                    <div class="separator-down"></div>
+                </div>`
+    }
+
+    // Bottom Container
+    function getBottomButtonItemTemplate(item) {
+        return `<span id="${item.id}" data-type="${item.type}" class="menu-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">${item.text}</span>`
+    }
+
+    function getLabelItemTemplate(item) {
+        return `<divspan id="${item.id}" data-type="${item.type}" class="label-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div class="label-cnt" style="display: flex;">
+                        <div class="ico dollar-ico"></div>
+                        <span id="${item.id}-text" class="btn-text">${item.text}</span>
                     </div>
                 </div>`
     }
 
-    function getMenuButtonContainerTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1">${item.text}</h1>
-                    <div class="btn-menu-img" style="width: 16px; height: 16px; background-image: url('./img/right-chevron.png')"></div>
-                </div>`
-    }
-
-    function getMenuCheckboxItemTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1">${item.text}</h1>
-                    <input id="${item.name}-div-checkbox" class="checkmark mrg-rg-15" type="checkbox"/>
-                </div>`
-    }
-
-    function getMenuListItemTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1">${item.text}</h1>
-
-                    <div class="list-content">
-                        <div class="selector">
-                            <div id="${item.name}-div-lb" data-id="${item.name}" style="background-image: url('./img/right-chevron.png'); transform: rotate(180deg);" class="btn-selector-img"></div>
+    // Middle Container
+    function getStoreMenuInfoTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" ${item.disabled ? "disabled" : ""} style="width: 100%; padding: 30px 0px; display: ${item.visible ? "flex" : "none"}">
+                    <h1 id="${item.id}-title">${item.title}</h1>
+                    <h2 id="${item.id}-description" style="margin-top: 10px;">${item.description}</h2>
+                    <div
+                        style="display: flex; justify-content: space-around; align-items: center; margin-top: 20px; margin-bottom: 0px;">
+                        <div style="display: flex; justify-content: flex-start; align-items: center;">
+                            <div class="ico weight-ico"></div>
+                            <h3 id="${item.id}-weight">${item.weight}</h3>
                         </div>
-
-                        <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1-itemname" style="margin-left: 6px; margin-right: 6px;">${item.itemName}</h1>
-
-                        <div class="selector">
-                            <div id="${item.name}-div-rb" data-id="${item.name}" style="background-image: url('./img/right-chevron.png')" class="btn-selector-img"></div>
+                        <div style="display: flex; justify-content: flex-start; align-items: center;">
+                            <div class="ico dollar-ico"></div>
+                            <h3 id="${item.id}-sellablePrice">${item.sellablePrice}</h3>
                         </div>
                     </div>
                 </div>`
     }
 
-    function getMenuSelectorItemTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1">${item.text}</h1>
+    function getStatTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="stats" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <span id="${item.id}-label">${item.label}</span>
+                    <div style="background: transparent; display: flex;">
+                        <div class="stats-bg-${item.statsType}"></div>
+                        <div id="${item.id}-fill" class="stats-fill-${item.statsType}" style="width: ${item.percentage * 250}px;"></div>
+                    </div>
+                </div>`
+    }
 
-                    <div class="list-content">
-                        <div id="${item.name}-div-lb" data-id="${item.name}" class="selector">
-                            <div style="background-image: url('./img/right-chevron.png'); transform: rotate(180deg);" class="btn-selector-img"></div>
-                        </div>
-
-                        <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1-itemname" style="margin-left: 6px; margin-right: 6px;">${item.isFloating ? item.value.toFixed(2) : item.value}/${item.isFloating ? item.max.toFixed(2) : item.max}</h1>
+    function getStatsMenuInfoTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="stats-store-info" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div id="${item.id}-container" class="stats-cnt">
                         
-                        <div id="${item.name}-div-rb" data-id="${item.name}" class="selector">
-                            <div style="background-image: url('./img/right-chevron.png')" class="btn-selector-img"></div>
-                        </div>
                     </div>
-                </div>`
-    }
-
-    function getMenuBar(step, value) {
-        var result = ""
-
-        for (var i = 0; i < step; i++) {
-            if (i <= value - 1) {
-                // result += `<div class="btn-bar-step" style="width: calc(100% / ${step} - 5px); height: 12px; border-radius: 2px; background: rgba(235, 235, 235, 1);"></div>\n`
-                result += `<div class="bar bar-fill"></div>\n`
-            } else {
-                // result += `<div class="btn-bar-step" style="width: calc(100% / ${step} - 5px); height: 12px; border-radius: 2px; background: rgba(235, 235, 235, 0.25);"></div>\n`
-                result += `<div class="bar bar-nofill"></div>\n`
-            }
-        }
-
-        return result
-    }
-
-    function getMenuBarItemTemplate(item) {
-        return `<div id="${item.name}-div" class="btn-md red-md" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <div class="wdt-100pr d-flex jst-btw">
-                        <div>
-                            <h1 id="${item.name}-div-h1" class="btn-text mrg-lf-15 mrg-top-10 mrg-bot-10" data-id="${item.name}">${item.text}</h1>
-                        </div>
-                        <div class="d-flex jst-btw aln-cnt mrg-rg-15" style="width: 54px;">
-                            <div class="selector">
-                                <div id="${item.name}-div-lb" data-id="${item.name}" style="background-image: url('./img/minus.png'); transform: rotate(180deg);" class="btn-selector-img"></div>
-                            </div>
-
-                            <div class="selector">
-                                <div id="${item.name}-div-rb" data-id="${item.name}" style="background-image: url('./img/plus.png')" class="btn-selector-img"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex jst-btw" id="${item.name}-btn-bar-container" data-id="${item.name}" style="width: 94%;">
-
-                    </div>
-                    <div class="wdt-100pr hgt-100pr">
-                        <h1 id="${item.name}-div-h1-description" data-id="${item.name}" class="btn-text-desc mrg-lf-15 mrg-top-10">${item.description}</h1>
-                    </div>
-                </div>`
-    }
-
-    function getMenuTextboxItemTemplate(item) {
-        return `<div id="${item.name}-div" class="btn red" data-id="${item.name}" style="display: ${item.visible ? "flex" : "none"}">
-                    <h1 class="btn-text mrg-lf-15" data-id="${item.name}" id="${item.name}-div-h1">${item.text}</h1>
-                    <input id="${item.name}-div-textbox" data-id="${item.name}" class="mrg-lf-15 mrg-rg-15" type="text" minLength="${item.minLength}" maxLength="${item.maxLength}" pattern="${item.pattern}" placeholder="${item.placeholder}" value="${item.value}" />
-                </div>`
-    }
-
-    function getMenuTextAreaItemTemplate(item) {
-        return `<div class="mrg-bot-5" id="${item.name}-div" data-id="${item.name}" style="display: ${item.visible ? "block" : "none"}; height: 250px;">
-                    <div class="btn black">
-                        <h1 class="btn-text mrg-lf-15" id="${item.name}-div-h1" data-id="${item.name}">${item.text}</h1>
-                    </div>
-                    <textarea class="btn-textarea" id="${item.name}-div-textarea" data-id="${item.name}" minLength="${item.minLength}" maxLength="${item.maxLength}" pattern="${item.pattern}" placeholder="${item.placeholder}">${item.value}</textarea>
                 </div>`
     }
 })

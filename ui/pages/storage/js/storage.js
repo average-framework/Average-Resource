@@ -6,6 +6,8 @@ $(() => {
     })
 
     avg.on(`init`, json => {
+        console.log("init slots: " + json)
+
         var data = JSON.parse(json)
         initSlots(data.slotCount, data.type)
     })
@@ -614,12 +616,11 @@ $(() => {
         $(".inv-slot").off(`mouseenter`).on(`mouseenter`, e => {
             $.post(`https://avg/storage/item_info`, JSON.stringify({
                 slotId: e.target.getAttribute(`data-slotid`)
-            }), function (json) {
-                var data = JSON.parse(json)
-                $(`#inv-info-title`).text(data[0].title)
-                $(`#inv-info-desc`).text(data[0].description)
-                $(`#inv-item-weight`).text(data[0].weight)
-                $(`#inv-item-sellable`).text(data[0].isSellable)
+            }), function (data) {
+                $(`#inv-info-title`).text(data.title)
+                $(`#inv-info-desc`).text(data.description)
+                $(`#inv-item-weight`).text(data.weight)
+                $(`#inv-item-sellable`).text(data.isSellable)
             })
         })
 
