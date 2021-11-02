@@ -33,7 +33,6 @@ $(() => {
 
     avg.on('render', json => {
         var data = JSON.parse(json)
-        console.log("render items: " + data.items)
         onRender(data.items)
     })
 
@@ -46,8 +45,6 @@ $(() => {
     function onRender(options) {
         $("#container").empty();
 
-        console.log("on render: " + JSON.stringify(options))
-
         for (var i = 0; i < options.length; i++) {
             var option = options[i]
 
@@ -55,7 +52,10 @@ $(() => {
                 $("#container").append(
                     `<li id="${option.Id}">
                         <a>
-                            <span id="${option.Id}-emoji" class="emoji">${option.Emoji}</span><h1 id="${option.Id}-text">${option.Text}</h1>
+                            <div style="display: flex;">
+                                <span id="${option.Id}-emoji" class="emoji">${option.Emoji}</span>
+                                <h1 id="${option.Id}-text">${option.Text}</h1>
+                            </div>
                         </a>
                     </li>`)
 
