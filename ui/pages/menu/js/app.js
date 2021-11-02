@@ -1,5 +1,5 @@
 $(() => {
-    // $("#menu").fadeOut(0)
+    $("#menu").fadeOut(0)
 
     avg.on('open', json => {
         var data = JSON.parse(json)
@@ -107,6 +107,11 @@ $(() => {
                     'width': stat.percentage * 250 + 'px'
                 })
             }
+        } else if (data.type == "LabelSeparatorItem") {
+            $(`#${data.id}-text`).text(data.text)
+            $(`#${data.id}-ico`).css({
+                'background-image': `../../src/img/${data.ico}`
+            })
         }
     })
 
@@ -117,6 +122,8 @@ $(() => {
 
         for (var i = 0; i < data.topContainer.length; i++) {
             var item = data.topContainer[i]
+
+            console.log("type: " + item.type)
 
             switch (item.type) {
                 case "ButtonItem":
@@ -189,41 +196,51 @@ $(() => {
 
                     $("#top-container").append(template)
                     break;
-            }
-        }
-
-        for (var i = 0; i < data.bottomContainer.length; i++) {
-            var item = data.bottomContainer[i]
-
-            switch (item.type) {
-                case "BottomButtonItem":
-                    var template = getBottomButtonItemTemplate(item)
-                    $("#bottom-container").append(template)
-                    addEventHandlerForButtonItem(item)
-                    break;
-                case "LabelItem":
-                    var template = getLabelItemTemplate(item)
-                    $("#bottom-container").append(template)
+                case "LabelSeparatorItem":
+                    var template = getLabelSeparatorItemTemplate(item)
+                    $("#top-container").append(template)
                     break;
             }
         }
 
-        switch (data.middleContainer.type) {
-            case "StoreMenuInfo":
-                var template = getStoreMenuInfoTemplate(data.middleContainer)
-                $("#middle-container").append(template)
-                break;
-            case "StatsMenuInfo":
-                var template = getStatsMenuInfoTemplate(data.middleContainer)
-                $("#middle-container").append(template)
+        if (data.bottomContainer != null) {
+            for (var i = 0; i < data.bottomContainer.length; i++) {
+                var item = data.bottomContainer[i]
 
-                for (var i = 0; i < data.middleContainer.items.length; i++) {
-                    var stat = data.middleContainer.items[i]
-                    var template = getStatTemplate(stat)
-                    $(`#${data.middleContainer.id}-container`).append(template)
+                switch (item.type) {
+                    case "BottomButtonItem":
+                        var template = getBottomButtonItemTemplate(item)
+                        $("#bottom-container").append(template)
+                        addEventHandlerForButtonItem(item)
+                        break;
+                    case "LabelItem":
+                        var template = getLabelItemTemplate(item)
+                        $("#bottom-container").append(template)
+                        break;
                 }
-                break;
+            }
         }
+
+        if (data.middleContainer != null) {
+            switch (data.middleContainer.type) {
+                case "StoreMenuInfo":
+                    var template = getStoreMenuInfoTemplate(data.middleContainer)
+                    $("#middle-container").append(template)
+                    break;
+                case "StatsMenuInfo":
+                    var template = getStatsMenuInfoTemplate(data.middleContainer)
+                    $("#middle-container").append(template)
+
+                    for (var i = 0; i < data.middleContainer.items.length; i++) {
+                        var stat = data.middleContainer.items[i]
+                        var template = getStatTemplate(stat)
+                        $(`#${data.middleContainer.id}-container`).append(template)
+                    }
+                    break;
+            }
+        }
+
+        console.log("state: " + data.topContainer + ", " + data.bottomContainer + ", " + data.middleContainer)
     }
 
     document.addEventListener('keydown', function (event) {
@@ -443,7 +460,7 @@ $(() => {
 
     function getSelectItemTemplate(item) {
         return `<div id="${item.id}" data-type="${item.type}" class="select-btn" ${item.disabled ? "disabled" : ""}style="display: ${item.visible ? "flex" : "none"}">
-                    <span id="${item.id}-text" class="btn-text npe">Color</span>
+                    <span id="${item.id}-text" class="btn-text npe">${item.text}</span>
                     <div class="select-cnt">
                         <div id="${item.id}-previous" class="ico arrow-left"></div>
                         <span id="${item.id}-item" class="btn-text npe">${item.item}</span>
@@ -515,13 +532,22 @@ $(() => {
                 </div>`
     }
 
+    function getLabelSeparatorItemTemplate(item) {
+        return `<div id="${item.id}" data-type="${item.type}" class="label-separator" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                    <div class="label-separator-cnt">
+                        <div id="${item.id}-ico" class="ico dollar-ico" style="background-image: url(${item.ico})"></div>
+                        <span id="${item.id}-text" class="label-separator-text">${item.text}</span>
+                    </div>
+                </div>`
+    }
+
     // Bottom Container
     function getBottomButtonItemTemplate(item) {
         return `<span id="${item.id}" data-type="${item.type}" class="menu-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">${item.text}</span>`
     }
 
     function getLabelItemTemplate(item) {
-        return `<divspan id="${item.id}" data-type="${item.type}" class="label-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+        return `<div id="${item.id}" data-type="${item.type}" class="label-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
                     <div class="label-cnt" style="display: flex;">
                         <div class="ico dollar-ico"></div>
                         <span id="${item.id}-text" class="btn-text">${item.text}</span>

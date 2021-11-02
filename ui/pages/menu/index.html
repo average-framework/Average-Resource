@@ -68,6 +68,14 @@
                                 <div class="crafting-highlight"></div>
                             </div>
 
+                            <div class="label-separator">
+                                <div class="btn" style="opacity: .4;"></div>
+                                <div class="label-separator-cnt">
+                                    <div class="ico dollar-ico" style="background-image: url('../src/img/inventory_items/');"></div>
+                                    <span class="label-separator-text">Chapeaux</span>
+                                </div>
+                            </div>
+
                             <div class="redirect-btn">
                                 <span class="btn-text">Clothes</span>
                                 <div style="display: flex; align-items: flex-start; margin-right: 15px;">
@@ -92,6 +100,13 @@
                                     <span class="checkmark"></span>
                                 </div>
                                 <div class="crafting-highlight"></div>
+                            </div>
+
+                            <div id="${item.id}" data-type="${item.type}" class="label-separator" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
+                                <div class="label-separator-cnt">
+                                    <div id="${item.id}-ico" class="ico dollar-ico" style="background-image: url(${item.ico})"></div>
+                                    <span id="${item.id}-text" class="label-separator-text">${item.text}</span>
+                                </div>
                             </div> -->
 
                             <!-- <div id="${item.id}" data-type="${item.type}" class="slider-btn" ${item.disabled ? "disabled" : ""} style="display: ${item.visible ? "flex" : "none"}">
@@ -207,9 +222,9 @@
                                     <div class="ico dollar-ico"></div>
                                     <span class="btn-text">14.00</span>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <span class="menu-btn">Acheter</span> -->
+                            <span class="menu-btn">Acheter</span>
                         </div>
                     </div>
                 </div>

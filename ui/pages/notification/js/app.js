@@ -1,19 +1,26 @@
 $(() => {
-    avg.on('notification.remove', data => {
-        $(`#${data.id}`).fadeOut(250, () => {
+    $('#${data.id}-cnt').addClass('scale-in')
+
+    avg.on('notification.remove', json => {
+        var data = JSON.parse(json)
+
+        $(`#${data.id}-cnt`).removeClass('scale-in')
+        $(`#${data.id}-cnt`).addClass('scale-out')
+        $(`#${data.id}`).fadeOut(600, () => {
             $(`#${data.id}`).remove();
         })
     })
 
-    avg.on('notification.open', data => {
+    avg.on('notification.open', json => {
         avg.show()
     })
 
-    avg.on('notification.hide', data => {
+    avg.on('notification.hide', json => {
         avg.hide()
     })
 
-    avg.on('notification.create', data => {
+    avg.on('notification.create', json => {
+        var data = JSON.parse(json)
         var result = `<li id="${data.id}" class="notification">
                         <div style="height: 100%; display: flex; justify-content: flex-start; align-items: center;">
                             <div id="${data.id}-notification-title" class="notification-title">${data.title}</div>
@@ -33,9 +40,8 @@ $(() => {
                     </li>`
 
         $('#notification-list').append(result)
-        $(`#${data.id}-notification`).fadeIn(250)
-        $(`#${data.id}-notification-progressbar`).animate({
-            width: `100%`
-        }, data.duration, "swing")
+        $(`#${data.id}-notification`).fadeIn(0)
+        $(`#${data.id}-cnt`).removeClass('scale-out')
+        $(`#${data.id}-cnt`).addClass('scale-in')
     })
 })
