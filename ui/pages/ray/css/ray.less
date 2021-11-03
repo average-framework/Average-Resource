@@ -7,8 +7,8 @@
     a {
         display: block;
         text-decoration: none;
-        font-family: 'Segoe UI';
-        font-weight: 600;
+        font-family: hapnadb;
+        // font-weight: 600;
     }
 
     .crossair,
@@ -63,6 +63,8 @@
         position: absolute;
         top: 0;
         z-index: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .container li {
@@ -75,45 +77,37 @@
     }
 
     .container li a {
-        display: block;
+        width: 275px;
+        height: 85px;
         text-decoration: none;
-        font-family: 'Segoe UI';
-        font-size: 16px;
-        font-weight: 600;
+        font-family: hapnadb;
+        font-size: 14px;
         display: inline-block;
         color: rgb(235, 235, 235);
-        background: rgba(14, 15, 17, 0.75);
-        border: 3px solid rgba(14, 15, 17, 0);
-        border-radius: 30px;
-        padding: 10px 15px 10px 13px;
-        margin: 2px 0;
-        transition: all 0.2s ease-in-out;
-        will-change: transform;
-        filter: drop-shadow(0 0 0.15rem rgba(75, 52, 52, 0.95));
-        // backdrop-filter: blur(10px);
+        background-image: url('../../src/img/test.png');
+        background-size: 100% 100%;
+        background-position-x: center;
+        background-position-y: center;
+        transition: all 0.15s ease-in-out;
+        line-height: 25px;
+        text-align: center;
+        padding: 7px 15px;
+        transform: scale(0.7);
 
         span {
             margin-right: 5px;
         }
 
         &:hover {
-            background: rgba(31, 33, 37, 1);
-            border: 3px solid rgb(46, 49, 54);
-            // color: white;
+            transform: scale(0.8);
         }
     }
 
-    .container li:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
-    }
+    // .container li:hover {
+
+    // }
 
     .container li a .emoji, h1 {
-        font-size: 16px;
-        margin-right: 5px;
-        font-weight: 600;
-        // display: inline-block;
         vertical-align: middle;
     }
 

@@ -49,12 +49,21 @@ $(() => {
             var option = options[i]
 
             if (option.IsVisible) {
+                // $("#container").append(
+                //     `<li id="${option.Id}">
+                //         <a>
+                //             <div style="display: flex; justify-content: center; align-items: center;">
+                //                 <span id="${option.Id}-emoji" class="emoji">${option.Emoji}</span>
+                //                 <h1 id="${option.Id}-text">${option.Text}</h1>
+                //             </div>
+                //         </a>
+                //     </li>`)
+
                 $("#container").append(
                     `<li id="${option.Id}">
                         <a>
-                            <div style="display: flex;">
-                                <span id="${option.Id}-emoji" class="emoji">${option.Emoji}</span>
-                                <h1 id="${option.Id}-text">${option.Text}</h1>
+                            <div style="display: flex; justify-content: center; align-items: center; margin-top: 8px;">
+                                <h1 id="${option.Id}-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 23px;">${option.Text}</h1>
                             </div>
                         </a>
                     </li>`)

@@ -9,16 +9,40 @@
 </head>
 
 <body>
-    <ul id="notification-list" class="notification-list">
-        <!-- <li id="${data.id}" class="notification">
-            <div id="${data.id}-cnt" class="notification-cnt">
-                <div id="${data.id}-ico" class="ico"></div>
-                <div class="info-cnt">
-                    <span id="${data.id}-text" class="text" style="background-image: url(../src/img/);">+ 1</span>
+    <div style="width: 100%; height: 100%; display: grid; grid-template-columns: 1fr auto; grid-template-rows: 1fr;">
+        <ul id="notification-left-cnt" class="notification-list" style="margin-left: 15px;">
+            <!-- <li id="${data.id}" class="notification">
+                <div id="${data.id}-cnt" class="notification-helptext-cnt">
+                    <span id="${data.id}-text" class="helptext-text">Je mange des <span class="warn td-line">bananes</span> tout les jours. Appuyer sur <span class="key">E</span> pour devenir un dieux. Je vous baise tous autant que vous êtes bande de connard.</span>
                 </div>
-            </div>
-        </li> -->
-    </ul>
+            </li> -->
+        </ul>
+
+        <div style="display: flex; align-items: center;">
+            <ul id="notification-right-cnt" class="notification-list" style="margin-right: 15px;">
+                <!-- <li id="${data.id}" class="notification">
+                    <div id="${data.id}-cnt" class="notification-ico-cnt">
+                        <div id="${data.id}-ico" class="ico"></div>
+                        <div class="info-cnt">
+                            <span id="${data.id}-text" style="background-image: url(../src/img/);">+ 1</span>
+                        </div>
+                    </div>
+                </li>
+        
+                <li id="${data.id}" class="notification">
+                    <div id="${data.id}-cnt" class="notification-store-cnt">
+                        <span id="${data.id}-text" class="text">-1 pomme</span>
+                    </div>
+                </li>
+        
+                <li id="${data.id}" class="notification">
+                    <div id="${data.id}-cnt" class="notification-store-cnt">
+                        <span id="${data.id}-text" class="text">-1 pomme de merde d'enculer</span>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
 
     <script src="./js/app.js"></script>
 </body>
