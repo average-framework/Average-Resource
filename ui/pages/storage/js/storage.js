@@ -609,7 +609,7 @@ $(() => {
             var width = item.offsetWidth
             var height = item.offsetHeight
 
-            $(`#${slotPrefix}-${currentSlotId}-context`).css("top", top + "px")
+            $(`#${slotPrefix}-${currentSlotId}-context`).css("top", (top - 105) + "px")
             $(`#${slotPrefix}-${currentSlotId}-context`).css("left", left + width + "px")
         })
 

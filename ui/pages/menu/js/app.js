@@ -1,5 +1,6 @@
 $(() => {
     $("#menu").fadeOut(0)
+    avg.hide()
 
     avg.on('open', json => {
         var data = JSON.parse(json)
