@@ -49,6 +49,7 @@ client_scripts {
     -- Average Framework (DO NOT REMOVE !!!)
     'Average.Shared.net.dll',
     'Average.Client.net.dll',
+    'getEventData.js'
     ----------------------------------------
 }
 
@@ -61,7 +62,9 @@ exports {
     "SetPlayerRadioSpeaker",
     "SetPlayerRadioChannel",
     "RemovePlayerRadioChannel",
-    "SetRadioTowers"
+    "SetRadioTowers",
+
+    "GetEventEntityDamaged"
 }
 
 VoiceEnabled "true"
